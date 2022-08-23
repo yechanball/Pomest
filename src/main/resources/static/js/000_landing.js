@@ -1,0 +1,13 @@
+function loginKakao(){
+    //////////////////////////////////////////////
+    // location.href = '/oauth2/authorization/kakao';
+    //////////////////////////////////////////////
+    location.href='./011_inputNickname.html';
+}
+
+function loginNaver(){
+    //////////////////////////////////////////////
+    // location.href = '/oauth2/authorization/naver';
+    ///////////////////////////////////////////////
+    location.href='./011_inputNickname.html';
+}
