@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포메스트 로그인</title>
-</head>
-<body>
-    <div>
-        <h1>우리를 위한 숲<br>포메스트에<br>오신 것을 환영해요!</h1>
-        <!--<img src="">-->
-        <button onclick="loginKakao()">카카오로 계속하기</button>
-        <button onclick="loginNaver()">네이버로 계속하기</button>
+    <link rel="stylesheet" href="../static/font/NotoSansKR.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/default_design.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/000_landing.css" type="text/css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>
+        <strong>우리를 위한 숲<br />포메스트에<br />오신 것을 환영해요!</strong>
+      </h1>
+      <img src="../static/img/logo_raw.png" />
+      <button id="btnLoginKakao" class="btn" onclick="loginKakao()">카카오로 계속하기</button><br />
+      <button id="btnLoginNaver" class="btn" onclick="loginNaver()">네이버로 계속하기</button><br />
+      <a id="btnLoginHelp" onclick="bottomUp()">로그인이 필요한 이유</a>
     </div>
     <script src="../static/js/000_landing.js"></script>
-</body>
+  </body>
 </html>

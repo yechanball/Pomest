@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포메스트 닉네임 입력</title>
-</head>
-<body>
-    <div>
-        <h1>포메스트에서 사용할<br>닉네임을 정해볼까요?</h1>
-        <input id='inputNickname' type="text" placeholder="한글 5자 이내의 닉네임을 입력하세요">
-        <p id="alertOverlap" style="visibility: hidden;"></p>
-        <button id="submitBtn" onclick="changePage()" disabled>닉네임 정했어요</button>
+    <link rel="stylesheet" href="../static/font/NotoSansKR.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/default_design.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/011_inputNickname.css" type="text/css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>포메스트에서 사용할<br />닉네임을 정해볼까요?</h1>
+      <input id="inputNickname" type="text" placeholder="한글 5자 이내의 닉네임을 입력하세요" />
+      <p id="alertNick" style="visibility: hidden"></p>
+      <button id="submitBtn" onclick="changePage()" disabled>닉네임 정했어요</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../static/js/011_inputNickname.js"></script>
-</body>
+  </body>
 </html>

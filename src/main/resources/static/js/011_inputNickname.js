@@ -4,7 +4,8 @@ $('input').keyup(function(e) {
         checkNickname();
     else{
         document.all.submitBtn.disabled = true;
-        document.all.alertOverlap.style.visibility = "hidden";
+        document.all.alertNick.style.visibility = "hidden";
+        document.all.inputNickname.style.border = "none"
     }
 });
 
@@ -14,20 +15,22 @@ function checkNickname(){
 
     if(inputNick.length <= 5 && checkKorNick(inputNick) && checkOverlapNick(inputNick)){
         // 닉네임이 한글 5자 이내이며 중복되지 않는 경우
-        document.all.alertOverlap.innerText = "사용 가능한 닉네임이에요";
-        document.all.alertOverlap.style.color = "green";
-        document.all.alertOverlap.style.visibility = "visible";
+        document.all.alertNick.innerText = "사용 가능한 닉네임이에요";
+        document.all.alertNick.style.color = "#4CAF50";
+        document.all.alertNick.style.visibility = "visible";
+        document.all.inputNickname.style.border = "1px solid #4CAF50"
         document.all.submitBtn.disabled = false;
         return true;
     }else{
         if(inputNick.length > 5 || !checkKorNick(inputNick)){
             // 닉네임이 한글이 아니거나, 5자가 넘는 경우 
-            document.all.alertOverlap.innerText = "한글로 5자 이하의 닉네임만 사용할 수 있어요";
+            document.all.alertNick.innerText = "한글로 5자 이하의 닉네임만 사용할 수 있어요";
         }else{
-            document.all.alertOverlap.innerText = "이미 사용 중인 닉네임이에요";
+            document.all.alertNick.innerText = "이미 사용 중인 닉네임이에요";
         }
-        document.all.alertOverlap.style.color = "red";
-        document.all.alertOverlap.style.visibility = "visible";
+        document.all.alertNick.style.color = "#D32F2F";
+        document.all.alertNick.style.visibility = "visible";
+        document.all.inputNickname.style.border = "1px solid #D32F2F"
         document.all.submitBtn.disabled = true;
         return false;
     }

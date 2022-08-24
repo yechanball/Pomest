@@ -1,0 +1,61 @@
+h1 {
+    position: absolute;
+    width: 250px;
+    top: 80px;
+    left: 55px;
+    text-align: left;
+    font-family: "Noto Sans KR Black";
+    font-size: 28px;
+    line-height: 42px;
+    color: #121212;
+}
+
+img {
+    position: absolute;
+    top: 265px;
+    left: -61px;
+    height: 50px;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px 18px;
+    gap: 2px;
+    width: 312px;
+    height: 54px;
+    border: none;
+    border-radius: 10px;
+
+    font-family: "Noto Sans KR Bold";
+    font-size: 14px;
+    line-height: 21px;
+}
+
+#btnLoginKakao {
+    position: absolute;
+    top: calc(50% - 54px / 2 + 148px);
+    left: 24px;
+    color: #121212;
+    background: #f7e600;
+}
+
+#btnLoginNaver {
+    position: absolute;
+    top: calc(50% - 54px / 2 + 218px);
+    left: 24px;
+    color: #ffffff;
+    background: #2db400;
+}
+
+#btnLoginHelp {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    width: 312px;
+    font-family: "Noto Sans KR Normal";
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #b9b9b9;
+}

@@ -1,0 +1,72 @@
+h1 {
+    position: absolute;
+    width: 262px;
+    height: 60px;
+    top: 74px;
+    left: 24px;
+    font-family: "Noto Sans KR Black";
+    font-size: 20px;
+    text-align: left;
+    line-height: 30px;
+    color: #121212;
+}
+
+#inputNickname {
+    position: absolute;
+    top: 225px;
+    left: 44px;
+    width: 272px;
+    height: 38px;
+    background: #ffffff;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border: none;
+}
+
+input::placeholder {
+    font-family: "Noto Sans KR Regular";
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    align-items: center;
+    color: #b9b9b9;
+}
+
+#alertNick {
+    position: absolute;
+    top: 270px;
+    left: 44px;
+    width: 222px;
+    font-family: "Noto Sans KR Regular";
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+}
+
+button {
+    background: #4bb158;
+}
+
+button:disabled,
+button[disabled] {
+    background: #b9b9b9;
+}
+
+#submitBtn {
+    position: absolute;
+    bottom: 74px;
+    left: 64px;
+    width: 232px;
+    height: 54px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px 18px;
+    gap: 2px;
+    font-family: "Noto Sans KR Bold";
+    font-size: 14px;
+    line-height: 21px;
+    color: #ffffff;
+    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    border: none;
+}
