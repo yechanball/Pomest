@@ -206,6 +206,30 @@
   border: 1.7px solid #b9b9b9;
 }
 
+/* symptom_tag */
+/* .symptom_tag_medium {} */
+.symptom_tag_medium span {
+  width: 47px;
+  height: 39px;
+  box-sizing: border-box;
+  padding: 9px 12px 12px;
+  gap: 2px;
+  background: #ffffff;
+  border: 1px solid #ff9691;
+  border-radius: 10px;
+  font-family: "Noto Sans KR Medium";
+  font-size: 12px;
+  line-height: 39px;
+  color: #ff9691;
+}
+.symptom_tag_medium input[type="checkbox"] {
+  display: none;
+}
+.symptom_tag_medium input[type="checkbox"]:checked ~ span {
+  background: #ff9691;
+  color: #ffffff;
+}
+
 /* Textbox */
 .textbox-default {
   background: #ffffff;
@@ -222,7 +246,7 @@
 .textbox-default::placeholder {
   font-family: "Noto Sans KR Regular";
   font-size: 12px;
-  line-height: 18px;
+  line-height: 30px;
   color: #b9b9b9;
 }
 .textbox-fail {
@@ -240,7 +264,7 @@
 .textbox-fail::placeholder {
   font-family: "Noto Sans KR Regular";
   font-size: 12px;
-  line-height: 18px;
+  line-height: 30px;
   color: #b9b9b9;
 }
 .textbox-message-fail {
