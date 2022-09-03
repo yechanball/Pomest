@@ -1,0 +1,271 @@
+/*=========Typography - 국문===========================*/
+/* 국문 - Header */
+.font-header-kr01 {
+  font-family: "Noto Sans KR Black";
+  font-size: 28px;
+  line-height: 42px;
+}
+.font-header-kr02 {
+  font-family: "Noto Sans KR Bold";
+  font-size: 28px;
+  line-height: 42px;
+}
+.font-header-kr03 {
+  font-family: "Noto Sans KR Medium";
+  font-size: 28px;
+  line-height: 42px;
+}
+/* 국문 - Title */
+.font-title-kr01 {
+  font-family: "Noto Sans KR Black";
+  font-size: 20px;
+  line-height: 30px;
+}
+.font-title-kr02 {
+  font-family: "Noto Sans KR Bold";
+  font-size: 20px;
+  line-height: 30px;
+}
+.font-title-kr03 {
+  font-family: "Noto Sans KR Medium";
+  font-size: 20px;
+  line-height: 30px;
+}
+/* 국문 - Body */
+.font-body-kr01 {
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+}
+.font-body-kr02 {
+  font-family: "Noto Sans KR Medium";
+  font-size: 14px;
+  line-height: 21px;
+}
+.font-body-kr03 {
+  font-family: "Noto Sans KR Regular";
+  font-size: 14px;
+  line-height: 21px;
+}
+/* 국문 - Detail */
+.font-detail-kr01 {
+  font-family: "Noto Sans KR Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.font-detail-kr02 {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+}
+/*=====================================================*/
+
+/*=========Typography - 영문 및 숫자====================*/
+/* 영문 및 숫자 - Header */
+.font-header-en01 {
+  font-family: "Inter Black";
+  font-size: 28px;
+  line-height: 42px;
+}
+.font-header-en02 {
+  font-family: "Inter Bold";
+  font-size: 28px;
+  line-height: 42px;
+}
+.font-header-en03 {
+  font-family: "Inter Medium";
+  font-size: 28px;
+  line-height: 42px;
+}
+/* 영문 및 숫자 - Title */
+.font-title-en01 {
+  font-family: "Noto Sans KR Black";
+  font-size: 20px;
+  line-height: 30px;
+}
+.font-title-en02 {
+  font-family: "Noto Sans KR Bold";
+  font-size: 20px;
+  line-height: 30px;
+}
+.font-title-en03 {
+  font-family: "Noto Sans KR Medium";
+  font-size: 20px;
+  line-height: 30px;
+}
+/* 영문 및 숫자 - Body */
+.font-body-en01 {
+  font-family: "Inter Bold";
+  font-size: 14px;
+  line-height: 21px;
+}
+.font-body-en02 {
+  font-family: "Inter Medium";
+  font-size: 14px;
+  line-height: 21px;
+}
+.font-body-en03 {
+  font-family: "Inter Regular";
+  font-size: 14px;
+  line-height: 21px;
+}
+/* 영문 및 숫자 - Detail */
+.font-detail-en01 {
+  font-family: "Inter Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+.font-detail-en02 {
+  font-family: "Inter Regular";
+  font-size: 12px;
+  line-height: 18px;
+}
+/*=====================================================*/
+
+/*========Components====================================*/
+/* Buttons */
+.button-elevated-default {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #4bb158;
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.button-elevated-default:hover {
+  background: #2c9539;
+}
+.button-elevated-disabled {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #b9b9b9;
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border: none;
+}
+.button-basic-default {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #4bb158;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.button-basic-default:hover {
+  background: #2c9539;
+}
+.button-basic-disabled {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #b9b9b9;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border: none;
+}
+.button-ghost-default {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #ffffff;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #4bb158;
+  border: 1.7px solid #4bb158;
+  cursor: pointer;
+}
+.button-ghost-default:hover {
+  color: #2c9539;
+  border: 1.7px solid #2c9539;
+}
+.button-ghost-disabled {
+  padding: 15px 25px 18px;
+  gap: 2px;
+  background: #ffffff;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Bold";
+  font-size: 14px;
+  line-height: 21px;
+  color: #b9b9b9;
+  border: 1.7px solid #b9b9b9;
+}
+
+/* Textbox */
+.textbox-default {
+  background: #ffffff;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: none;
+  font-family: "Noto Sans KR Medium";
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  align-items: center;
+  color: #121212;
+}
+.textbox-default::placeholder {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #b9b9b9;
+}
+.textbox-fail {
+  background: #ffffff;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 1px solid #d32f2f;
+  font-family: "Noto Sans KR Medium";
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  align-items: center;
+  color: #121212;
+}
+.textbox-fail::placeholder {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #b9b9b9;
+}
+.textbox-message-fail {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #d32f2f;
+}
+.textbox-success {
+  background: #ffffff;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  border: 1px solid #4caf50;
+  font-family: "Noto Sans KR Medium";
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  align-items: center;
+  color: #121212;
+}
+.textbox-message-success {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #4caf50;
+}
+
+/*=====================================================*/
