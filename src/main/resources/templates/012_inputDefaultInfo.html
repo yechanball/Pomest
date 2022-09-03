@@ -1,22 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포메스트 기본 정보 입력</title>
-    <link rel="stylesheet" href="../static/css/default_design.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../static/font/NotoSansKR.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../static/css/012_inputDefaultInfo.css"
+      type="text/css"
+    />
   </head>
   <body>
     <div class="wrap">
-      <h1 id="titleText"></h1>
-      <ul>
-        <li>엄마가 겪고 있는 갱년기 증상</li>
-        <li>엄마의 갱년기를 알게 된 시기</li>
-        <li>엄마와 내가 태어난 연도</li>
-      </ul>
-      <button onclick="">다음에 할게요</button>
-      <button onclick="">지금 입력할게요</button>
+      <h1 class="font-title-kr01" id="title-text">
+        닉네임님께 필요한 정보를<br />꼼꼼히 모으기 위해<br />이런 것들을 알고
+        싶어요
+      </h1>
+      <table>
+        <tr>
+          <td>
+            <svg
+              width="18"
+              height="13"
+              viewBox="0 0 18 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.55001 13L0.850006 7.30001L2.27501 5.87501L6.55001 10.15L15.725 0.975006L17.15 2.40001L6.55001 13Z"
+                fill="#5FA0A6"
+              />
+            </svg>
+          </td>
+          <td class="font-body-kr02">엄마가 겪고 있는 갱년기 증상</td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              width="18"
+              height="13"
+              viewBox="0 0 18 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.55001 13L0.850006 7.30001L2.27501 5.87501L6.55001 10.15L15.725 0.975006L17.15 2.40001L6.55001 13Z"
+                fill="#5FA0A6"
+              />
+            </svg>
+          </td>
+          <td class="font-body-kr02">엄마의 갱년기를 알게 된 시기</td>
+        </tr>
+        <tr>
+          <td>
+            <svg
+              width="18"
+              height="13"
+              viewBox="0 0 18 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.55001 13L0.850006 7.30001L2.27501 5.87501L6.55001 10.15L15.725 0.975006L17.15 2.40001L6.55001 13Z"
+                fill="#5FA0A6"
+              />
+            </svg>
+          </td>
+          <td class="font-body-kr02">엄마와 내가 태어난 연도</td>
+        </tr>
+      </table>
+      <button class="button-ghost-default" id="btn-do-next">
+        다음에 할게요
+      </button>
+      <button class="button-elevated-default" id="btn-do-now">
+        지금 입력할게요
+      </button>
     </div>
     <script src="../static/js/012_inputDefaultInfo.js"></script>
   </body>
