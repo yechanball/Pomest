@@ -230,6 +230,26 @@
   color: #ffffff;
 }
 
+/* radio button */
+input[type="radio"] {
+  background-color: #ffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1.7px solid #121212;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+input[type="radio"]:checked {
+  background-color: #4bb158;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1.7px solid #4bb158;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
 /* Textbox */
 .textbox-default {
   background: #ffffff;
