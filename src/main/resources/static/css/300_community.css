@@ -1,0 +1,89 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 120px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.header-top {
+  position: relative;
+  margin: 24px auto 0px;
+  width: 100%;
+  height: 30px;
+}
+
+.header-top h1 {
+  position: absolute;
+  left: 24px;
+  margin: 0;
+}
+
+.header-top a {
+  position: absolute;
+  right: 24px;
+  margin: 6px;
+}
+
+.header-menu {
+  margin-top: 18px;
+  width: 100%;
+  height: 50px;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.header-menu label {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.header-menu label:first-child {
+  display: inline-block;
+  margin-left: 24px;
+}
+
+.feed-list {
+  width: 100%;
+  overflow: auto;
+}
+
+.feed-item {
+  width: 100%-48px;
+  height: 141px;
+  padding: 12px 24px;
+}
+
+.bottom-menu {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 75px;
+  bottom: 0px;
+  /* background: #ffffff; */
+  background-color: #e2e2e2;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 15px 15px 0px 0px;
+}
