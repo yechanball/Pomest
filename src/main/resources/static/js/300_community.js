@@ -43,95 +43,41 @@ document.addEventListener("input", function () {
       }
 
       if (checkResult.size > 0) {
-        // 선택한 항목이 있다면 버튼 활성화
+        // TODO 선택한 항목이 있다면 검색 실행
       } else {
-        // 선택한 항목이 없다면 버튼 비활성화
+        // TODO 선택한 항목이 없다면 초기 상태로 초기화
       }
     });
   }
 });
 
-// 생년월일 확인
-function checkBirthMom() {
-  var inputText = textBoxMom.value; // 입력 받은 태어난년도
+// 검색 버튼 클릭시 이벤트 체크
+document.querySelector(".btn-search").addEventListener("click", function () {
+  alert("검색 버튼 클릭!!!");
+});
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2000) {
-    // 4글자 숫자열, 1900년 이상 2000년 이하인 경우
-    textBoxMom.classList.remove("textbox-fail");
-    textBoxMom.classList.add("textbox-default");
-    textBoxMomMessage.style.display = "none";
-    return true;
-  } else {
-    progress.style.width = (308 / 3) * (step - 1) + "px";
-    textBoxMom.classList.remove("textbox-default");
-    textBoxMom.classList.add("textbox-fail");
-    textBoxMomMessage.style.display = "block";
-    nextBtn.classList.remove("button-elevated-default");
-    nextBtn.classList.add("button-elevated-disabled");
-    isCheck = false;
-    return false;
-  }
-}
+// 게시글 클릭시 이벤트 체크
+var feedItems = document.querySelectorAll(".feed-item");
+feedItems.forEach((feedItem) => {
+  feedItem.addEventListener("click", function () {
+    // TODO 게시글 클릭시 게시글 상세페이지로 이동
+    alert(feedItem.getAttribute("value") + "번 게시글 클릭");
+  });
+});
 
-function checkBirthMy() {
-  var inputText = textBoxMy.value; // 입력 받은 태어난년도
+// 작성하기 버튼 클릭시 이벤트 체크
+document
+  .querySelector("#btn-move-wirte")
+  .addEventListener("click", function () {
+    // TODO 작성하기 버튼 클릭시 글 작성 페이지로 이동
+    alert("작성하기 버튼 클릭!!");
+  });
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2000) {
-    // 4글자 숫자열, 1900년 이상 2000년 이하인 경우
-    textBoxMy.classList.remove("textbox-fail");
-    textBoxMy.classList.add("textbox-default");
-    textBoxMyMessage.style.display = "none";
-    return true;
-  } else {
-    progress.style.width = (308 / 3) * (step - 1) + "px";
-    textBoxMy.classList.remove("textbox-default");
-    textBoxMy.classList.add("textbox-fail");
-    textBoxMyMessage.style.display = "block";
-    nextBtn.classList.remove("button-elevated-default");
-    nextBtn.classList.add("button-elevated-disabled");
-    isCheck = false;
-    return false;
-  }
-}
-
-// 하단 버튼 클릭시 상황에 따른 작동
-nextBtn.addEventListener("click", function () {
-  if (isCheck) {
-    if (step == 1) {
-      // 1단계
-      question.innerHTML = "엄마의 갱년기를 알게 된 지<br>얼마나 되었나요?";
-      step1Div.style.display = "none";
-      step2Div.style.display = "block";
-      nextBtn.classList.remove("button-elevated-default");
-      nextBtn.classList.add("button-elevated-disabled");
-      isCheck = false;
-      step++;
-    } else if (step == 2) {
-      // 2단계
-      question.innerHTML = "엄마와 내가<br>태어난 연도는 언제인가요?";
-      step2Div.style.display = "none";
-      step3Div.style.display = "block";
-      nextBtn.innerText = "포메스트 시작하기";
-      nextBtn.classList.remove("button-elevated-default");
-      nextBtn.classList.add("button-elevated-disabled");
-      isCheck = false;
-      step++;
-    } else if (step == 3) {
-      if (checkBirthMom() && checkBirthMy()) {
-        // 3단계
-        //////////////////////////////////////////////
-        // 서버에 데이터 보내기
-        // 닉네임 : nick
-        // 증상태그 정보: checkResult
-        // 기간 정보 : checkRadio
-        // 생년월일 정보 : textBoxMom.value, textBoxMy.value
-        // 기본정보 입력이 끝난 후 -> 2 포스트 페이지로 교체
-        location.replace("./200_post.html");
-        ///////////////////////////////////////////////
-      }
-    } else {
-      // 1, 2, 3단계 외의 버튼 클릭인 경우
-      alert("잘못된 접근입니다!!");
-    }
-  }
+// 하단 메뉴 클릭시 이벤트 체크
+var bottomMenus = document.querySelectorAll(".bottom-menu-item");
+bottomMenus.forEach((bottomMenu) => {
+  bottomMenu.addEventListener("click", function () {
+    // TODO 하단 메뉴 클릭시 해당 메뉴 페이지로 이동
+    alert(bottomMenu.getAttribute("value") + " 메뉴 선택");
+  });
 });

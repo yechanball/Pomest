@@ -229,6 +229,20 @@
   background: #ff9691;
   color: #ffffff;
 }
+.symptom_tag_span {
+  min-width: 39px;
+  height: 23px;
+  box-sizing: border-box;
+  padding: 2px 8px 3px;
+  gap: 2px;
+  background: #ffffff;
+  border: 1px solid #ff9691;
+  border-radius: 5px;
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #ff9691;
+}
 
 /* radio button */
 input[type="radio"] {

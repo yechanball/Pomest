@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   display: flex;
@@ -24,6 +28,7 @@ body {
   max-width: 450px;
   height: 120px;
   background-color: #ffffff;
+  box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
@@ -32,10 +37,12 @@ body {
   margin: 24px auto 0px;
   width: 100%;
   height: 30px;
+  margin-bottom: 20px;
 }
 
 .header-top h1 {
   position: absolute;
+  line-height: 30px;
   left: 24px;
   margin: 0;
 }
@@ -44,10 +51,10 @@ body {
   position: absolute;
   right: 24px;
   margin: 6px;
+  cursor: pointer;
 }
 
 .header-menu {
-  margin-top: 18px;
   width: 100%;
   height: 50px;
   overflow: auto;
@@ -72,8 +79,48 @@ body {
 
 .feed-item {
   width: 100%-48px;
-  height: 141px;
+  height: 127px;
   padding: 12px 24px;
+}
+
+.feed-item-top {
+  height: 23px;
+  padding-bottom: 12px;
+}
+
+.feed-item-top > span:first-child {
+  float: left;
+}
+
+.feed-item-top > span:last-child {
+  float: right;
+}
+
+.feed-item-content {
+  height: 42px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.feed-item-content > p {
+  text-align: left;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.feed-item-bottom {
+  float: left;
+  margin-bottom: 14px;
+}
+
+.feed-item-like {
+  cursor: pointer;
+}
+
+.feed-item-bottom-line {
+  border-bottom: 1px solid #e5e5e5;
+  clear: both;
 }
 
 .bottom-menu {
@@ -81,9 +128,49 @@ body {
   width: 100%;
   max-width: 450px;
   height: 75px;
-  bottom: 0px;
-  /* background: #ffffff; */
-  background-color: #e2e2e2;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  bottom: -1px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
   border-radius: 15px 15px 0px 0px;
+}
+
+.bottom-menu-item {
+  display: inline-block;
+  padding: 18px 0px 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.bottom-menu-item > p {
+  margin: 0;
+}
+
+.bottom-menu-item-select > p {
+  color: #4bb158;
+}
+
+.btn-fixed {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 37px;
+  bottom: 80px;
+}
+
+#btn-move-wirte {
+  position: absolute;
+  width: 101px;
+  height: 37px;
+  right: 26px;
+  bottom: 0px;
+  padding: 4px 9px 10px;
+  border-radius: 10px;
+  font-family: "Noto Sans KR Medium";
+  font-size: 14px;
+  line-height: 21px;
+}
+
+#btn-move-wirte:hover > svg > path {
+  fill: #2c9539;
 }
