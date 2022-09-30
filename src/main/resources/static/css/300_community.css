@@ -177,8 +177,6 @@ body {
 }
 
 /* 검색 화면 */
-/* .community-search{} */
-
 .search-header{
   position: fixed;
   width: 100%;
@@ -205,4 +203,29 @@ body {
   position: absolute;
   top: 28px;
   left: 302px;
+}
+
+.search-body {
+  position: absolute;
+  top: 74px;
+  left: 24px;
+}
+
+.search-body > p {
+  padding-top: 9px;
+  margin: 0;
+}
+
+#search-symptoms{
+  position: absolute;
+  width: 320px;
+  top: 24px;
+  padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#search-symptoms label {
+  margin: 4px;
+  cursor: pointer;
 }

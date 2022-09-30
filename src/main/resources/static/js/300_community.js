@@ -15,9 +15,20 @@ var symptoms = [
   "발한",
   "기타",
 ]; // 증상 태그 배열 -> 실제 서버에서 목록 가지고오기
+var hotSymptoms = [
+  "홍조",
+  "우울감",
+  "인터뷰",
+  "체중 증가",
+  "관절통",
+  "의욕 저하",
+  "땀이 많이 남",
+  "불안함"
+]; // 자주 검색하는 증상 태그 배열 -> 실제 서버에서 목록 가지고오기
 var selectSymptoms = document.querySelector("#select-symptoms");
 var checkboxList = []; // 체크박스 리스트
 var checkResult = new Set(); // 최종 체크한 결과 목록 (중복 허용 X)
+
 
 // 페이지 로딩시 증상 태그 생성
 window.onload = function () {
@@ -27,8 +38,16 @@ window.onload = function () {
     symptomLabel.innerHTML = `<input type="checkbox" name="symptom" id="symptom-check" value="${symptom}"/><span>${symptom}</span>`;
     selectSymptoms.appendChild(symptomLabel);
   }
+
+  for (let symptom of hotSymptoms) {
+    let symptomLabel = document.createElement("label");
+    symptomLabel.classList.add("symptom_tag_medium");
+    symptomLabel.innerHTML = `<input type="checkbox" name="searchsymptom" id="search-symptom-check" value="${symptom}"/><span>${symptom}</span>`;
+    document.querySelector("#search-symptoms").appendChild(symptomLabel);
+  }
   checkboxList = document.querySelectorAll("input[type=checkbox]");
 };
+
 
 // 체크박스 및 라디오박스 클릭 이벤트 체크
 document.addEventListener("input", function () {
@@ -51,7 +70,10 @@ document.addEventListener("input", function () {
   }
 });
 
+
 // 검색 버튼 클릭시 이벤트 체크 : 커뮤니티 메인 화면에서 검색 화면으로 전환
+document.querySelector("#community-search").style.display = "none"; // 기본 초기화
+
 document.querySelector(".btn-search").addEventListener("click", function () {
   document.querySelector("#community-main").style.display = "none";
   document.querySelector("#community-search").style.display = "";
@@ -60,6 +82,20 @@ document.querySelector("#btn-move-back").addEventListener("click", function () {
   document.querySelector("#community-main").style.display = "";
   document.querySelector("#community-search").style.display = "none";
 });
+
+
+// 검색 값 입력 이벤트 체크
+document.querySelector("#input-search").addEventListener("keyup", function (e) {
+  if (e.keyCode == 13) {
+    // TODO 검색 실행
+    alert(document.querySelector("#input-search").value + " 검색!!");
+  } 
+});
+
+document.querySelector("#btn-search-remove").addEventListener("click", function () {
+  document.querySelector("#input-search").value = "";
+});
+
 
 // 게시글 클릭시 이벤트 체크
 var feedItems = document.querySelectorAll(".feed-item");
@@ -70,6 +106,7 @@ feedItems.forEach((feedItem) => {
   });
 });
 
+
 // 작성하기 버튼 클릭시 이벤트 체크
 document
   .querySelector("#btn-move-wirte")
@@ -77,6 +114,7 @@ document
     // TODO 작성하기 버튼 클릭시 글 작성 페이지로 이동
     alert("작성하기 버튼 클릭!!");
   });
+
 
 // 하단 메뉴 클릭시 이벤트 체크
 var bottomMenus = document.querySelectorAll(".bottom-menu-item");
