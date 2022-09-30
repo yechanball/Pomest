@@ -51,9 +51,14 @@ document.addEventListener("input", function () {
   }
 });
 
-// 검색 버튼 클릭시 이벤트 체크
+// 검색 버튼 클릭시 이벤트 체크 : 커뮤니티 메인 화면에서 검색 화면으로 전환
 document.querySelector(".btn-search").addEventListener("click", function () {
-  alert("검색 버튼 클릭!!!");
+  document.querySelector("#community-main").style.display = "none";
+  document.querySelector("#community-search").style.display = "";
+});
+document.querySelector("#btn-move-back").addEventListener("click", function () {
+  document.querySelector("#community-main").style.display = "";
+  document.querySelector("#community-search").style.display = "none";
 });
 
 // 게시글 클릭시 이벤트 체크

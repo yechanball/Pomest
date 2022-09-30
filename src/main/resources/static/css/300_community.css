@@ -22,6 +22,7 @@ body {
   overflow-x: hidden;
 }
 
+/* 커뮤니티 메인 화면 */
 .header {
   position: fixed;
   width: 100%;
@@ -173,4 +174,35 @@ body {
 
 #btn-move-wirte:hover > svg > path {
   fill: #2c9539;
+}
+
+/* 검색 화면 */
+/* .community-search{} */
+
+.search-header{
+  position: fixed;
+  width: 100%;
+  max-width: 360px;
+  height: 62px;
+  margin: 0 auto;
+}
+
+#btn-move-back{
+  position: absolute;
+  top: 27px;
+  left: 28px;
+}
+
+#input-search{
+  position: absolute;
+  top: 15px;
+  left: 64px;
+  width: 272px;
+  height: 38px;
+}
+
+#btn-search-remove{
+  position: absolute;
+  top: 28px;
+  left: 302px;
 }
