@@ -1,0 +1,64 @@
+{
+    "symptoms": [
+      {
+        "id": 1,
+        "symptomName": "홍조"
+      },
+      {
+        "id": 2,
+        "symptomName": "우울감"
+      },
+      {
+        "id": 3,
+        "symptomName": "집중력 저하"
+      },
+      {
+        "id": 4,
+        "symptomName": "수면의 어려움"
+      },
+      {
+        "id": 5,
+        "symptomName": "관절통"
+      },
+      {
+        "id": 6,
+        "symptomName": "의욕 저하"
+      },
+      {
+        "id": 7,
+        "symptomName": "기억력 저하"
+      },
+      {
+        "id": 8,
+        "symptomName": "피로감"
+      },
+      {
+        "id": 9,
+        "symptomName": "성욕 감소"
+      },
+      {
+        "id": 10,
+        "symptomName": "불안함"
+      },
+      {
+        "id": 11,
+        "symptomName": "땀이 많이 남"
+      },
+      {
+        "id": 12,
+        "symptomName": "배뇨통"
+      },
+      {
+        "id": 13,
+        "symptomName": "근골격계 질환"
+      },
+      {
+        "id": 14,
+        "symptomName": "발한"
+      },
+      {
+        "id": 15,
+        "symptomName": "기타"
+      }
+    ]
+  }
