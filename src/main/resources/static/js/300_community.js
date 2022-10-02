@@ -146,13 +146,17 @@ function calcDate(postDate) {
   var postSeconds = dateSplitSub2[2];
 
   if (postYear == year && postMonth == month && postDay == day) {
-    let diff = hours * 60 + minutes - (postHours * 60 + postMinutes);
+    let diff =
+      parseInt(hours * 60) +
+      parseInt(minutes) -
+      (parseInt(postHours * 60) + parseInt(postMinutes));
+    console.log(diff);
     if (diff <= 1) {
       return "지금";
     } else if (diff < 60) {
       return diff + "분 전";
     } else {
-      return postDate;
+      return dateSplit[0].substr(2);
     }
   } else {
     return dateSplit[0].substr(2);
