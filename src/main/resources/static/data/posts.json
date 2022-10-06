@@ -3,6 +3,7 @@
     "posts": [
       {
         "postId": 1,
+        "isUserLike" : false,
         "userNickname": "옹따가랭이",
         "content": "오늘 엄마랑 말도 안 되는 걸로 싸웠는데 진짜 너무 속상해요ㅠㅠ 도대체 엄마는 지금 어떤 기분이길래",
         "numLike": 7,
@@ -15,6 +16,7 @@
       },
       {
         "postId": 2,
+        "isUserLike" : false,
         "userNickname": "직박구리",
         "content": "날씨가 흐리네요.... 마음도 흐리네요.... 미래도 흐리네요....... 하....",
         "numLike": 35,
@@ -27,7 +29,8 @@
       },
       {
         "postId": 3,
-        "userNickname": "밤에못자는올빼미",
+        "isUserLike" : true,
+        "userNickname": "자는올빼미",
         "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
         "numLike": 13,
         "numComment": 5,
@@ -39,7 +42,8 @@
       },
       {
         "postId": 4,
-        "userNickname": "올빼미두마리",
+        "isUserLike" : false,
+        "userNickname": "올빼미님",
         "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
         "numLike": 119,
         "numComment": 911,
@@ -51,6 +55,7 @@
       },
       {
         "postId": 5,
+        "isUserLike" : true,
         "userNickname": "짱구아빠",
         "content": "일을 할때 제가 너무 산만해요 책상 정리가 너무 즐거워요... 집중력을 향상시킬 수 있는 비결 알려줘요!",
         "numLike": 121,
@@ -63,6 +68,7 @@
       },
       {
         "postId": 6,
+        "isUserLike" : true,
         "userNickname": "나는누구요",
         "content": "저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매... 어라...?",
         "numLike": 22,
@@ -75,6 +81,7 @@
       },
       {
         "postId": 7,
+        "isUserLike" : false,
         "userNickname": "로렘로렘",
         "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
         "numLike": 11,
@@ -87,6 +94,7 @@
       },
       {
         "postId": 8,
+        "isUserLike" : false,
         "userNickname": "로렘로렘이",
         "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
         "numLike": 22,
@@ -99,7 +107,8 @@
       },
       {
         "postId": 9,
-        "userNickname": "로렘로렘삼삼",
+        "isUserLike" : false,
+        "userNickname": "로렘로렘삼",
         "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
         "numLike": 33,
         "numComment": 33,
@@ -111,7 +120,8 @@
       },
       {
         "postId": 10,
-        "userNickname": "로렘로렘샤샤샤",
+        "isUserLike" : false,
+        "userNickname": "로렘로렘샤",
         "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
         "numLike": 444,
         "numComment": 444,
@@ -123,7 +133,8 @@
       },
       {
         "postId": 11,
-        "userNickname": "로렘로렘오옹",
+        "isUserLike" : false,
+        "userNickname": "로렘로렘오",
         "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
         "numLike": 5555,
         "numComment": 55,
@@ -135,6 +146,7 @@
       },
       {
         "postId": 12,
+        "isUserLike" : false,
         "userNickname": "테스터님",
         "content": "이건 테스트 글이야!! test!! 블라블라~ 난 몰라요",
         "numLike": 13,
@@ -147,7 +159,8 @@
       },
       {
         "postId": 13,
-        "userNickname": "무적솔로부대",
+        "isUserLike" : true,
+        "userNickname": "무적솔로",
         "content": "징글벨~ 징글벨~ 올해도 크리스마스는... 혼자 보기 좋은 영화 추천 좀....",
         "numLike": 9999,
         "numComment": 9999,
@@ -159,6 +172,7 @@
       },
       {
         "postId": 14,
+        "isUserLike" : false,
         "userNickname": "테스터님",
         "content": "이건 테스트 글이야!! test!! 블라블라~",
         "numLike": 13,
@@ -171,6 +185,7 @@
       },
       {
         "postId": 15,
+        "isUserLike" : false,
         "userNickname": "테스터2님",
         "content": "이건 테스트 글이야!! 블라블라~ 가나다라마바사",
         "numLike": 16,
@@ -183,6 +198,7 @@
       },
       {
         "postId": 16,
+        "isUserLike" : true,
         "userNickname": "심영님",
         "content": "아니, 의사양반 그게 무슨 소리요...? 총알이 영 좋지 않은 곳을 맞았다니...? 뭐요...? 이보시오.... 아이고.... 내가 고자라니...!! 내가 고자라니....!!!!",
         "numLike": 58,
