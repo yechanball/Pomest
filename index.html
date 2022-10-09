@@ -7,23 +7,33 @@
     <title>Pomest Test</title>
     <link
       rel="stylesheet"
-      href="./src/main/resources/static/css/main.css"
+      href="./src/main/resources/static/css/common/main.css"
       type="text/css"
     />
+    <style>
+      .wrap {
+        text-align: center;
+        padding: 100px 20px;
+      }
+      .wrap > button {
+        margin: 10px 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="wrap">
+      <h1 class="font-header-kr01">POMEST</h1>
       <button
         class="button-elevated-default"
-        onclick="location.href = './src/main/resources/templates/000_landing.html'"
+        onclick="location.href = './src/main/resources/templates/landing/login.html'"
       >
-        포메스트 랜더링 페이지
+        Landing
       </button>
       <button
         class="button-elevated-default"
-        onclick="location.href = './src/main/resources/templates/300_community.html'"
+        onclick="location.href = './src/main/resources/templates/community/main.html'"
       >
-        포메스트 커뮤니티 페이지
+        Community
       </button>
     </div>
   </body>

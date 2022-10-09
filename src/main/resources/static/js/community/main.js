@@ -340,9 +340,8 @@ function searchFeed(searchValue, searchSymptomId) {
 // 게시글 클릭시 이벤트 체크
 function clickFeed(postId) {
   // TODO 게시글 클릭시 게시글 상세페이지로 이동
-  alert(postId + "번 게시글 클릭");
   console.log(postId + "번 게시글 클릭");
-  return false;
+  location.href = "./view.html?postid=" + postId;
 }
 
 // 작성하기 버튼 클릭시 이벤트 체크
@@ -350,14 +349,16 @@ document
   .querySelector("#btn-move-wirte")
   .addEventListener("click", function () {
     console.log("작성하기 버튼 클릭!!");
-    location.href = "./320_write.html";
+    location.href = "./write.html";
   });
-document
-  .querySelector("#btn-move-wirte-2")
-  .addEventListener("click", function () {
-    console.log("작성하기 버튼 클릭!!");
-    location.href = "./320_write.html";
-  });
+if (document.querySelector("#btn-move-wirte-2") != null) {
+  document
+    .querySelector("#btn-move-wirte-2")
+    .addEventListener("click", function () {
+      console.log("작성하기 버튼 클릭!!");
+      location.href = "./write.html";
+    });
+}
 
 // 하단 메뉴 클릭시 이벤트 체크
 var bottomMenus = document.querySelectorAll(".bottom-menu-item");
@@ -365,5 +366,10 @@ bottomMenus.forEach((bottomMenu) => {
   bottomMenu.addEventListener("click", function () {
     // TODO 하단 메뉴 클릭시 해당 메뉴 페이지로 이동
     alert(bottomMenu.getAttribute("value") + " 메뉴 선택");
+
+    let menuName = bottomMenu.getAttribute("value");
+    if (menuName == "post") {
+      location.href = "../post/main.html";
+    }
   });
 });

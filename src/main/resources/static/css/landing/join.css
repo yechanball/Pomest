@@ -1,0 +1,52 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  position: absolute;
+  width: 262px;
+  height: 60px;
+  top: 74px;
+  left: 24px;
+  text-align: left;
+  color: #121212;
+}
+
+#textbox {
+  position: absolute;
+  top: 225px;
+  left: 44px;
+  width: 272px;
+}
+
+#textbox-message {
+  position: absolute;
+  top: 270px;
+  left: 44px;
+  width: 222px;
+  text-align: left;
+  display: none;
+}
+
+#btn-submit {
+  position: absolute;
+  bottom: 74px;
+  left: 64px;
+  width: 232px;
+  height: 54px;
+}

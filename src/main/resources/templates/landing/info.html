@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포메스트 기본 정보 입력</title>
+    <link
+      rel="stylesheet"
+      href="../../static/font/NotoSansKR.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/common/main.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/landing/info.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="progress-bar-container"></div>
+      <div id="progress-bar"></div>
+      <h1 class="font-title-kr01" id="question">
+        엄마의 갱년기에는 <br />어떤 증상이 찾아왔나요?
+      </h1>
+
+      <div id="select-symptoms"></div>
+
+      <div id="select-date">
+        <div>
+          <input
+            type="radio"
+            id="date-option-1"
+            name="date"
+            value="6개월 미만"
+          />
+          <label class="font-body-kr02" for="date-option-1">6개월 미만</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="date-option-2"
+            name="date"
+            value="6개월 이상 ~ 1년 미만"
+          />
+          <label class="font-body-kr02" for="date-option-2">
+            6개월 이상 ~ 1년 미만
+          </label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="date-option-3"
+            name="date"
+            value="1년 이상 ~ 2년 미만"
+          />
+          <label class="font-body-kr02" for="date-option-3">
+            1년 이상 ~ 2년 미만
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="date-option-4" name="date" value="2년 이상" />
+          <label class="font-body-kr02" for="date-option-4">2년 이상</label>
+        </div>
+      </div>
+
+      <div id="input-date">
+        <div>
+          <div>
+            <label class="font-body-kr01" for="birth-year-mom">엄마</label>
+          </div>
+          <input
+            type="number"
+            class="textbox-default"
+            id="birth-year-mom"
+            name="birth"
+            placeholder="태어난 연도 4자리를 입력하세요"
+          />
+          <p
+            class="textbox-message-fail font-detail-kr02"
+            id="textbox-message-mom"
+          >
+            생년 4자리를 입력해주세요
+          </p>
+        </div>
+        <div>
+          <div>
+            <label class="font-body-kr01" for="birth-year-my">나</label>
+          </div>
+          <input
+            type="number"
+            class="textbox-default"
+            id="birth-year-my"
+            name="birth"
+            placeholder="태어난 연도 4자리를 입력하세요"
+          />
+          <p
+            class="textbox-message-fail font-detail-kr02"
+            id="textbox-message-my"
+          >
+            생년 4자리를 입력해주세요
+          </p>
+        </div>
+      </div>
+
+      <button class="button-elevated-disabled" id="btn-next">다음</button>
+    </div>
+    <script src="../../static/js/landing/info.js"></script>
+  </body>
+</html>

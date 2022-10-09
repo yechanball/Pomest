@@ -1,0 +1,103 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  max-width: 360px;
+  height: 62px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.header > h1 {
+  position: absolute;
+  top: 6px;
+  left: 64px;
+  width: 304px;
+  text-align: left;
+}
+
+#btn-move-back {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+#btn-complete {
+  position: absolute;
+  top: 18px;
+  left: 283px;
+  height: 34px;
+  padding: 7px 15px 9px;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.main-select > p {
+  position: absolute;
+  top: 74px;
+  left: 24px;
+  width: 214px;
+  height: 42px;
+}
+
+#select-symptoms {
+  position: absolute;
+  width: 320px;
+  top: 150px;
+  left: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#select-symptoms label {
+  margin: 4px;
+  cursor: pointer;
+}
+
+#btn-next {
+  position: absolute;
+  bottom: 74px;
+  left: 64px;
+  width: 232px;
+  height: 54px;
+  padding: 15px 25px 18px;
+}
+
+#selected-symptoms {
+  height: 54px;
+  text-align: left;
+  margin: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#selected-symptoms label {
+  margin: 4px;
+}
+
+#input-content {
+  width: 312px;
+  height: 400px;
+  border: none;
+}

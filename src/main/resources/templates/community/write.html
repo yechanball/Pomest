@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글쓰기</title>
+    <link
+      rel="stylesheet"
+      href="../../static/font/NotoSansKR.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/common/main.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/community/write.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div id="btn-move-back">
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 16.4463L0 8.44629L8 0.446289L9.425 1.84629L3.825 7.44629H16V9.44629H3.825L9.425 15.0463L8 16.4463Z"
+              fill="#121212"
+            />
+          </svg>
+        </div>
+        <h1 class="font-title-kr02">글쓰기</h1>
+        <button class="button-ghost-disabled" id="btn-complete">완료</button>
+      </div>
+
+      <div class="main-select">
+        <p class="font-body-kr01">
+          (선택) 관련 증상을 1 ~ 2개 태그하면 <br />더 많은 분들에게 도달할 수
+          있어요
+        </p>
+        <div id="select-symptoms"></div>
+        <button class="button-elevated-default" id="btn-next">다음</button>
+      </div>
+
+      <div class="main-write">
+        <div id="selected-symptoms"></div>
+        <input
+          type="text"
+          id="input-content"
+          name="content"
+          placeholder="이야기를 나누면서 마음이 가뿐해지시면 좋겠어요"
+        />
+      </div>
+    </div>
+    <script src="../../static/js/community/write.js"></script>
+  </body>
+</html>
