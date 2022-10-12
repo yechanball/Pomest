@@ -1,213 +1,242 @@
 {
-    "isNextPage": "true",
-    "posts": [
-      {
-        "postId": 1,
-        "isUserLike" : false,
-        "userNickname": "옹따가랭이",
-        "content": "오늘 엄마랑 말도 안 되는 걸로 싸웠는데 진짜 너무 속상해요ㅠㅠ 도대체 엄마는 지금 어떤 기분이길래",
-        "numLike": 7,
-        "numComment": 4,
-        "symptoms": {
+  "isNextPage": "true",
+  "posts": [
+    {
+      "postId": 1,
+      "isUserLike": false,
+      "userNickname": "옹따가랭이",
+      "content": "오늘 엄마랑 말도 안 되는 걸로 싸웠는데 진짜 너무 속상해요ㅠㅠ 도대체 엄마는 지금 어떤 기분이길래",
+      "numLike": 7,
+      "numComment": 4,
+      "symptoms": [
+        {
           "id": 1,
           "symptomName": "홍조"
-        },
-        "postDate": "2022.10.02 14:20:05"
-      },
-      {
-        "postId": 2,
-        "isUserLike" : false,
-        "userNickname": "직박구리",
-        "content": "날씨가 흐리네요.... 마음도 흐리네요.... 미래도 흐리네요....... 하....",
-        "numLike": 35,
-        "numComment": 19,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.10.12 21:10:05"
+    },
+    {
+      "postId": 2,
+      "isUserLike": false,
+      "userNickname": "직박구리",
+      "content": "날씨가 흐리네요.... 마음도 흐리네요.... 미래도 흐리네요....... 하....",
+      "numLike": 35,
+      "numComment": 19,
+      "symptoms": [
+        {
           "id": 2,
           "symptomName": "우울감"
         },
-        "postDate": "2022.10.02 13:57:02"
-      },
-      {
-        "postId": 3,
-        "isUserLike" : true,
-        "userNickname": "자는올빼미",
-        "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
-        "numLike": 13,
-        "numComment": 5,
-        "symptoms": {
+        {
+          "id": 11,
+          "symptomName": "땀이 많이 남"
+        }
+      ],
+      "postDate": "2022.10.12 16:00:02"
+    },
+    {
+      "postId": 3,
+      "isUserLike": true,
+      "userNickname": "자는올빼미",
+      "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
+      "numLike": 13,
+      "numComment": 5,
+      "symptoms": [
+        {
           "id": 4,
           "symptomName": "수면의 어려움"
-        },
-        "postDate": "2022.10.02 04:01:02"
-      },
-      {
-        "postId": 4,
-        "isUserLike" : false,
-        "userNickname": "올빼미님",
-        "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
-        "numLike": 119,
-        "numComment": 911,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.10.11 07:01:02"
+    },
+    {
+      "postId": 4,
+      "isUserLike": false,
+      "userNickname": "올빼미님",
+      "content": "오늘도 밤을 샜습니다. 요즘 할 일이 너무 많아 밤을 새는 것이 일상이 되어 가고 있네요. 잘 자는 방법이 궁금합니다.",
+      "numLike": 119,
+      "numComment": 911,
+      "symptoms": [
+        {
           "id": 4,
           "symptomName": "수면의 어려움"
-        },
-        "postDate": "2022.10.01 05:01:02"
-      },
-      {
-        "postId": 5,
-        "isUserLike" : true,
-        "userNickname": "짱구아빠",
-        "content": "일을 할때 제가 너무 산만해요 책상 정리가 너무 즐거워요... 집중력을 향상시킬 수 있는 비결 알려줘요!",
-        "numLike": 121,
-        "numComment": 9,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.10.01 05:01:02"
+    },
+    {
+      "postId": 5,
+      "isUserLike": true,
+      "userNickname": "짱구아빠",
+      "content": "일을 할때 제가 너무 산만해요 책상 정리가 너무 즐거워요... 집중력을 향상시킬 수 있는 비결 알려줘요!",
+      "numLike": 121,
+      "numComment": 9,
+      "symptoms": [
+        {
           "id": 3,
           "symptomName": "집중력 저하"
-        },
-        "postDate": "2022.09.30 13:01:02"
-      },
-      {
-        "postId": 6,
-        "isUserLike" : true,
-        "userNickname": "나는누구요",
-        "content": "저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매... 어라...?",
-        "numLike": 22,
-        "numComment": 574,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.09.30 13:01:02"
+    },
+    {
+      "postId": 6,
+      "isUserLike": true,
+      "userNickname": "나는누구요",
+      "content": "저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매가 있습니다. 저는 치매... 어라...?",
+      "numLike": 22,
+      "numComment": 574,
+      "symptoms": [
+        {
           "id": 7,
           "symptomName": "기억력 저하"
-        },
-        "postDate": "2022.09.28 13:01:02"
-      },
-      {
-        "postId": 7,
-        "isUserLike" : false,
-        "userNickname": "로렘로렘",
-        "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
-        "numLike": 11,
-        "numComment": 11,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.09.28 13:01:02"
+    },
+    {
+      "postId": 7,
+      "isUserLike": false,
+      "userNickname": "로렘로렘",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 11,
+      "numComment": 11,
+      "symptoms": [],
+      "postDate": "2022.09.27 13:01:02"
+    },
+    {
+      "postId": 8,
+      "isUserLike": false,
+      "userNickname": "로렘로렘이",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 22,
+      "numComment": 22,
+      "symptoms": [
+        {
           "id": 15,
           "symptomName": "기타"
+        }
+      ],
+      "postDate": "2022.09.26 13:01:02"
+    },
+    {
+      "postId": 9,
+      "isUserLike": false,
+      "userNickname": "로렘로렘삼",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 33,
+      "numComment": 33,
+      "symptoms": [
+        {
+          "id": 10,
+          "symptomName": "불안함"
         },
-        "postDate": "2022.09.27 13:01:02"
-      },
-      {
-        "postId": 8,
-        "isUserLike" : false,
-        "userNickname": "로렘로렘이",
-        "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
-        "numLike": 22,
-        "numComment": 22,
-        "symptoms": {
+        {
           "id": 15,
           "symptomName": "기타"
-        },
-        "postDate": "2022.09.26 13:01:02"
-      },
-      {
-        "postId": 9,
-        "isUserLike" : false,
-        "userNickname": "로렘로렘삼",
-        "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
-        "numLike": 33,
-        "numComment": 33,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2022.09.25 13:01:02"
+    },
+    {
+      "postId": 10,
+      "isUserLike": false,
+      "userNickname": "로렘로렘샤",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 444,
+      "numComment": 444,
+      "symptoms": [],
+      "postDate": "2022.04.24 13:01:02"
+    },
+    {
+      "postId": 11,
+      "isUserLike": false,
+      "userNickname": "로렘로렘오",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 5555,
+      "numComment": 55,
+      "symptoms": [
+        {
           "id": 15,
           "symptomName": "기타"
+        }
+      ],
+      "postDate": "2022.04.05 13:01:02"
+    },
+    {
+      "postId": 12,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 테스트 글이야!! test!! 블라블라~ 난 몰라요",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
+          "id": 6,
+          "symptomName": "의욕 저하"
+        }
+      ],
+      "postDate": "2022.03.12 13:01:02"
+    },
+    {
+      "postId": 13,
+      "isUserLike": true,
+      "userNickname": "무적솔로",
+      "content": "징글벨~ 징글벨~ 올해도 크리스마스는... 혼자 보기 좋은 영화 추천 좀....",
+      "numLike": 9999,
+      "numComment": 9999,
+      "symptoms": [
+        {
+          "id": 6,
+          "symptomName": "의욕 저하"
         },
-        "postDate": "2022.09.25 13:01:02"
-      },
-      {
-        "postId": 10,
-        "isUserLike" : false,
-        "userNickname": "로렘로렘샤",
-        "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
-        "numLike": 444,
-        "numComment": 444,
-        "symptoms": {
+        {
+          "id": 2,
+          "symptomName": "우울감"
+        }
+      ],
+      "postDate": "2021.12.25 08:01:02"
+    },
+    {
+      "postId": 14,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 테스트 글이야!! test!! 블라블라~",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
           "id": 15,
           "symptomName": "기타"
-        },
-        "postDate": "2022.04.24 13:01:02"
-      },
-      {
-        "postId": 11,
-        "isUserLike" : false,
-        "userNickname": "로렘로렘오",
-        "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
-        "numLike": 5555,
-        "numComment": 55,
-        "symptoms": {
-          "id": 15,
-          "symptomName": "기타"
-        },
-        "postDate": "2022.04.05 13:01:02"
-      },
-      {
-        "postId": 12,
-        "isUserLike" : false,
-        "userNickname": "테스터님",
-        "content": "이건 테스트 글이야!! test!! 블라블라~ 난 몰라요",
-        "numLike": 13,
-        "numComment": 4,
-        "symptoms": {
-          "id": 15,
-          "symptomName": "기타"
-        },
-        "postDate": "2022.03.12 13:01:02"
-      },
-      {
-        "postId": 13,
-        "isUserLike" : true,
-        "userNickname": "무적솔로",
-        "content": "징글벨~ 징글벨~ 올해도 크리스마스는... 혼자 보기 좋은 영화 추천 좀....",
-        "numLike": 9999,
-        "numComment": 9999,
-        "symptoms": {
-          "id": 15,
-          "symptomName": "기타"
-        },
-        "postDate": "2021.12.25 08:01:02"
-      },
-      {
-        "postId": 14,
-        "isUserLike" : false,
-        "userNickname": "테스터님",
-        "content": "이건 테스트 글이야!! test!! 블라블라~",
-        "numLike": 13,
-        "numComment": 4,
-        "symptoms": {
-          "id": 15,
-          "symptomName": "기타"
-        },
-        "postDate": "2021.12.31 13:01:02"
-      },
-      {
-        "postId": 15,
-        "isUserLike" : false,
-        "userNickname": "테스터2님",
-        "content": "이건 테스트 글이야!! 블라블라~ 가나다라마바사",
-        "numLike": 16,
-        "numComment": 7,
-        "symptoms": {
-          "id": 15,
-          "symptomName": "기타"
-        },
-        "postDate": "2021.05.12 13:01:02"
-      },
-      {
-        "postId": 16,
-        "isUserLike" : true,
-        "userNickname": "심영님",
-        "content": "아니, 의사양반 그게 무슨 소리요...? 총알이 영 좋지 않은 곳을 맞았다니...? 뭐요...? 이보시오.... 아이고.... 내가 고자라니...!! 내가 고자라니....!!!!",
-        "numLike": 58,
-        "numComment": 82,
-        "symptoms": {
+        }
+      ],
+      "postDate": "2021.12.31 13:01:02"
+    },
+    {
+      "postId": 15,
+      "isUserLike": false,
+      "userNickname": "테스터2님",
+      "content": "이건 테스트 글이야!! 블라블라~ 가나다라마바사",
+      "numLike": 16,
+      "numComment": 7,
+      "symptoms": [],
+      "postDate": "2021.05.12 13:01:02"
+    },
+    {
+      "postId": 16,
+      "isUserLike": true,
+      "userNickname": "심영님",
+      "content": "아니, 의사양반 그게 무슨 소리요...? 총알이 영 좋지 않은 곳을 맞았다니...? 뭐요...? 이보시오.... 아이고.... 내가 고자라니...!! 내가 고자라니....!!!!",
+      "numLike": 58,
+      "numComment": 82,
+      "symptoms": [
+        {
           "id": 9,
           "symptomName": "성욕 감소"
-        },
-        "postDate": "2019.06.09 13:01:02"
-      }
-    ]
-  }
+        }
+      ],
+      "postDate": "2019.06.09 13:01:02"
+    }
+  ]
+}
