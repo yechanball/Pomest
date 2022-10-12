@@ -61,8 +61,12 @@ function makeFeedList(data, postId) {
                   </span>`;
       }
 
+      let postSymptomTag = ``;
+      for (let symptom of feed.symptoms) {
+        postSymptomTag += `<span class="symptom_tag_span">${symptom.symptomName}</span>`;
+      }
       feedItem.innerHTML = `<div class="feed-item-top">
-                <span class="symptom_tag_span">${feed.symptoms.symptomName}</span>
+                ${postSymptomTag}
                 <span class="font-detail-kr01"
                   >${feed.userNickname}&emsp;${feed.postDate}</span
                 >

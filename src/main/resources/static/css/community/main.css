@@ -146,6 +146,11 @@ body {
 
 .feed-item-top > span:first-child {
   float: left;
+  margin-right: 8px;
+}
+
+.feed-item-top > span:nth-child(2){
+  float: left;
 }
 
 .feed-item-top > span:last-child {

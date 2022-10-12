@@ -67,7 +67,7 @@ function makeHotSymtomList(data) {
   }
 }
 
-// 받은 data를 가지고 피드 리스트 생성
+// 받은 data를 가지고 피드 리스트 생성 
 function makeFeedList(data) {
   data.posts.forEach((feed) => {
     feedList.push(feed);
@@ -75,7 +75,6 @@ function makeFeedList(data) {
     let feedItem = document.createElement("div");
     feedItem.classList.add("feed-item");
     feedItem.setAttribute("postid", feed.postId);
-    feedItem.setAttribute("symtomid", feed.symptoms.id);
     feedItem.setAttribute("onclick", "clickFeed(" + feed.postId + ")");
     let showDate = calcDate(feed.postDate);
 
@@ -112,8 +111,12 @@ function makeFeedList(data) {
                 </span>`;
     }
 
+    let postSymptomTag = ``;
+    for (let symptom of feed.symptoms) {
+      postSymptomTag += `<span class="symptom_tag_span">${symptom.symptomName}</span>`;
+    }
     feedItem.innerHTML = `<div class="feed-item-top">
-              <span class="symptom_tag_span">${feed.symptoms.symptomName}</span>
+              ${postSymptomTag}
               <span class="font-detail-kr01"
                 >${feed.userNickname}&emsp;${showDate}</span
               >
@@ -170,7 +173,6 @@ function calcDate(postDate) {
       parseInt(hours * 60) +
       parseInt(minutes) -
       (parseInt(postHours * 60) + parseInt(postMinutes));
-    console.log(diff);
     if (diff <= 1) {
       return "지금";
     } else if (diff < 60) {
@@ -198,15 +200,14 @@ document.addEventListener("input", function () {
       if (checkResult.size > 0) {
         // TODO 선택한 항목이 있다면 검색 실행
         console.log("검색 태그 선택");
+        console.log(checkResult);
         document.querySelector(".btn-fixed").style.display = "none";
         document.querySelector(".feed-list").innerHTML = "";
-        checkResult.forEach((symtomId) => {
-          searchFeed(document.querySelector("#input-search").value, symtomId);
-        });
+        searchFeed(document.querySelector("#input-search").value, checkResult);
       } else {
         // TODO 선택한 항목이 없다면 초기 상태로 초기화
         document.querySelector(".btn-fixed").style.display = "";
-        searchFeed(document.querySelector("#input-search").value, 0); // 필터링된 게시글 초기화
+        searchFeed(document.querySelector("#input-search").value, checkResult); // 필터링된 게시글 초기화
       }
     });
   }
@@ -227,7 +228,7 @@ document.querySelector(".btn-search").addEventListener("click", function () {
   document.querySelector(".search-body").style.display = "";
 });
 document.querySelector("#btn-move-back").addEventListener("click", function () {
-  searchFeed("", 0); // 필터링된 게시글 초기화
+  searchFeed("", checkResult); // 필터링된 게시글 초기화
   document.querySelector("#input-search").value = "";
   document.querySelector(".header-top").style.display = "";
   document.querySelector(".header-menu").style.display = "";
@@ -248,7 +249,7 @@ document.querySelector("#input-search").addEventListener("keyup", function (e) {
     document.querySelector(".btn-fixed").style.display = "none";
     console.log(document.querySelector("#input-search").value + " 검색!!");
     document.querySelector(".feed-list").innerHTML = "";
-    searchFeed(document.querySelector("#input-search").value, 0);
+    searchFeed(document.querySelector("#input-search").value, checkResult);
   }
 });
 
@@ -259,26 +260,38 @@ document
   });
 
 // 게시글 검색 (키워드, 태그)
-function searchFeed(searchValue, searchSymptomId) {
+function searchFeed(searchValue, searchSymptoms) {
   let searchFeedSize = 0; // 검색된 피드 개수
 
   feedList.forEach((feed) => {
-    // 검색 키워드 / 태그가 있다면 태그와 함께 게시글 내용에 포함되어 있는 경우
+    // 검색 키워드 / 태`그가 있다면 태그와 함께 게시글 내용에 포함되어 있는 경우
+    let hasSymptom = false;
+    for (let symptom of feed.symptoms) {
+      for (let searchSymptom of searchSymptoms) {
+        if (searchSymptom == symptom.id) {
+          hasSymptom = true;
+        }
+      }
+    }
+
     if (
       feed.content.includes(searchValue) &&
-      (searchSymptomId == 0 || feed.symptoms.id == searchSymptomId)
+      (searchSymptoms.size == 0 || hasSymptom)
     ) {
       searchFeedSize++;
 
       let feedItem = document.createElement("div");
       feedItem.classList.add("feed-item");
       feedItem.setAttribute("postid", feed.postId);
-      feedItem.setAttribute("symtomid", feed.symptoms.id);
       feedItem.setAttribute("onclick", "clickFeed(" + feed.postId + ")");
       let showDate = calcDate(feed.postDate);
 
+      let postSymptomTag = ``;
+      for (let symptom of feed.symptoms) {
+        postSymptomTag += `<span class="symptom_tag_span">${symptom.symptomName}</span>`;
+      }
       feedItem.innerHTML = `<div class="feed-item-top">
-                <span class="symptom_tag_span">${feed.symptoms.symptomName}</span>
+                ${postSymptomTag}
                 <span class="font-detail-kr01"
                   >${feed.userNickname}&emsp;${showDate}</span
                 >
