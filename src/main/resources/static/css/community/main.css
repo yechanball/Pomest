@@ -55,6 +55,30 @@ body {
   cursor: pointer;
 }
 
+/* 태그 검색 화면 */
+.search-tag-header {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 62px;
+  background-color: #ffffff;
+  box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.search-tag-header > div {
+  position: absolute;
+  top: 27px;
+  left: 28px;
+}
+
+#search-title {
+  position: absolute;
+  top: 21px;
+  left: 64px;
+  margin: 0;
+}
+
 /* 검색 화면 */
 .search-header {
   position: relative;
@@ -149,7 +173,7 @@ body {
   margin-right: 8px;
 }
 
-.feed-item-top > span:nth-child(2){
+.feed-item-top > span:nth-child(2) {
   float: left;
 }
 

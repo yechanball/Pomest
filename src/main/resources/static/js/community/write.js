@@ -81,7 +81,6 @@ document
     }
   });
 
-var step = 1; // 현재 화면 상태
 document.querySelector(".popup").style.display = "none";
 // 다음 버튼 클릭 시
 document.querySelector("#btn-next").addEventListener("click", function () {
@@ -96,20 +95,11 @@ document.querySelector("#btn-next").addEventListener("click", function () {
     }</span>`;
     document.querySelector("#selected-symptoms").appendChild(symptomLabel);
   }
-  step = 2;
 });
 
 // 뒤로가기 버튼 클릭 시
 document.querySelector("#btn-move-back").addEventListener("click", function () {
-  if (step == 1) {
-    document.querySelector(".popup").style.display = "";
-    console.log("팝업 오픈");
-  }
-  if (step == 2) {
-    document.querySelector(".main-write").style.display = "none";
-    document.querySelector(".main-select").style.display = "";
-    step = 1;
-  }
+  document.querySelector(".popup").style.display = "";
 });
 
 // 팝업 버튼
