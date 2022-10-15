@@ -110,6 +110,11 @@ body {
   margin: 4px;
 }
 
+#selected-symptoms label > span {
+  background: #ff9691;
+  color: #ffffff;
+}
+
 #input-content {
   width: 312px;
   height: 400px;
