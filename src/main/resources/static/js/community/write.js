@@ -82,6 +82,7 @@ document
   });
 
 var step = 1; // 현재 화면 상태
+document.querySelector(".popup").style.display = "none";
 // 다음 버튼 클릭 시
 document.querySelector("#btn-next").addEventListener("click", function () {
   document.querySelector(".main-write").style.display = "";
@@ -101,7 +102,8 @@ document.querySelector("#btn-next").addEventListener("click", function () {
 // 뒤로가기 버튼 클릭 시
 document.querySelector("#btn-move-back").addEventListener("click", function () {
   if (step == 1) {
-    location.href = "./main.html";
+    document.querySelector(".popup").style.display = "";
+    console.log("팝업 오픈");
   }
   if (step == 2) {
     document.querySelector(".main-write").style.display = "none";
@@ -110,6 +112,17 @@ document.querySelector("#btn-move-back").addEventListener("click", function () {
   }
 });
 
+// 팝업 버튼
+document
+  .querySelector("#btn-popup-close")
+  .addEventListener("click", function () {
+    document.querySelector(".popup").style.display = "none";
+  });
+document.querySelector("#btn-delete").addEventListener("click", function () {
+  location.href = "./main.html";
+});
+
+// 글작성 완료 버튼 클릭 시
 document.querySelector("#btn-complete").addEventListener("click", function () {
   if (document.querySelector("#input-content").value.length > 0) {
     alert(document.querySelector("#input-content").value + " 내용으로 글쓰기!");
