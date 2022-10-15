@@ -44,21 +44,27 @@
 
       <div class="main-select">
         <p class="font-body-kr01">
-          (선택) 관련 증상을 1 ~ 2개 태그하면 <br />더 많은 분들에게 도달할 수
-          있어요
+          고민 해결에 도움이 필요하다면<br />관련 증상을
+          <u>최대 2개</u> 태그하세요
         </p>
         <div id="select-symptoms"></div>
+        <p class="font-detail-kr01">
+          물론! 태그를 선택하지 않아도 글을 쓸 수 있어요
+        </p>
         <button class="button-elevated-default" id="btn-next">다음</button>
       </div>
 
       <div class="main-write">
-        <div id="selected-symptoms"></div>
-        <input
-          type="text"
-          id="input-content"
-          name="content"
-          placeholder="이야기를 나누면서 마음이 가뿐해지시면 좋겠어요"
-        />
+        <form action="" method="post">
+          <div id="selected-symptoms"></div>
+          <textarea
+            name="content"
+            id="input-content"
+            cols="30"
+            rows="10"
+            placeholder="이야기를 나누면서 마음이 가뿐해지시면 좋겠어요"
+          ></textarea>
+        </form>
       </div>
     </div>
     <script src="../../static/js/community/write.js"></script>

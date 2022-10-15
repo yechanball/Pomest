@@ -45,12 +45,22 @@ document.addEventListener("input", function () {
         if (checkResult.size < 2) {
           // 최대 선택 2가지
           checkResult.add(event.target.value);
+          // 선택 개수가 2개인 경우 다른 버튼 비활성화
+          if (checkResult.size == 2) {
+            for (var cb of checkboxList) {
+              if (!cb.checked) {
+                cb.disabled = true;
+              }
+            }
+          }
         }
       } else {
         // 체크가 풀리는 경우 배열에서 삭제
         checkResult.delete(event.target.value);
+        for (var cb of checkboxList) {
+          cb.disabled = false;
+        }
       }
-      console.log(checkResult);
     });
   }
 });
@@ -76,6 +86,7 @@ var step = 1; // 현재 화면 상태
 document.querySelector("#btn-next").addEventListener("click", function () {
   document.querySelector(".main-write").style.display = "";
   document.querySelector(".main-select").style.display = "none";
+  document.querySelector("#selected-symptoms").innerHTML = ``;
   for (let symptom of checkResult) {
     let symptomLabel = document.createElement("label");
     symptomLabel.classList.add("symptom_tag_medium");
