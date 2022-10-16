@@ -416,13 +416,14 @@ function searchFeed(searchValue, searchSymptoms) {
   // 검색된 글이 없는 경우
   if (searchFeedSize == 0) {
     document.querySelector(".btn-fixed").style.display = "none";
+    document.querySelector(".header-menu").style.display = "none";
     document.querySelector(
       ".feed-list"
-    ).innerHTML = `<div class="search-body" style="position: absolute;top: 130px;left: 24px;text-align:left">
+    ).innerHTML = `<div class="search-body" style="position: absolute;top: 74px;left: 24px;text-align:left">
         <p class="font-body-kr01">아직 이야기가 없는 주제이네요 &#128546;
               <br>이야기를 나눠주실래요?</p>
       </div>
-      <button class="button-ghost-default" id="btn-move-wirte-2" style="position:absolute; top:210px; left:136px; padding: 7px 15px 9px; border-radius: 15px;">글쓰러 가기</button>`;
+      <button class="button-ghost-default" id="btn-move-wirte-2" style="position:absolute; top:175px; left:136px; padding: 7px 15px 9px; border-radius: 15px;">글쓰러 가기</button>`;
   }
 
   document.querySelector(".feed-list").style.display = "";

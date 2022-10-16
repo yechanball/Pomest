@@ -39,3 +39,107 @@ body {
   top: 28px;
   left: 28px;
 }
+
+/* 피드 내용 */
+.feed-item {
+  width: 100%-48px;
+  padding: 12px 24px;
+}
+
+.feed-item-top {
+  height: 23px;
+  padding-bottom: 12px;
+}
+
+.feed-item-top > span:first-child {
+  float: left;
+  margin-right: 8px;
+}
+
+.feed-item-top > span:nth-child(2) {
+  float: left;
+}
+
+.feed-item-top > span:last-child {
+  float: right;
+}
+
+.feed-item-content {
+  margin-bottom: 14px;
+}
+
+.feed-item-content > p {
+  text-align: left;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.feed-item-bottom {
+  float: left;
+  margin-bottom: 14px;
+}
+
+.feed-item-like {
+  cursor: pointer;
+}
+
+.feed-item-bottom-line {
+  border-bottom: 1px solid #e5e5e5;
+  clear: both;
+}
+
+/* 댓글 내용 */
+.comment-item {
+  width: 100%-48px;
+  padding: 12px 24px;
+}
+
+.comment-item-top {
+  height: 23px;
+  padding-bottom: 12px;
+}
+
+.comment-item-top > span:first-child {
+  float: left;
+  margin-right: 8px;
+}
+
+.comment-item-top > span:nth-child(2) {
+  float: right;
+}
+
+.comment-item-top > span:last-child {
+  float: right;
+  margin-right: 14px;
+}
+
+.comment-item-content {
+  margin-bottom: 14px;
+}
+
+.comment-item-content > p {
+  text-align: left;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+/* 댓글 입력 */
+#input-comment {
+  position: fixed;
+  bottom: 0;
+  left: 9px;
+  width: calc(100% - 18px);
+  height: 48px;
+  background: #e5e5e5;
+  border-radius: 10px;
+}
+
+#btn-add {
+  position: fixed;
+  bottom: 12px;
+  right: 25px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #ffffff00;
+}

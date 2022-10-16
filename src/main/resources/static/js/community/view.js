@@ -16,49 +16,47 @@ window.onload = function () {
 
   requestPost.onload = function () {
     data = requestPost.response;
-    makeFeedList(data, postId);
+    showFeed(data, postId);
   };
 };
 
-function makeFeedList(data, postId) {
+function showFeed(data, postId) {
   data.posts.forEach((feed) => {
     if (postId == feed.postId) {
       let feedItem = document.createElement("div");
       feedItem.classList.add("feed-item");
       feedItem.setAttribute("postid", feed.postId);
-      feedItem.setAttribute("symtomid", feed.symptoms.id);
-      feedItem.setAttribute("onclick", "clickFeed(" + feed.postId + ")");
-      let likeBtn;
+
+      let likeBtn = document.createElement("span");
+      likeBtn.setAttribute("class", "feed-item-like");
       if (feed.isUserLike) {
-        likeBtn = `<span class="feed-item-like" value="like">
-                    <svg
-                      width="14"
-                      height="13"
-                      viewBox="0 0 14 13"
+        likeBtn.setAttribute("value", "like");
+        likeBtn.innerHTML = `<svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.665 12.2303L5.69857 11.3638C4.57663 10.353 3.64909 9.48096 2.91594 8.74781C2.18279 8.01466 1.5996 7.35638 1.16637 6.77297C0.73315 6.19001 0.430559 5.65414 0.258602 5.16537C0.0862007 4.67661 0 4.17673 0 3.66575C0 2.62157 0.349913 1.74956 1.04974 1.04974C1.74956 0.349912 2.62157 0 3.66575 0C4.24338 0 4.79325 0.122192 5.31534 0.366575C5.83743 0.610958 6.28732 0.955317 6.665 1.39965C7.04268 0.955317 7.49257 0.610958 8.01466 0.366575C8.53675 0.122192 9.08662 0 9.66425 0C10.7084 0 11.5804 0.349912 12.2803 1.04974C12.9801 1.74956 13.33 2.62157 13.33 3.66575C13.33 4.17673 13.244 4.67661 13.0721 5.16537C12.8997 5.65414 12.5968 6.19001 12.1636 6.77297C11.7304 7.35638 11.1472 8.01466 10.4141 8.74781C9.68091 9.48096 8.75337 10.353 7.63142 11.3638L6.665 12.2303Z"
+                        d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19Z"
                         fill="#4BB158"
                       />
-                  </svg>
-                </span>`;
+                    </svg>`;
       } else {
-        likeBtn = `<span class="feed-item-like" value="unlike">
-                    <svg
-                      width="14"
-                      height="13"
-                      viewBox="0 0 14 13"
+        likeBtn.setAttribute("value", "unlike");
+        likeBtn.innerHTML = `<svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M6.66667 12.2333L5.7 11.3667C4.57778 10.3556 3.65 9.48333 2.91667 8.75C2.18333 8.01667 1.6 7.35822 1.16667 6.77467C0.733333 6.19156 0.430667 5.65556 0.258667 5.16667C0.0862222 4.67778 0 4.17778 0 3.66667C0 2.62222 0.35 1.75 1.05 1.05C1.75 0.35 2.62222 0 3.66667 0C4.24444 0 4.79444 0.122222 5.31667 0.366667C5.83889 0.611111 6.28889 0.955556 6.66667 1.4C7.04444 0.955556 7.49444 0.611111 8.01667 0.366667C8.53889 0.122222 9.08889 0 9.66667 0C10.7111 0 11.5833 0.35 12.2833 1.05C12.9833 1.75 13.3333 2.62222 13.3333 3.66667C13.3333 4.17778 13.2473 4.67778 13.0753 5.16667C12.9029 5.65556 12.6 6.19156 12.1667 6.77467C11.7333 7.35822 11.15 8.01667 10.4167 8.75C9.68333 9.48333 8.75556 10.3556 7.63333 11.3667L6.66667 12.2333ZM6.66667 10.4333C7.73333 9.47778 8.61111 8.65822 9.3 7.97467C9.98889 7.29156 10.5333 6.69733 10.9333 6.192C11.3333 5.68622 11.6111 5.236 11.7667 4.84133C11.9222 4.44711 12 4.05556 12 3.66667C12 3 11.7778 2.44444 11.3333 2C10.8889 1.55556 10.3333 1.33333 9.66667 1.33333C9.14444 1.33333 8.66111 1.48044 8.21667 1.77467C7.77222 2.06933 7.46667 2.44444 7.3 2.9H6.03333C5.86667 2.44444 5.56111 2.06933 5.11667 1.77467C4.67222 1.48044 4.18889 1.33333 3.66667 1.33333C3 1.33333 2.44444 1.55556 2 2C1.55556 2.44444 1.33333 3 1.33333 3.66667C1.33333 4.05556 1.41111 4.44711 1.56667 4.84133C1.72222 5.236 2 5.68622 2.4 6.192C2.8 6.69733 3.34444 7.29156 4.03333 7.97467C4.72222 8.65822 5.6 9.47778 6.66667 10.4333Z"
+                        d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19ZM10 16.3C11.6 14.8667 12.9167 13.6373 13.95 12.612C14.9833 11.5873 15.8 10.696 16.4 9.93799C17 9.17933 17.4167 8.50399 17.65 7.91199C17.8833 7.32066 18 6.73333 18 6.14999C18 5.14999 17.6667 4.31666 17 3.64999C16.3333 2.98333 15.5 2.64999 14.5 2.64999C13.7167 2.64999 12.9917 2.87066 12.325 3.31199C11.6583 3.75399 11.2 4.31666 10.95 4.99999H9.05C8.8 4.31666 8.34167 3.75399 7.675 3.31199C7.00833 2.87066 6.28333 2.64999 5.5 2.64999C4.5 2.64999 3.66667 2.98333 3 3.64999C2.33333 4.31666 2 5.14999 2 6.14999C2 6.73333 2.11667 7.32066 2.35 7.91199C2.58333 8.50399 3 9.17933 3.6 9.93799C4.2 10.696 5.01667 11.5873 6.05 12.612C7.08333 13.6373 8.4 14.8667 10 16.3Z"
                         fill="#121212"
                       />
-                    </svg>
-                  </span>`;
+                    </svg>`;
       }
 
       let postSymptomTag = ``;
@@ -67,38 +65,140 @@ function makeFeedList(data, postId) {
       }
       feedItem.innerHTML = `<div class="feed-item-top">
                 ${postSymptomTag}
-                <span class="font-detail-kr01"
-                  >${feed.userNickname}&emsp;${feed.postDate}</span
-                >
+                <span class="font-body-kr01" id="feed-menu">
+                  &bull;&bull;&bull;
+                  </span>
               </div>
               <div class="feed-item-content">
+                <p class="font-detail-kr01">
+                  ${feed.userNickname}&emsp;${feed.postDate}
+                </p>
                 <p class="font-body-kr03">${feed.content}</p>
-              </div>
-              <div class="feed-item-bottom">
-                ${likeBtn}
-                <span>${feed.numLike}&nbsp;</span>
-                <span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.333252 13.6663V1.66634C0.333252 1.29967 0.463919 0.985674 0.725252 0.724341C0.986141 0.463452 1.29992 0.333008 1.66659 0.333008H12.3333C12.6999 0.333008 13.0139 0.463452 13.2753 0.724341C13.5361 0.985674 13.6666 1.29967 13.6666 1.66634V9.66634C13.6666 10.033 13.5361 10.347 13.2753 10.6083C13.0139 10.8692 12.6999 10.9997 12.3333 10.9997H2.99992L0.333252 13.6663ZM1.66659 10.4497L2.44992 9.66634H12.3333V1.66634H1.66659V10.4497Z"
-                      fill="#121212"
-                    />
-                  </svg>
-                </span>
-                <span>${feed.numComment}</span>
-              </div>
-              <div class="feed-item-bottom-line"></div>`;
-      document.querySelector("#main-content").appendChild(feedItem);
+              </div>`;
+      let feedItemBottom = document.createElement("div");
+      feedItemBottom.setAttribute("class", "feed-item-bottom");
+      let likeNum = document.createElement("span");
+      likeNum.setAttribute("class", "font-body-en02");
+      likeNum.innerHTML = `${feed.numLike}`;
+      feedItemBottom.appendChild(likeBtn);
+      feedItemBottom.appendChild(likeNum);
+      feedItem.appendChild(feedItemBottom);
+
+      let feedItemBottomLine = document.createElement("div");
+      feedItemBottomLine.setAttribute("class", "feed-item-bottom-line");
+      feedItem.appendChild(feedItemBottomLine);
+
+      document.querySelector(".main-content").appendChild(feedItem);
+
+      likeBtn.addEventListener("click", function () {
+        console.log(likeBtn.getAttribute("value"));
+        if (likeBtn.getAttribute("value") == "unlike") {
+          console.log("좋아요 이벤트 감지인식 테스트");
+          // 좋아요 추가하기
+          likeBtn.innerHTML = `<svg
+                            width="20"
+                            height="19"
+                            viewBox="0 0 20 19"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19Z"
+                              fill="#4BB158"
+                            />
+                          </svg>`;
+          likeBtn.setAttribute("value", "like");
+        }
+        if (likeBtn.getAttribute("value") == "like") {
+          // 좋아요 취소하기
+          likeBtn.innerHTML = `<svg
+                            width="20"
+                            height="19"
+                            viewBox="0 0 20 19"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19ZM10 16.3C11.6 14.8667 12.9167 13.6373 13.95 12.612C14.9833 11.5873 15.8 10.696 16.4 9.93799C17 9.17933 17.4167 8.50399 17.65 7.91199C17.8833 7.32066 18 6.73333 18 6.14999C18 5.14999 17.6667 4.31666 17 3.64999C16.3333 2.98333 15.5 2.64999 14.5 2.64999C13.7167 2.64999 12.9917 2.87066 12.325 3.31199C11.6583 3.75399 11.2 4.31666 10.95 4.99999H9.05C8.8 4.31666 8.34167 3.75399 7.675 3.31199C7.00833 2.87066 6.28333 2.64999 5.5 2.64999C4.5 2.64999 3.66667 2.98333 3 3.64999C2.33333 4.31666 2 5.14999 2 6.14999C2 6.73333 2.11667 7.32066 2.35 7.91199C2.58333 8.50399 3 9.17933 3.6 9.93799C4.2 10.696 5.01667 11.5873 6.05 12.612C7.08333 13.6373 8.4 14.8667 10 16.3Z"
+                              fill="#121212"
+                            />
+                          </svg>`;
+          likeBtn.setAttribute("value", "unlike");
+        }
+      });
     }
   });
 }
 
 document.querySelector("#btn-move-back").addEventListener("click", function () {
   location.href = "./main.html";
+});
+
+// 댓글 입력 버튼
+document.querySelector("#btn-add").style.display = "none";
+document
+  .querySelector("#input-comment")
+  .addEventListener("keyup", function (e) {
+    if (document.querySelector("#input-comment").value.length > 0) {
+      document.querySelector("#btn-add").style.display = "";
+    } else {
+      document.querySelector("#btn-add").style.display = "none";
+    }
+  });
+
+// 댓글 생성하기
+document.querySelector("#btn-add").addEventListener("click", function () {
+  let listDiv = document.querySelector(".comment-list");
+
+  let commentDiv = document.createElement("div");
+  commentDiv.setAttribute("class", "comment-item");
+
+  let commentTopDiv = document.createElement("div");
+  commentTopDiv.setAttribute("class", "comment-item-top");
+
+  let commentTopDivEl1 = document.createElement("span");
+  commentTopDivEl1.setAttribute("class", "font-detail-kr01");
+  commentTopDivEl1.innerHTML = `닉네임&emsp;N분 전`;
+
+  let commentTopDivEl2 = document.createElement("span");
+  commentTopDivEl2.setAttribute("class", "comment-menu font-body-kr01");
+  commentTopDivEl2.innerHTML = `&bull;&bull;&bull;`;
+  commentTopDivEl2.addEventListener("click", function () {
+    let parentEl = this.parentElement.parentElement;
+    listDiv.removeChild(parentEl);
+  });
+
+  let commentTopDivEl3 = document.createElement("span");
+  commentTopDivEl3.innerHTML = `<svg
+                                  width="18"
+                                  height="18"
+                                  viewBox="0 0 18 18"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2.16667 17.7497C1.70833 17.7497 1.31583 17.5863 0.989167 17.2597C0.663055 16.9336 0.5 16.5413 0.5 16.083V4.41634C0.5 3.95801 0.663055 3.56551 0.989167 3.23884C1.31583 2.91273 1.70833 2.74967 2.16667 2.74967H9.60417L7.9375 4.41634H2.16667V16.083H13.8333V10.2913L15.5 8.62467V16.083C15.5 16.5413 15.3369 16.9336 15.0108 17.2597C14.6842 17.5863 14.2917 17.7497 13.8333 17.7497H2.16667ZM11.4792 3.22884L12.6667 4.39551L7.16667 9.89551V11.083H8.33333L13.8542 5.56217L15.0417 6.72884L9.04167 12.7497H5.5V9.20801L11.4792 3.22884ZM15.0417 6.72884L11.4792 3.22884L13.5625 1.14551C13.8958 0.812175 14.2953 0.645508 14.7608 0.645508C15.2258 0.645508 15.6181 0.812175 15.9375 1.14551L17.1042 2.33301C17.4236 2.65245 17.5833 3.04134 17.5833 3.49967C17.5833 3.95801 17.4236 4.3469 17.1042 4.66634L15.0417 6.72884Z"
+                                    fill="#121212"
+                                  />
+                                </svg>`;
+  commentTopDivEl3.addEventListener("click", function () {
+    alert("수정하기 버튼 클릭");
+  });
+
+  commentTopDiv.appendChild(commentTopDivEl1);
+  commentTopDiv.appendChild(commentTopDivEl2);
+  commentTopDiv.appendChild(commentTopDivEl3);
+
+  let inputComment = document.querySelector("#input-comment").value;
+  let commentContent = document.createElement("div");
+  commentContent.setAttribute("class", "comment-item-content");
+  commentContent.innerHTML = `<p class="font-body-kr03">
+                                ${inputComment}</p>`;
+
+  commentDiv.appendChild(commentTopDiv);
+  commentDiv.appendChild(commentContent);
+
+  listDiv.appendChild(commentDiv);
+
+  document.querySelector("#input-comment").value = "";
 });
