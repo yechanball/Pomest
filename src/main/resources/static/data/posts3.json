@@ -1,0 +1,45 @@
+{
+  "isNextPage": "false",
+  "posts": [
+    {
+      "postId": 21,
+      "isUserLike": false,
+      "userNickname": "무야호",
+      "content": "성공적으로 불러졌다구!!!! 무야호~~",
+      "numLike": 55,
+      "numComment": 55,
+      "symptoms": [],
+      "postDate": "2020.04.05 13:01:02"
+    },
+    {
+      "postId": 22,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 테스트 글이야!! test!! 블라블라~",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
+          "id": 15,
+          "symptomName": "기타"
+        }
+      ],
+      "postDate": "2020.03.30 13:01:02"
+    },
+    {
+      "postId": 23,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 마지막 글이야 마지막!!",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
+          "id": 6,
+          "symptomName": "의욕 저하"
+        }
+      ],
+      "postDate": "2021.03.12 13:01:02"
+    }
+  ]
+}

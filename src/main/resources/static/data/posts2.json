@@ -1,5 +1,5 @@
 {
-  "isNextPage": "false",
+  "isNextPage": "true",
   "posts": [
     {
       "postId": 11,
@@ -86,6 +86,61 @@
         {
           "id": 9,
           "symptomName": "성욕 감소"
+        }
+      ],
+      "postDate": "2019.06.09 13:01:02"
+    },
+    {
+      "postId": 17,
+      "isUserLike": false,
+      "userNickname": "테스터",
+      "content": "테스트 글이에유",
+      "numLike": 1,
+      "numComment": 3,
+      "symptoms": [
+        {
+          "id": 11,
+          "symptomName": "땀이 많이 남"
+        }
+      ],
+      "postDate": "2019.06.08 13:01:02"
+    },
+    {
+      "postId": 18,
+      "isUserLike": true,
+      "userNickname": "알파",
+      "content": "이제 슬슬 준비를....",
+      "numLike": 5,
+      "numComment": 5,
+      "symptoms": [
+        {
+          "id": 11,
+          "symptomName": "땀이 많이 남"
+        }
+      ],
+      "postDate": "2019.06.01 13:01:02"
+    },
+    {
+      "postId": 19,
+      "isUserLike": true,
+      "userNickname": "베타",
+      "content": "준비됬어 감마?",
+      "numLike": 55,
+      "numComment": 55,
+      "symptoms": [],
+      "postDate": "2019.05.15 13:01:02"
+    },
+    {
+      "postId": 20,
+      "isUserLike": false,
+      "userNickname": "감마",
+      "content": "페이지를 로딩해보자구!!!",
+      "numLike": 33,
+      "numComment": 33,
+      "symptoms": [
+        {
+          "id": 10,
+          "symptomName": "불안함"
         }
       ],
       "postDate": "2019.06.09 13:01:02"
