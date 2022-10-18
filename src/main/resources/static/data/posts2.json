@@ -1,0 +1,94 @@
+{
+  "isNextPage": "false",
+  "posts": [
+    {
+      "postId": 11,
+      "isUserLike": false,
+      "userNickname": "로렘로렘오",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis cumque praesentium voluptate quasi nesciunt natus velit! Earum sint temporibus fugiat atque quaerat voluptatum doloremque, eius accusantium natus quos explicabo. Deserunt?",
+      "numLike": 5555,
+      "numComment": 55,
+      "symptoms": [
+        {
+          "id": 15,
+          "symptomName": "기타"
+        }
+      ],
+      "postDate": "2022.04.05 13:01:02"
+    },
+    {
+      "postId": 12,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 테스트 글이야!! test!! 블라블라~ 난 몰라요",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
+          "id": 6,
+          "symptomName": "의욕 저하"
+        }
+      ],
+      "postDate": "2022.03.12 13:01:02"
+    },
+    {
+      "postId": 13,
+      "isUserLike": true,
+      "userNickname": "무적솔로",
+      "content": "징글벨~ 징글벨~ 올해도 크리스마스는... 혼자 보기 좋은 영화 추천 좀....",
+      "numLike": 9999,
+      "numComment": 9999,
+      "symptoms": [
+        {
+          "id": 6,
+          "symptomName": "의욕 저하"
+        },
+        {
+          "id": 2,
+          "symptomName": "우울감"
+        }
+      ],
+      "postDate": "2021.12.25 08:01:02"
+    },
+    {
+      "postId": 14,
+      "isUserLike": false,
+      "userNickname": "테스터님",
+      "content": "이건 테스트 글이야!! test!! 블라블라~",
+      "numLike": 13,
+      "numComment": 4,
+      "symptoms": [
+        {
+          "id": 15,
+          "symptomName": "기타"
+        }
+      ],
+      "postDate": "2021.12.31 13:01:02"
+    },
+    {
+      "postId": 15,
+      "isUserLike": false,
+      "userNickname": "테스터2님",
+      "content": "이건 테스트 글이야!! 블라블라~ 가나다라마바사",
+      "numLike": 16,
+      "numComment": 7,
+      "symptoms": [],
+      "postDate": "2021.05.12 13:01:02"
+    },
+    {
+      "postId": 16,
+      "isUserLike": true,
+      "userNickname": "심영님",
+      "content": "아니, 의사양반 그게 무슨 소리요...? 총알이 영 좋지 않은 곳을 맞았다니...? 뭐요...? 이보시오.... 아이고.... 내가 고자라니...!! 내가 고자라니....!!!!",
+      "numLike": 58,
+      "numComment": 82,
+      "symptoms": [
+        {
+          "id": 9,
+          "symptomName": "성욕 감소"
+        }
+      ],
+      "postDate": "2019.06.09 13:01:02"
+    }
+  ]
+}
