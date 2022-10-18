@@ -23,8 +23,44 @@ window.onload = function () {
   };
 
   // 게시글 json 정보 받기
+  // var requestPostURL =
+  //   "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts.json";
+  // var requestPost = new XMLHttpRequest();
+  // requestPost.open("GET", requestPostURL);
+  // requestPost.responseType = "json";
+  // requestPost.send();
+
+  // requestPost.onload = function () {
+  //   data = requestPost.response;
+  //   makeFeedList(data);
+  // };
+};
+
+////////////////////////////////////////////////////////////////////
+// TODO 스크롤 이벤트 작성하기
+
+// 무한스크롤에서 사용할 변수
+var pageNum = 0;
+var isNextPage = true;
+
+// 무한 스크롤 테스트
+var intersectionObserver = new IntersectionObserver(function (entries) {
+  if (entries[0].intersectionRatio <= 0) return;
+
+  console.log("다음 페이지 존재 여부 : " + isNextPage);
+  if (!isNextPage) {
+    //alert("더 이상 불러올 페이지가 없습니다!");
+    return;
+  }
+
+  // 다음 페이지가 존재하는 경우만 추가
+  // 게시글 json 정보 받기
+  pageNum++;
+  console.log("Loaded new content -> pageNum : " + pageNum);
   var requestPostURL =
-    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts.json";
+    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts" +
+    pageNum +
+    ".json";
   var requestPost = new XMLHttpRequest();
   requestPost.open("GET", requestPostURL);
   requestPost.responseType = "json";
@@ -34,7 +70,10 @@ window.onload = function () {
     data = requestPost.response;
     makeFeedList(data);
   };
-};
+});
+// start observing
+intersectionObserver.observe(document.querySelector(".scrollerFooter"));
+////////////////////////////////////////////////////////////////////
 
 // 증상 배열 생성 및 생성
 function makeSymtomList(data) {
@@ -69,6 +108,12 @@ function makeHotSymtomList(data) {
 
 // 받은 data를 가지고 피드 리스트 생성
 function makeFeedList(data) {
+  if (data.isNextPage) {
+    isNextPage = true;
+  } else {
+    isNextPage = false;
+  }
+
   data.posts.forEach((feed) => {
     feedList.push(feed);
 
@@ -96,7 +141,7 @@ function makeFeedList(data) {
             </span>`;
     } else {
       likeBtn = `<span class="feed-item-like" value="unlike">
-            <svg
+      <svg
             width="14"
             height="13"
             viewBox="0 0 14 13"
@@ -147,17 +192,6 @@ function makeFeedList(data) {
     document.querySelector(".feed-list").appendChild(feedItem);
   });
 }
-
-////////////////////////////////////////////////////////////////////
-// TODO 스크롤 이벤트 작성하기
-// 스크롤 위치 파악
-window.addEventListener("scroll", function () {
-  //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-  console.log(window.scrollX, window.scrollY);
-  var _scrollTop = window.scrollY || document.documentElement.scrollTop;
-  console.log(_scrollTop);
-});
-////////////////////////////////////////////////////////////////////
 
 // 화면에 보여질 날짜 포맷 변환
 function calcDate(postDate) {
@@ -230,13 +264,9 @@ function selectTag() {
   if (checkResult.size > 0) {
     // TODO 선택한 항목이 있다면 검색 실행
     searchFeed(document.querySelector("#input-search").value, checkResult);
-    document.querySelector(".bottom-menu").style.display = "none";
-    document.querySelector(".btn-fixed").style.bottom = "24px";
   } else {
     // TODO 선택한 항목이 없다면 초기 상태로 초기화
     searchFeed(document.querySelector("#input-search").value, checkResult); // 필터링된 게시글 초기화
-    document.querySelector(".bottom-menu").style.display = "";
-    document.querySelector(".btn-fixed").style.bottom = "80px";
   }
 }
 
@@ -368,45 +398,45 @@ function searchFeed(searchValue, searchSymptoms) {
         postSymptomTag += `<span class="symptom_tag_span">${symptom.symptomName}</span>`;
       }
       feedItem.innerHTML = `<div class="feed-item-top">
-                ${postSymptomTag}
-                <span class="font-detail-kr01"
-                  >${feed.userNickname}&emsp;${showDate}</span
-                >
-              </div>
-              <div class="feed-item-content">
-                <p class="font-body-kr03">${feed.content}</p>
-              </div>
-              <div class="feed-item-bottom">
-                <span class="feed-item-like" value="unlike">
+      ${postSymptomTag}
+      <span class="font-detail-kr01"
+      >${feed.userNickname}&emsp;${showDate}</span
+      >
+                  </div>
+                  <div class="feed-item-content">
+                  <p class="font-body-kr03">${feed.content}</p>
+                  </div>
+                  <div class="feed-item-bottom">
+                  <span class="feed-item-like" value="unlike">
                   <svg
-                    width="14"
-                    height="13"
+                  width="14"
+                  height="13"
                     viewBox="0 0 14 13"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
+                    >
                     <path
-                      d="M6.66667 12.2333L5.7 11.3667C4.57778 10.3556 3.65 9.48333 2.91667 8.75C2.18333 8.01667 1.6 7.35822 1.16667 6.77467C0.733333 6.19156 0.430667 5.65556 0.258667 5.16667C0.0862222 4.67778 0 4.17778 0 3.66667C0 2.62222 0.35 1.75 1.05 1.05C1.75 0.35 2.62222 0 3.66667 0C4.24444 0 4.79444 0.122222 5.31667 0.366667C5.83889 0.611111 6.28889 0.955556 6.66667 1.4C7.04444 0.955556 7.49444 0.611111 8.01667 0.366667C8.53889 0.122222 9.08889 0 9.66667 0C10.7111 0 11.5833 0.35 12.2833 1.05C12.9833 1.75 13.3333 2.62222 13.3333 3.66667C13.3333 4.17778 13.2473 4.67778 13.0753 5.16667C12.9029 5.65556 12.6 6.19156 12.1667 6.77467C11.7333 7.35822 11.15 8.01667 10.4167 8.75C9.68333 9.48333 8.75556 10.3556 7.63333 11.3667L6.66667 12.2333ZM6.66667 10.4333C7.73333 9.47778 8.61111 8.65822 9.3 7.97467C9.98889 7.29156 10.5333 6.69733 10.9333 6.192C11.3333 5.68622 11.6111 5.236 11.7667 4.84133C11.9222 4.44711 12 4.05556 12 3.66667C12 3 11.7778 2.44444 11.3333 2C10.8889 1.55556 10.3333 1.33333 9.66667 1.33333C9.14444 1.33333 8.66111 1.48044 8.21667 1.77467C7.77222 2.06933 7.46667 2.44444 7.3 2.9H6.03333C5.86667 2.44444 5.56111 2.06933 5.11667 1.77467C4.67222 1.48044 4.18889 1.33333 3.66667 1.33333C3 1.33333 2.44444 1.55556 2 2C1.55556 2.44444 1.33333 3 1.33333 3.66667C1.33333 4.05556 1.41111 4.44711 1.56667 4.84133C1.72222 5.236 2 5.68622 2.4 6.192C2.8 6.69733 3.34444 7.29156 4.03333 7.97467C4.72222 8.65822 5.6 9.47778 6.66667 10.4333Z"
-                      fill="#121212"
+                    d="M6.66667 12.2333L5.7 11.3667C4.57778 10.3556 3.65 9.48333 2.91667 8.75C2.18333 8.01667 1.6 7.35822 1.16667 6.77467C0.733333 6.19156 0.430667 5.65556 0.258667 5.16667C0.0862222 4.67778 0 4.17778 0 3.66667C0 2.62222 0.35 1.75 1.05 1.05C1.75 0.35 2.62222 0 3.66667 0C4.24444 0 4.79444 0.122222 5.31667 0.366667C5.83889 0.611111 6.28889 0.955556 6.66667 1.4C7.04444 0.955556 7.49444 0.611111 8.01667 0.366667C8.53889 0.122222 9.08889 0 9.66667 0C10.7111 0 11.5833 0.35 12.2833 1.05C12.9833 1.75 13.3333 2.62222 13.3333 3.66667C13.3333 4.17778 13.2473 4.67778 13.0753 5.16667C12.9029 5.65556 12.6 6.19156 12.1667 6.77467C11.7333 7.35822 11.15 8.01667 10.4167 8.75C9.68333 9.48333 8.75556 10.3556 7.63333 11.3667L6.66667 12.2333ZM6.66667 10.4333C7.73333 9.47778 8.61111 8.65822 9.3 7.97467C9.98889 7.29156 10.5333 6.69733 10.9333 6.192C11.3333 5.68622 11.6111 5.236 11.7667 4.84133C11.9222 4.44711 12 4.05556 12 3.66667C12 3 11.7778 2.44444 11.3333 2C10.8889 1.55556 10.3333 1.33333 9.66667 1.33333C9.14444 1.33333 8.66111 1.48044 8.21667 1.77467C7.77222 2.06933 7.46667 2.44444 7.3 2.9H6.03333C5.86667 2.44444 5.56111 2.06933 5.11667 1.77467C4.67222 1.48044 4.18889 1.33333 3.66667 1.33333C3 1.33333 2.44444 1.55556 2 2C1.55556 2.44444 1.33333 3 1.33333 3.66667C1.33333 4.05556 1.41111 4.44711 1.56667 4.84133C1.72222 5.236 2 5.68622 2.4 6.192C2.8 6.69733 3.34444 7.29156 4.03333 7.97467C4.72222 8.65822 5.6 9.47778 6.66667 10.4333Z"
+                    fill="#121212"
                     />
                   </svg>
-                </span>
-                <span>${feed.numLike}&nbsp;</span>
-                <span>
+                  </span>
+                  <span>${feed.numLike}&nbsp;</span>
+                  <span>
                   <svg
                     width="14"
                     height="14"
                     viewBox="0 0 14 14"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
+                    >
                     <path
                       d="M0.333252 13.6663V1.66634C0.333252 1.29967 0.463919 0.985674 0.725252 0.724341C0.986141 0.463452 1.29992 0.333008 1.66659 0.333008H12.3333C12.6999 0.333008 13.0139 0.463452 13.2753 0.724341C13.5361 0.985674 13.6666 1.29967 13.6666 1.66634V9.66634C13.6666 10.033 13.5361 10.347 13.2753 10.6083C13.0139 10.8692 12.6999 10.9997 12.3333 10.9997H2.99992L0.333252 13.6663ZM1.66659 10.4497L2.44992 9.66634H12.3333V1.66634H1.66659V10.4497Z"
                       fill="#121212"
                     />
                   </svg>
-                </span>
-                <span>${feed.numComment}</span>
+                  </span>
+                  <span>${feed.numComment}</span>
               </div>
               <div class="feed-item-bottom-line"></div>`;
       document.querySelector(".feed-list").appendChild(feedItem);
@@ -420,7 +450,7 @@ function searchFeed(searchValue, searchSymptoms) {
     document.querySelector(
       ".feed-list"
     ).innerHTML = `<div class="search-body" style="position: absolute;top: 74px;left: 24px;text-align:left">
-        <p class="font-body-kr01">아직 이야기가 없는 주제이네요 &#128546;
+    <p class="font-body-kr01">아직 이야기가 없는 주제이네요 &#128546;
               <br>이야기를 나눠주실래요?</p>
       </div>
       <button class="button-ghost-default" id="btn-move-wirte-2" style="position:absolute; top:175px; left:136px; padding: 7px 15px 9px; border-radius: 15px;">글쓰러 가기</button>`;
