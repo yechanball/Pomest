@@ -124,19 +124,30 @@ body {
 }
 
 /* 댓글 입력 */
-#input-comment {
+#bottom-input {
   position: fixed;
-  bottom: 0;
+  bottom: 12px;
+  width: 100%;
+  max-width: 360px;
+  height: 48px;
+  text-align: center;
+}
+
+#input-comment {
+  position: absolute;
   left: 9px;
-  width: calc(100% - 18px);
+  bottom: 0px;
+  padding: 0px 12px;
+  width: calc(100% - 42px);
   height: 48px;
   background: #e5e5e5;
   border-radius: 10px;
+  border: none;
 }
 
 #btn-add {
-  position: fixed;
-  bottom: 12px;
+  position: absolute;
+  bottom: 14px;
   right: 25px;
   padding: 0;
   margin: 0;

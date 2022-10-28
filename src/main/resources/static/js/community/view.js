@@ -8,7 +8,7 @@ window.onload = function () {
 
   // 게시글 json 정보 받기
   var requestPostURL =
-    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts.json";
+    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts1.json";
   var requestPost = new XMLHttpRequest();
   requestPost.open("GET", requestPostURL);
   requestPost.responseType = "json";
@@ -18,6 +18,10 @@ window.onload = function () {
     data = requestPost.response;
     showFeed(data, postId);
   };
+
+  // fetch("/*경로 작성하기 : {mainurl}/community/post?postId=${postId} */")
+  //   .then((response) => response.json())
+  //   .then((data) => showFeed(data));
 };
 
 function showFeed(data, postId) {
@@ -29,6 +33,7 @@ function showFeed(data, postId) {
 
       let likeBtn = document.createElement("span");
       likeBtn.setAttribute("class", "feed-item-like");
+      likeBtn.setAttribute("onclick", "clickLikeBtn(this)")
       if (feed.isUserLike) {
         likeBtn.setAttribute("value", "like");
         likeBtn.innerHTML = `<svg
@@ -90,44 +95,58 @@ function showFeed(data, postId) {
 
       document.querySelector(".main-content").appendChild(feedItem);
 
-      likeBtn.addEventListener("click", function () {
-        console.log(likeBtn.getAttribute("value"));
-        if (likeBtn.getAttribute("value") == "unlike") {
-          console.log("좋아요 이벤트 감지인식 테스트");
-          // 좋아요 추가하기
-          likeBtn.innerHTML = `<svg
-                            width="20"
-                            height="19"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19Z"
-                              fill="#4BB158"
-                            />
-                          </svg>`;
-          likeBtn.setAttribute("value", "like");
-        }
-        if (likeBtn.getAttribute("value") == "like") {
-          // 좋아요 취소하기
-          likeBtn.innerHTML = `<svg
-                            width="20"
-                            height="19"
-                            viewBox="0 0 20 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19ZM10 16.3C11.6 14.8667 12.9167 13.6373 13.95 12.612C14.9833 11.5873 15.8 10.696 16.4 9.93799C17 9.17933 17.4167 8.50399 17.65 7.91199C17.8833 7.32066 18 6.73333 18 6.14999C18 5.14999 17.6667 4.31666 17 3.64999C16.3333 2.98333 15.5 2.64999 14.5 2.64999C13.7167 2.64999 12.9917 2.87066 12.325 3.31199C11.6583 3.75399 11.2 4.31666 10.95 4.99999H9.05C8.8 4.31666 8.34167 3.75399 7.675 3.31199C7.00833 2.87066 6.28333 2.64999 5.5 2.64999C4.5 2.64999 3.66667 2.98333 3 3.64999C2.33333 4.31666 2 5.14999 2 6.14999C2 6.73333 2.11667 7.32066 2.35 7.91199C2.58333 8.50399 3 9.17933 3.6 9.93799C4.2 10.696 5.01667 11.5873 6.05 12.612C7.08333 13.6373 8.4 14.8667 10 16.3Z"
-                              fill="#121212"
-                            />
-                          </svg>`;
-          likeBtn.setAttribute("value", "unlike");
-        }
-      });
     }
   });
+}
+
+function clickLikeBtn(el) {
+  let likeStatus = el.getAttribute("value");
+
+  if (likeStatus == "unlike") {
+    el.innerHTML = `<svg
+      width="20"
+      height="19"
+      viewBox="0 0 20 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+      d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19Z"
+      fill="#4BB158"
+      />
+    </svg>`;
+    likeStatus = "like";
+  }
+  else if ( likeStatus == "like") {
+    el.innerHTML = `<svg
+      width="20"
+      height="19"
+      viewBox="0 0 20 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 19L8.55 17.7C6.86667 16.1833 5.475 14.875 4.375 13.775C3.275 12.675 2.4 11.6873 1.75 10.812C1.1 9.93733 0.646 9.13333 0.388 8.39999C0.129333 7.66666 0 6.91666 0 6.14999C0 4.58333 0.525 3.27499 1.575 2.22499C2.625 1.17499 3.93333 0.649994 5.5 0.649994C6.36667 0.649994 7.19167 0.833327 7.975 1.19999C8.75833 1.56666 9.43333 2.08333 10 2.74999C10.5667 2.08333 11.2417 1.56666 12.025 1.19999C12.8083 0.833327 13.6333 0.649994 14.5 0.649994C16.0667 0.649994 17.375 1.17499 18.425 2.22499C19.475 3.27499 20 4.58333 20 6.14999C20 6.91666 19.871 7.66666 19.613 8.39999C19.3543 9.13333 18.9 9.93733 18.25 10.812C17.6 11.6873 16.725 12.675 15.625 13.775C14.525 14.875 13.1333 16.1833 11.45 17.7L10 19ZM10 16.3C11.6 14.8667 12.9167 13.6373 13.95 12.612C14.9833 11.5873 15.8 10.696 16.4 9.93799C17 9.17933 17.4167 8.50399 17.65 7.91199C17.8833 7.32066 18 6.73333 18 6.14999C18 5.14999 17.6667 4.31666 17 3.64999C16.3333 2.98333 15.5 2.64999 14.5 2.64999C13.7167 2.64999 12.9917 2.87066 12.325 3.31199C11.6583 3.75399 11.2 4.31666 10.95 4.99999H9.05C8.8 4.31666 8.34167 3.75399 7.675 3.31199C7.00833 2.87066 6.28333 2.64999 5.5 2.64999C4.5 2.64999 3.66667 2.98333 3 3.64999C2.33333 4.31666 2 5.14999 2 6.14999C2 6.73333 2.11667 7.32066 2.35 7.91199C2.58333 8.50399 3 9.17933 3.6 9.93799C4.2 10.696 5.01667 11.5873 6.05 12.612C7.08333 13.6373 8.4 14.8667 10 16.3Z"
+        fill="#121212"
+      />
+    </svg>`;
+    likeStatus = "unlike";
+  }
+  el.setAttribute("value", likeStatus);
+
+  /////////////////////////////////////////
+  // 서버 요청 부분
+  let config = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      postId : postId,
+    }),
+  };
+  fetch(`${mainUrl}/community/${likeStatus}`, config)
+    .then((response) => response.json())
+    .then((data) => showFeed(data));
+  /////////////////////////////////////////
 }
 
 document.querySelector("#btn-move-back").addEventListener("click", function () {
@@ -139,6 +158,9 @@ document.querySelector("#btn-add").style.display = "none";
 document
   .querySelector("#input-comment")
   .addEventListener("keyup", function (e) {
+    if (e.keyCode == 13) {
+      makeComment();
+    }
     if (document.querySelector("#input-comment").value.length > 0) {
       document.querySelector("#btn-add").style.display = "";
     } else {
@@ -147,7 +169,9 @@ document
   });
 
 // 댓글 생성하기
-document.querySelector("#btn-add").addEventListener("click", function () {
+document.querySelector("#btn-add").addEventListener("click", makeComment);
+
+function makeComment() {
   let listDiv = document.querySelector(".comment-list");
 
   let commentDiv = document.createElement("div");
@@ -201,4 +225,4 @@ document.querySelector("#btn-add").addEventListener("click", function () {
   listDiv.appendChild(commentDiv);
 
   document.querySelector("#input-comment").value = "";
-});
+}
