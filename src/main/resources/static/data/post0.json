@@ -1,0 +1,20 @@
+{
+  "id": 2,
+  "writerName": "직박구리",
+  "isUserWriter": true,
+  "isUserLike": false,
+  "content": "날씨가 흐리네요.... 마음도 흐리네요.... 미래도 흐리네요....... 하.... (ps. 내가 작성한 글)",
+  "postDate": "2022.10.12 16:00:02",
+  "view": 83,
+  "numLike": 35,
+  "symptomNames": [
+    {
+      "id": 2,
+      "symptomName": "우울감"
+    },
+    {
+      "id": 11,
+      "symptomName": "땀이 많이 남"
+    }
+  ]
+}

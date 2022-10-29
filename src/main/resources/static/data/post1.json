@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "writerName": "옹따가랭이",
+  "isUserWriter": false,
+  "isUserLike": false,
+  "content": "오늘 엄마랑 말도 안 되는 걸로 싸웠는데 진짜 너무 속상해요ㅠㅠ 도대체 엄마는 지금 어떤 기분이길래 (ps. 내가 작성하지 않은 글)",
+  "postDate": "2022.10.12 21:10:05",
+  "view": 13,
+  "numLike": 7,
+  "symptomNames": [
+    {
+      "id": 1,
+      "symptomName": "홍조"
+    }
+  ]
+}
