@@ -7,14 +7,5 @@
   "postDate": "2022.10.12 16:00:02",
   "view": 83,
   "numLike": 35,
-  "symptomNames": [
-    {
-      "id": 2,
-      "symptomName": "우울감"
-    },
-    {
-      "id": 11,
-      "symptomName": "땀이 많이 남"
-    }
-  ]
+  "symptomNames": ["우울감", "땀이 많이 남"]
 }
