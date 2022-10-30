@@ -146,7 +146,7 @@ body {
 .comment-item > .menu-small-writer,
 .comment-item > .menu-small-not-writer {
   top: 35px;
-  z-index: 9999;
+  z-index: 99;
 }
 
 /* 댓글 입력 */

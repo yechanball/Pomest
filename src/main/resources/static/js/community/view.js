@@ -377,10 +377,23 @@ function openCommentMenu(el, id) {
   el.setAttribute("value", condition);
 }
 
+// 댓글 신고 버튼 클릭
+function reportComment(el) {
+  let id = el.parentElement.getAttribute("id").split("-")[2];
+  location.href = "./report.html?postid=" + id;
+  /////////////////////////////////////////
+  // 쿼리 스트링 수정하기
+  /////////////////////////////////////////
+}
+
+// 댓글 삭제 버튼 클릭
 function removeComment(el) {
   let commentItem = el.parentElement.parentElement;
   let commentList = commentItem.parentElement;
   commentList.removeChild(commentItem);
+  /////////////////////////////////////////
+  // 댓글 삭제 확인 팝업 넣기
+  /////////////////////////////////////////
 }
 
 // [임시]시간 생성
