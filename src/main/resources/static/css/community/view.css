@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   display: flex;
@@ -7,6 +11,7 @@ body {
   height: 100%;
   margin: 0;
   overflow: hidden;
+  -ms-overflow-style: none;
 }
 
 .wrap {
@@ -64,6 +69,18 @@ body {
   float: right;
 }
 
+.menu-small-writer {
+  position: absolute;
+  top: 98px;
+  right: 15px;
+}
+
+.menu-small-not-writer {
+  position: absolute;
+  top: 98px;
+  right: 15px;
+}
+
 .feed-item-content {
   margin-bottom: 14px;
 }
@@ -75,12 +92,14 @@ body {
 }
 
 .feed-item-bottom {
+  display: inline-flex;
   float: left;
   margin-bottom: 14px;
 }
 
 .feed-item-like {
   cursor: pointer;
+  padding-right: 7px;
 }
 
 .feed-item-bottom-line {
@@ -90,6 +109,7 @@ body {
 
 /* 댓글 내용 */
 .comment-item {
+  position: relative;
   width: 100%-48px;
   padding: 12px 24px;
 }
@@ -121,6 +141,12 @@ body {
   text-align: left;
   margin: 0;
   padding-bottom: 12px;
+}
+
+.comment-item > .menu-small-writer,
+.comment-item > .menu-small-not-writer {
+  top: 35px;
+  z-index: 9999;
 }
 
 /* 댓글 입력 */

@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>본문</title>
-    <link rel="stylesheet" href="../../static/font/NotoSansKR.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/css/common/main.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/css/community/view.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../static/font/NotoSansKR.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../static/font/Inter.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../../static/css/common/main.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/community/view.css"
+      type="text/css"
+    />
   </head>
   <body>
     <div class="wrap">
@@ -38,6 +51,21 @@
               <span class="font-body-kr01" id="feed-menu"
                 >&bull;&bull;&bull;</span
               >
+            </div>
+            <div
+              class="menu-small-writer"
+              id="menu-small"
+              style="display: none"
+            >
+              <p onclick="modify()">수정하기</p>
+              <p onclick="remove()">삭제하기</p>
+            </div>
+            <div
+              class="menu-small-not-writer"
+              id="menu-small"
+              style="display: none"
+            >
+              <p onclick="report()">신고하기</p>
             </div>
             <div class="feed-item-content">
               <p class="font-detail-kr01">닉네임&emsp;N분 전</p>
@@ -85,13 +113,28 @@
           <!-- 콘텐츠 포맷 end -->
           <!-- ---------------------------- -->
         </div>
+
+        <div class="popup" style="display: none">
+          <div class="popup-background"></div>
+          <div class="popup-box">
+            <p class="font-title-kr02">글을 삭제하시겠어요?</p>
+            <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
+            <button class="font-detail-kr01" id="btn-popup-close">
+              취소하기
+            </button>
+            <button class="font-detail-kr01" id="btn-delete">삭제하기</button>
+          </div>
+        </div>
+
         <div class="comment-list">
           <!-- ---------------------------- -->
           <!-- 댓글 포맷 -->
-          <div class="comment-item">
+          <!--<div class="comment-item">
             <div class="comment-item-top">
               <span class="font-detail-kr01">닉네임&emsp;N분 전</span>
-              <span class="comment-menu font-body-kr01"> &bull;&bull;&bull; </span>
+              <span class="comment-menu font-body-kr01" value="close" onclick="openCommentMenu(${id})">
+                &bull;&bull;&bull;
+              </span>
               <span>
                 <svg
                   width="18"
@@ -107,16 +150,33 @@
                 </svg>
               </span>
             </div>
+            <div
+              class="menu-small-writer"
+              id="comment-menu-${id}"
+              style="display: none"
+            >
+              <p onclick="modifyComment(this)">수정하기</p>
+              <p onclick="removeComment(this)">삭제하기</p>
+            </div>
+            <div
+              class="menu-small-not-writer"
+              id="comment-menu-${id}"
+              style="display: none"
+            >
+              <p onclick="reportComment(this)">신고하기</p>
+            </div>
             <div class="comment-item-content">
               <p class="font-body-kr03">
-                어머 저도 비슷한 일 있었어요 그럴 때는 엄마한테 무슨 일이 있는 건지 확인해보면
-                좋더라고요~!
+                어머 저도 비슷한 일 있었어요 그럴 때는 엄마한테 무슨 일이 있는
+                건지 확인해보면 좋더라고요~!
               </p>
             </div>
-          </div>
+          </div>-->
           <!-- 댓글 포맷 end -->
           <!-- ---------------------------- -->
         </div>
+
+        <div class="scrollerFooter" style="height: 75px"></div>
       </div>
       <div id="bottom-input">
         <input

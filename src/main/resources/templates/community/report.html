@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>글쓰기</title>
+    <title>신고하기</title>
     <link
       rel="stylesheet"
       href="../../static/font/NotoSansKR.css"
@@ -22,7 +22,7 @@
     />
   </head>
   <body>
-    <div class="wrap">
+    <div class="wrap" id="report">
       <div class="header">
         <div id="btn-move-back">
           <svg
@@ -38,32 +38,19 @@
             />
           </svg>
         </div>
-        <h1 class="font-title-kr02">글쓰기</h1>
+        <h1 class="font-title-kr02">신고하기</h1>
         <button class="button-ghost-disabled" id="btn-complete">완료</button>
-      </div>
-
-      <div class="main-select">
-        <p class="font-body-kr01">
-          고민 해결에 도움이 필요하다면<br />관련 증상을
-          <u>최대 2개</u> 태그하세요
-        </p>
-        <div id="select-symptoms"></div>
-        <p class="font-detail-kr01">
-          물론! 태그를 선택하지 않아도 글을 쓸 수 있어요
-        </p>
-        <button class="button-elevated-default" id="btn-next">다음</button>
       </div>
 
       <div class="main-write">
         <form action="" method="post">
-          <div id="selected-symptoms"></div>
           <textarea
             class="font-body-kr03"
             name="content"
             id="input-content"
             cols="30"
             rows="10"
-            placeholder="이야기를 나누면서 마음이 가뿐해지시면 좋겠어요"
+            placeholder="신고 이유를 작성해주세요"
           ></textarea>
         </form>
       </div>
@@ -80,6 +67,30 @@
         </div>
       </div>
     </div>
-    <script src="../../static/js/community/write.js"></script>
+
+    <div class="wrap" id="report-done" style="display: none">
+      <div class="header" style="text-align: center">
+        <h2
+          class="font-title-kr02"
+          style="position: relative; padding-top: 20px"
+        >
+          신고를 접수했어요 !
+        </h2>
+      </div>
+      <div class="main-write">
+        <p class="font-body-kr02" style="padding-top: 20px">
+          신고 이유 검토 후 삭제 여부를 결정합니다
+          <br />보다 안전한 커뮤니티를 위해 노력하겠습니다
+        </p>
+      </div>
+      <button
+        class="button-ghost-default font-detail-kr01"
+        id="btn-mv-main"
+        style="height: 38px; margin-top: 50px; padding: 7px 15px 9px"
+      >
+        커뮤니티로 가기
+      </button>
+    </div>
+    <script src="../../static/js/community/report.js"></script>
   </body>
 </html>

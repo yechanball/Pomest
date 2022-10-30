@@ -383,4 +383,42 @@ input[type="radio"]:checked {
   color: #d32f2f;
 }
 
+/* Menu_small */
+.menu-small-writer {
+  width: 95px;
+  height: 96px;
+  padding: 5px;
+  gap: 2px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.menu-small-writer > p {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  padding: 15px;
+  margin: 0;
+}
+.menu-small-writer > p:first-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.menu-small-not-writer {
+  width: 95px;
+  height: 48px;
+  padding: 5px;
+  gap: 2px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.menu-small-not-writer > p {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  padding: 15px;
+  margin: 0;
+}
+
 /*=====================================================*/

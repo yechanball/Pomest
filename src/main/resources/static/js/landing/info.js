@@ -119,8 +119,8 @@ document.addEventListener(
 function checkBirthMom() {
   var inputText = textBoxMom.value; // 입력 받은 태어난년도
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2022) {
-    // 4글자 숫자열, 1900년 이상 2022년 이하인 경우
+  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2014) {
+    // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
     textBoxMom.classList.remove("textbox-fail");
     textBoxMom.classList.add("textbox-default");
     textBoxMomMessage.style.display = "none";
@@ -140,8 +140,8 @@ function checkBirthMom() {
 function checkBirthMy() {
   var inputText = textBoxMy.value; // 입력 받은 태어난년도
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2022) {
-    // 4글자 숫자열, 1900년 이상 2022년 이하인 경우
+  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2014) {
+    // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
     textBoxMy.classList.remove("textbox-fail");
     textBoxMy.classList.add("textbox-default");
     textBoxMyMessage.style.display = "none";

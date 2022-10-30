@@ -118,6 +118,7 @@ body {
 #input-content {
   width: 312px;
   height: 400px;
+  padding: 16px;
   border: none;
 }
 

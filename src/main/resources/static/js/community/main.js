@@ -43,7 +43,7 @@ window.onload = function () {
 var pageNum = 0;
 var isNextPage = true;
 
-// 무한 스크롤 테스트
+// 무한 스크롤
 var intersectionObserver = new IntersectionObserver(function (entries) {
   if (entries[0].intersectionRatio <= 0) return;
 
