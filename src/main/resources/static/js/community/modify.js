@@ -23,7 +23,6 @@ window.onload = function () {
 function showFeed(data) {
   document.querySelector("#selected-symptoms").innerHTML = ``;
   for (let symptom of data.symptomNames) {
-    symptomArr.push(symptomId * 1);
     let symptomLabel = document.createElement("label");
     symptomLabel.classList.add("symptom_tag_medium");
     symptomLabel.innerHTML = `<span>${symptom}</span>`;
