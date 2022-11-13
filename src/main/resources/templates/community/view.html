@@ -114,7 +114,7 @@
           <!-- ---------------------------- -->
         </div>
 
-        <div class="popup" style="display: none">
+        <div class="popup" id="popup-delete-main" style="display: none">
           <div class="popup-background"></div>
           <div class="popup-box">
             <p class="font-title-kr02">글을 삭제하시겠어요?</p>
@@ -129,10 +129,14 @@
         <div class="comment-list">
           <!-- ---------------------------- -->
           <!-- 댓글 포맷 -->
-          <!--<div class="comment-item">
+          <div class="comment-item">
             <div class="comment-item-top">
               <span class="font-detail-kr01">닉네임&emsp;N분 전</span>
-              <span class="comment-menu font-body-kr01" value="close" onclick="openCommentMenu(${id})">
+              <span
+                class="comment-menu font-body-kr01"
+                value="close"
+                onclick="openCommentMenu(this, 0)"
+              >
                 &bull;&bull;&bull;
               </span>
               <span>
@@ -152,33 +156,187 @@
             </div>
             <div
               class="menu-small-writer"
-              id="comment-menu-${id}"
+              id="comment-menu-0"
               style="display: none"
             >
               <p onclick="modifyComment(this)">수정하기</p>
               <p onclick="removeComment(this)">삭제하기</p>
             </div>
-            <div
+            <!-- <div
               class="menu-small-not-writer"
-              id="comment-menu-${id}"
+              id="comment-menu-0"
               style="display: none"
             >
               <p onclick="reportComment(this)">신고하기</p>
-            </div>
+            </div> -->
             <div class="comment-item-content">
               <p class="font-body-kr03">
                 어머 저도 비슷한 일 있었어요 그럴 때는 엄마한테 무슨 일이 있는
                 건지 확인해보면 좋더라고요~!
               </p>
             </div>
-          </div>-->
+            <p
+              class="recomment-more"
+              id="recomment-more-open-0"
+              onclick="openRecommentList(this)"
+            >
+              대댓글 더보기
+            </p>
+            <p
+              class="recomment-more"
+              id="recomment-more-close-0"
+              onclick="closeRecommentList(this)"
+              style="display: none"
+            >
+              대댓글 접기
+            </p>
+            <div
+              class="recomment-list"
+              id="recomment-list-0"
+              style="display: none"
+            >
+              <!-- 대댓글 0번 -->
+              <div class="recomment-item">
+                <div class="comment-item-top">
+                  <span class="font-detail-kr01">닉네임&emsp;3분 전</span>
+                  <span
+                    class="comment-menu font-body-kr01"
+                    value="close"
+                    onclick="openRecommentMenu(this, 0)"
+                  >
+                    &bull;&bull;&bull;
+                  </span>
+                  <span>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.16667 17.7497C1.70833 17.7497 1.31583 17.5863 0.989167 17.2597C0.663055 16.9336 0.5 16.5413 0.5 16.083V4.41634C0.5 3.95801 0.663055 3.56551 0.989167 3.23884C1.31583 2.91273 1.70833 2.74967 2.16667 2.74967H9.60417L7.9375 4.41634H2.16667V16.083H13.8333V10.2913L15.5 8.62467V16.083C15.5 16.5413 15.3369 16.9336 15.0108 17.2597C14.6842 17.5863 14.2917 17.7497 13.8333 17.7497H2.16667ZM11.4792 3.22884L12.6667 4.39551L7.16667 9.89551V11.083H8.33333L13.8542 5.56217L15.0417 6.72884L9.04167 12.7497H5.5V9.20801L11.4792 3.22884ZM15.0417 6.72884L11.4792 3.22884L13.5625 1.14551C13.8958 0.812175 14.2953 0.645508 14.7608 0.645508C15.2258 0.645508 15.6181 0.812175 15.9375 1.14551L17.1042 2.33301C17.4236 2.65245 17.5833 3.04134 17.5833 3.49967C17.5833 3.95801 17.4236 4.3469 17.1042 4.66634L15.0417 6.72884Z"
+                        fill="#121212"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div
+                  class="menu-small-writer"
+                  id="recomment-menu-0"
+                  style="display: none"
+                >
+                  <p onclick="modifyRecomment(this)">수정하기</p>
+                  <p onclick="removeRecomment(this)">삭제하기</p>
+                </div>
+                <!--<div
+                  class="menu-small-not-writer"
+                  id="recomment-menu-0"
+                  style="display: none;"
+                >
+                  <p onclick="reportRecomment(this)">신고하기</p>
+                </div>-->
+                <div class="comment-item-content">
+                  <p class="font-body-kr03">
+                    어머 저도 비슷한 일 있었어요 그럴 때는 엄마한테 무슨 일이
+                    있는 건지 확인해보면 좋더라고요~!
+                  </p>
+                </div>
+              </div>
+
+              <!-- 대댓글 1번 -->
+              <div class="recomment-item">
+                <div class="comment-item-top">
+                  <span class="font-detail-kr01">닉네임&emsp;1분 전</span>
+                  <span
+                    class="comment-menu font-body-kr01"
+                    value="close"
+                    onclick="openRecommentMenu(this, 1)"
+                  >
+                    &bull;&bull;&bull;
+                  </span>
+                  <span>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.16667 17.7497C1.70833 17.7497 1.31583 17.5863 0.989167 17.2597C0.663055 16.9336 0.5 16.5413 0.5 16.083V4.41634C0.5 3.95801 0.663055 3.56551 0.989167 3.23884C1.31583 2.91273 1.70833 2.74967 2.16667 2.74967H9.60417L7.9375 4.41634H2.16667V16.083H13.8333V10.2913L15.5 8.62467V16.083C15.5 16.5413 15.3369 16.9336 15.0108 17.2597C14.6842 17.5863 14.2917 17.7497 13.8333 17.7497H2.16667ZM11.4792 3.22884L12.6667 4.39551L7.16667 9.89551V11.083H8.33333L13.8542 5.56217L15.0417 6.72884L9.04167 12.7497H5.5V9.20801L11.4792 3.22884ZM15.0417 6.72884L11.4792 3.22884L13.5625 1.14551C13.8958 0.812175 14.2953 0.645508 14.7608 0.645508C15.2258 0.645508 15.6181 0.812175 15.9375 1.14551L17.1042 2.33301C17.4236 2.65245 17.5833 3.04134 17.5833 3.49967C17.5833 3.95801 17.4236 4.3469 17.1042 4.66634L15.0417 6.72884Z"
+                        fill="#121212"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- <div
+                  class="menu-small-writer"
+                  id="recomment-menu-1"
+                  style="display: none;"
+                >
+                  <p onclick="modifyRecomment(this)">수정하기</p>
+                  <p onclick="removeRecomment(this)">삭제하기</p>
+                </div> -->
+                <div
+                  class="menu-small-not-writer"
+                  id="recomment-menu-1"
+                  style="display: none"
+                >
+                  <p onclick="reportRecomment(this)">신고하기</p>
+                </div>
+                <div class="comment-item-content">
+                  <p class="font-body-kr03">
+                    너무 좋더라구요~ 너무 좋더라구요~ 너무 좋더라구요~ 너무
+                    좋더라구요~
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- 댓글 포맷 end -->
           <!-- ---------------------------- -->
         </div>
 
         <div class="scrollerFooter" style="height: 75px"></div>
       </div>
+
+      <div class="popup" id="popup-delete-comment" style="display: none">
+        <div class="popup-background"></div>
+        <div class="popup-box">
+          <p class="font-title-kr02">댓글을 삭제하시겠어요?</p>
+          <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
+          <button class="font-detail-kr01" id="btn-popup-comment-close">
+            취소하기
+          </button>
+          <button class="font-detail-kr01" id="btn-delete-comment">
+            삭제하기
+          </button>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-delete-recomment" style="display: none">
+        <div class="popup-background"></div>
+        <div class="popup-box">
+          <p class="font-title-kr02">댓글을 삭제하시겠어요?</p>
+          <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
+          <button class="font-detail-kr01" id="btn-popup-recomment-close">
+            취소하기
+          </button>
+          <button class="font-detail-kr01" id="btn-delete-recomment">
+            삭제하기
+          </button>
+        </div>
+      </div>
+
       <div id="bottom-input">
+        <button
+          id="input-recomment-close"
+          onclick="closeRecommentMode()"
+          style="display: none"
+        >
+          X
+        </button>
         <input
           id="input-comment"
           type="text"

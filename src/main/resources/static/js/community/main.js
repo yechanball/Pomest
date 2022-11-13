@@ -5,42 +5,33 @@ var selectSymptoms = document.querySelector("#select-symptoms");
 var checkboxList = []; // 체크박스 리스트
 var checktagList = []; // 검색 추천 태그 리스트
 var checkResult = new Set(); // 최종 체크한 결과 목록 (중복 허용 X)
+let symptomIds = []; // 서버에 요청할 태그 리스트
 
 // 페이지 로딩시 증상 태그 생성
 window.onload = function () {
   // 증상 json 정보 받기
-  var requestSymtomURL =
-    "https://yechanball.github.io/Pomest/src/main/resources/static/data/symptoms.json";
-  var requestSymtom = new XMLHttpRequest();
-  requestSymtom.open("GET", requestSymtomURL);
-  requestSymtom.responseType = "json";
-  requestSymtom.send();
+  fetch(
+    "https://yechanball.github.io/Pomest/src/main/resources/static/data/symptoms.json"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      makeSymtomList(data);
+      makeHotSymtomList(data);
+    });
 
-  requestSymtom.onload = function () {
-    data = requestSymtom.response;
-    makeSymtomList(data);
-    makeHotSymtomList(data);
-  };
-
-  // 게시글 json 정보 받기
-  // var requestPostURL =
-  //   "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts.json";
-  // var requestPost = new XMLHttpRequest();
-  // requestPost.open("GET", requestPostURL);
-  // requestPost.responseType = "json";
-  // requestPost.send();
-
-  // requestPost.onload = function () {
-  //   data = requestPost.response;
-  //   makeFeedList(data);
-  // };
+  // fetch("/symptoms")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     makeSymtomList(data);
+  //     makeHotSymtomList(data);
+  //   });
 };
 
 ////////////////////////////////////////////////////////////////////
 // TODO 스크롤 이벤트 작성하기
 
 // 무한스크롤에서 사용할 변수
-var pageNum = 0;
+var pageNum = -1;
 var isNextPage = true;
 
 // 무한 스크롤
@@ -57,19 +48,30 @@ var intersectionObserver = new IntersectionObserver(function (entries) {
   // 게시글 json 정보 받기
   pageNum++;
   console.log("Loaded new content -> pageNum : " + pageNum);
-  var requestPostURL =
-    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts" +
-    pageNum +
-    ".json";
-  var requestPost = new XMLHttpRequest();
-  requestPost.open("GET", requestPostURL);
-  requestPost.responseType = "json";
-  requestPost.send();
 
-  requestPost.onload = function () {
-    data = requestPost.response;
-    makeFeedList(data);
-  };
+  fetch(
+    "https://yechanball.github.io/Pomest/src/main/resources/static/data/posts" +
+      ++pageNum +
+      ".json"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      makeFeedList(data);
+    });
+  // 서버 요청 부분
+  // let config = {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify({
+  //     pageNum: pageNum,
+  //     symptomIds: symptomIds,
+  //   }),
+  // };
+  // fetch("/community/symptoms", config)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     makeFeedList(data);
+  //   });
 });
 // start observing
 intersectionObserver.observe(document.querySelector(".scrollerFooter"));
@@ -201,7 +203,6 @@ function calcDate(postDate) {
   const day = date.getDate();
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
 
   var dateSplit = postDate.split(" ");
   var dateSplitSub1 = dateSplit[0].split(".");
@@ -211,7 +212,6 @@ function calcDate(postDate) {
   var postDay = dateSplitSub1[2];
   var postHours = dateSplitSub2[0];
   var postMinutes = dateSplitSub2[1];
-  var postSeconds = dateSplitSub2[2];
 
   if (postYear == year && postMonth == month && postDay == day) {
     let diff =
@@ -241,6 +241,9 @@ document.addEventListener("input", function () {
         // 체크가 풀리는 경우 배열에서 삭제
         checkResult.delete(event.target.value);
       }
+      checkResult.forEach(function (symptomId) {
+        symptomIds.push(symptomId * 1);
+      });
       selectTag();
     });
   }
@@ -255,6 +258,9 @@ document.addEventListener("input", function () {
         // 체크가 풀리는 경우 배열에서 삭제
         checkResult.delete(event.target.value);
       }
+      checkResult.forEach(function (symptomId) {
+        symptomIds.push(symptomId * 1);
+      });
       searchTag(event.target.value);
     });
   }

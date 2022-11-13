@@ -14,7 +14,7 @@ window.onload = function () {
     .then((response) => response.json())
     .then((data) => showFeed(data));
 
-  // fetch("/*경로 작성하기 : {mainurl}/community/post?postId=${postId} */")
+  // fetch(`/community/post?postId=${postId}`)
   //   .then((response) => response.json())
   //   .then((data) => showFeed(data));
 };
@@ -23,6 +23,7 @@ window.onload = function () {
 function showFeed(data) {
   let feedItem = document.createElement("div");
   feedItem.classList.add("feed-item");
+  feedItem.setAttribute("postid", data.postId);
 
   let likeBtn = document.createElement("span");
   likeBtn.setAttribute("class", "feed-item-like");
@@ -183,7 +184,7 @@ function clickLikeBtn(el) {
   //     postId: postId,
   //   }),
   // };
-  // fetch(`${mainUrl}/community/${likeStatus}`, config)
+  // fetch(`/community/${likeStatus}`, config)
   //   .then((response) => response.json())
   //   .then((data) => showFeed(data));
   /////////////////////////////////////////
@@ -215,13 +216,13 @@ function modify() {
 
 // 삭제하기 버튼 클릭 -> 팝업
 function remove() {
-  document.querySelector(".popup").style.display = "";
+  document.querySelector("#popup-delete-main").style.display = "";
 }
 // 팝업 버튼
 document
   .querySelector("#btn-popup-close")
   .addEventListener("click", function () {
-    document.querySelector(".popup").style.display = "none";
+    document.querySelector("#popup-delete-main").style.display = "none";
   });
 document.querySelector("#btn-delete").addEventListener("click", function () {
   location.href = "./main.html";
@@ -234,7 +235,7 @@ document.querySelector("#btn-delete").addEventListener("click", function () {
   //     postId: postId,
   //   }),
   // };
-  // fetch(`${mainUrl}/community/deletepost`, config)
+  // fetch("/community/deletepost", config)
   //   .then((response) => response.json())
   //   .then((data) => function(){
   //   location.href = "./main.html"
@@ -271,6 +272,7 @@ intersectionObserver.observe(document.querySelector(".scrollerFooter"));
 
 // 임시 번호
 var commentId = 0;
+let recommentInputMode = false;
 
 // 댓글 입력 시 입력 확인
 document.querySelector("#btn-add").style.display = "none";
@@ -289,6 +291,14 @@ document
 
 // 댓글 등록 버튼 클릭
 document.querySelector("#btn-add").addEventListener("click", makeComment);
+
+// 대댓글 모드 닫기
+function closeRecommentMode() {
+  console.log("대댓글 달기 모드 해제");
+  recommentInputMode = false;
+  document.querySelector("#input-comment").placeholder = "댓글을 입력하세요";
+  document.querySelector("#input-recomment-close").style.display = "none";
+}
 
 // 댓글 화면 구성
 function makeComment() {
@@ -329,7 +339,11 @@ function makeComment() {
                                   />
                                 </svg>`;
   commentTopDivEl3.addEventListener("click", function () {
-    alert("대댓글 달기");
+    console.log("대댓글 달기");
+    recommentInputMode = true;
+    document.querySelector("#input-comment").placeholder =
+      "대댓글을 입력하세요";
+    document.querySelector("#input-recomment-close").style.display = "";
   });
 
   commentTopDiv.appendChild(commentTopDivEl1);
@@ -387,14 +401,43 @@ function reportComment(el) {
 }
 
 // 댓글 삭제 버튼 클릭
+let deleteCommentId;
+
 function removeComment(el) {
-  let commentItem = el.parentElement.parentElement;
-  let commentList = commentItem.parentElement;
-  commentList.removeChild(commentItem);
-  /////////////////////////////////////////
-  // 댓글 삭제 확인 팝업 넣기
-  /////////////////////////////////////////
+  document.querySelector("#popup-delete-comment").style.display = "";
+  deleteCommentId = el.parentElement.id.split("-")[2];
 }
+
+document
+  .querySelector("#btn-delete-comment")
+  .addEventListener("click", function () {
+    console.log(deleteCommentId + "번 댓글 삭제");
+    let commentItem = el.parentElement.parentElement;
+    let commentList = commentItem.parentElement;
+    commentList.removeChild(commentItem);
+    /////////////////////////////////////////
+    // 서버 요청 부분
+    // let config = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     postId: postId,
+    //   }),
+    // };
+    // fetch(`${mainUrl}/community/deletepost`, config)
+    //   .then((response) => response.json())
+    //   .then((data) => function(){
+    //   location.href = "./main.html"
+    // });
+    /////////////////////////////////////////
+  });
+
+// 댓글 팝업 버튼
+document
+  .querySelector("#btn-popup-comment-close")
+  .addEventListener("click", function () {
+    document.querySelector("#popup-delete-comment").style.display = "none";
+  });
 
 // [임시]시간 생성
 function makeDate() {
@@ -410,3 +453,85 @@ function makeDate() {
     year + "." + month + "." + day + " " + hours + ":" + minutes + ":" + seconds
   );
 }
+
+// 대댓글 목록 열기
+let recommentParentsId;
+function openRecommentList(el) {
+  recommentParentsId = el.id.split("-")[3];
+  console.log(recommentParentsId + "번 대댓글 열기");
+  el.style.display = "none";
+  document.querySelector(
+    `#recomment-list-${recommentParentsId}`
+  ).style.display = "";
+  document.querySelector(
+    `#recomment-more-close-${recommentParentsId}`
+  ).style.display = "";
+}
+
+// 대댓글 목록 닫기
+function closeRecommentList(el) {
+  recommentParentsId = el.id.split("-")[3];
+  console.log(recommentParentsId + "번 대댓글 닫기");
+  el.style.display = "none";
+  document.querySelector(
+    `#recomment-list-${recommentParentsId}`
+  ).style.display = "none";
+  document.querySelector(
+    `#recomment-more-open-${recommentParentsId}`
+  ).style.display = "";
+}
+
+// 대댓글 메뉴 열기 / 닫기
+function openRecommentMenu(el, id) {
+  console.log(id + " 대댓글 메뉴 열기/닫기");
+  let condition = el.getAttribute("value");
+  console.log(condition);
+  if (condition == "close") {
+    document.querySelector(`#recomment-menu-${id}`).style.display = "";
+    condition = "open";
+  } else {
+    document.querySelector(`#recomment-menu-${id}`).style.display = "none";
+    condition = "close";
+  }
+  el.setAttribute("value", condition);
+}
+
+// 대댓글 신고하기 버튼 클릭
+function reportRecomment(el) {
+  let id = el.parentElement.getAttribute("id").split("-")[2];
+  location.href = "./report.html?postid=" + id + "&category=1";
+}
+
+// 대댓글 수정하기 버튼 클릭
+let modifyRecommentId;
+let deleteReommentId;
+
+function modifyRecomment(el) {
+  modifyRecommentId = el.parentElement.id.split("-")[2];
+  console.log(modifyRecommentId + "번 대댓글 수정하기");
+}
+
+// 대댓글 삭제하기 버튼 클릭 -> 팝업
+function removeRecomment(el) {
+  document.querySelector("#popup-delete-recomment").style.display = "";
+  deleteReommentId = el.parentElement.id.split("-")[2];
+  console.log(deleteReommentId + "번 대댓글 삭제");
+}
+
+document
+  .querySelector("#btn-popup-recomment-close")
+  .addEventListener("click", function () {
+    document.querySelector("#popup-delete-recomment").style.display = "none";
+  });
+
+document
+  .querySelector("#btn-delete-recomment")
+  .addEventListener("click", function () {
+    console.log(deleteReommentId + "번 댓글 삭제");
+    let recommentItem = document.querySelector(
+      `#recomment-menu-${deleteReommentId}`
+    ).parentElement;
+    let recommentList = recommentItem.parentElement;
+    recommentList.removeChild(recommentItem);
+    document.querySelector("#popup-delete-recomment").style.display = "none";
+  });

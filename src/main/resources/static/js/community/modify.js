@@ -14,7 +14,7 @@ window.onload = function () {
     .then((response) => response.json())
     .then((data) => showFeed(data));
 
-  // fetch("/*경로 작성하기 : {mainurl}/community/post?postId=${postId} */")
+  // fetch("/community/post?postId=${postId} */")
   //   .then((response) => response.json())
   //   .then((data) => showFeed(data));
 };
@@ -23,6 +23,7 @@ window.onload = function () {
 function showFeed(data) {
   document.querySelector("#selected-symptoms").innerHTML = ``;
   for (let symptom of data.symptomNames) {
+    symptomArr.push(symptomId * 1);
     let symptomLabel = document.createElement("label");
     symptomLabel.classList.add("symptom_tag_medium");
     symptomLabel.innerHTML = `<span>${symptom}</span>`;
@@ -66,7 +67,24 @@ document.querySelector("#btn-delete").addEventListener("click", function () {
 
 // 글수정 완료 버튼 클릭 시
 document.querySelector("#btn-complete").addEventListener("click", function () {
-  if (document.querySelector("#input-content").value.length > 0) {
-    location.href = "./view.html?postid=" + postId;
+  let content = document.querySelector("#input-content").value;
+  if (content.length > 0) {
+    /////////////////////////////////////////
+    // 서버 요청 부분
+    let config = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        postId: postId,
+        content: content,
+      }),
+    };
+    fetch("/community/modifypost", config)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code == 200) location.href = "./view.html?postid=" + postId;
+        else alert("글 수정 중 에러가 발생하였습니다.");
+      });
+    /////////////////////////////////////////
   }
 });

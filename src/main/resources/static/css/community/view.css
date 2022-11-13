@@ -180,3 +180,39 @@ body {
   border: none;
   background-color: #ffffff00;
 }
+
+/* 대댓글 */
+.recomment-more {
+  position: absolute;
+  top: 80px;
+  right: 24px;
+  height: 18px;
+
+  font-family: "Noto Sans KR Regular";
+  font-size: 10px;
+  line-height: 18px;
+  color: #8a8a8a;
+}
+
+.recomment-list {
+  padding-top: 10px;
+}
+
+.recomment-item {
+  position: relative;
+  padding: 0px 0px 0px 24px;
+}
+
+.recomment-item > .menu-small-writer,
+.recomment-item > .menu-small-not-writer {
+  position: absolute;
+  top: 23px;
+  right: -9px;
+  z-index: 99;
+}
+
+#input-recomment-close {
+  position: absolute;
+  bottom: 72px;
+  left: 13px;
+}

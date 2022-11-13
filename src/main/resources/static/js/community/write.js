@@ -6,18 +6,19 @@ var selectSymptoms = document.querySelector("#select-symptoms");
 // 페이지 로딩시 증상 태그 생성
 window.onload = function () {
   // 증상 json 정보 받기
-  var requestSymtomURL =
-    "https://yechanball.github.io/Pomest/src/main/resources/static/data/symptoms.json";
-  var requestSymtom = new XMLHttpRequest();
-  requestSymtom.open("GET", requestSymtomURL);
-  requestSymtom.responseType = "json";
-  requestSymtom.send();
+  fetch(
+    "https://yechanball.github.io/Pomest/src/main/resources/static/data/symptoms.json"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      makeSymtomList(data);
+    });
 
-  requestSymtom.onload = function () {
-    data = requestSymtom.response;
-    console.log(data);
-    makeSymtomList(data);
-  };
+  // fetch("/symptoms")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     makeSymtomList(data);
+  //   });
 
   document.querySelector(".main-write").style.display = "none";
 };
@@ -114,8 +115,29 @@ document.querySelector("#btn-delete").addEventListener("click", function () {
 
 // 글작성 완료 버튼 클릭 시
 document.querySelector("#btn-complete").addEventListener("click", function () {
-  if (document.querySelector("#input-content").value.length > 0) {
-    alert(document.querySelector("#input-content").value + " 내용으로 글쓰기!");
-    location.href = "./main.html";
+  let content = document.querySelector("#input-content").value;
+  if (content.length > 0) {
+    let symptomArr = [];
+    checkResult.forEach(function (symptomId) {
+      symptomArr.push(symptomId * 1);
+    });
+
+    /////////////////////////////////////////
+    // 서버 요청 부분
+    let config = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        content: content,
+        symptomIds: symptomArr,
+      }),
+    };
+    fetch("/community/posting", config)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.code == 200) location.href = "./main.html";
+        else alert("글 작성 중 에러가 발생하였습니다.");
+      });
+    /////////////////////////////////////////
   }
 });
