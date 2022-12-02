@@ -499,7 +499,7 @@ function openRecommentMenu(el, id) {
 // 대댓글 신고하기 버튼 클릭
 function reportRecomment(el) {
   let id = el.parentElement.getAttribute("id").split("-")[2];
-  location.href = "./report.html?postid=" + id + "&category=1";
+  location.href = "./report.html?postid=" + id + "&category=2";
 }
 
 // 대댓글 수정하기 버튼 클릭

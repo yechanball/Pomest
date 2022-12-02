@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포스트 제안하기</title>
+    <link
+      rel="stylesheet"
+      href="../../static/font/NotoSansKR.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/common/main.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../static/css/post/suggest.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="wrap" id="suggest">
+      <div class="header">
+        <div id="btn-move-back">
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 16.4463L0 8.44629L8 0.446289L9.425 1.84629L3.825 7.44629H16V9.44629H3.825L9.425 15.0463L8 16.4463Z"
+              fill="#121212"
+            />
+          </svg>
+        </div>
+        <h1 class="font-title-kr02">포스트 주제 제안하기</h1>
+        <button class="button-ghost-disabled" id="btn-complete">완료</button>
+      </div>
+
+      <div class="main-write">
+        <form action="" method="post">
+          <textarea
+            class="font-body-kr03"
+            name="content"
+            id="input-content"
+            cols="30"
+            rows="10"
+            placeholder="어떤 주제의 포스트가 필요한지 말씀해주세요
+더 좋은 포스트를 만드는 데에 큰 도움이 된답니다"
+          ></textarea>
+        </form>
+      </div>
+
+      <div class="popup" style="display: none">
+        <div class="popup-background"></div>
+        <div class="popup-box">
+          <p class="font-title-kr02">제안을 삭제하시겠어요?</p>
+          <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
+          <button class="font-detail-kr01" id="btn-popup-close">
+            취소하기
+          </button>
+          <button class="font-detail-kr01" id="btn-delete">삭제하기</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap" id="suggest-done" style="display: none">
+      <div class="header" style="text-align: center">
+        <h2 class="font-title-kr02" style="position: relative">
+          제안을 보냈어요 !
+        </h2>
+      </div>
+      <div class="main-write">
+        <p class="font-body-kr02" style="text-align: left; padding-left: 24px">
+          시간 내어 보내주신 소중한 제안,
+          <br />꼼꼼히 읽고 포메스트에 반영할게요
+        </p>
+      </div>
+      <button
+        class="button-ghost-default font-detail-kr01"
+        id="btn-mv-main"
+        style="height: 38px; margin-top: 50px; padding: 7px 15px 9px"
+      >
+        메인으로 돌아가기
+      </button>
+    </div>
+    <script src="../../static/js/post/suggest.js"></script>
+  </body>
+</html>

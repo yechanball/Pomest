@@ -1,0 +1,72 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  max-width: 360px;
+  height: 62px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.header > h1 {
+  position: absolute;
+  top: 7px;
+  left: 64px;
+  width: 304px;
+  text-align: left;
+}
+
+#btn-move-back {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  cursor: pointer;
+}
+
+#btn-complete {
+  position: absolute;
+  top: 18px;
+  left: 283px;
+  height: 34px;
+  padding: 7px 15px 9px;
+  border-radius: 15px;
+  font-family: "Noto Sans KR Medium";
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#input-content {
+  width: 312px;
+  height: 400px;
+  padding: 16px;
+  border: none;
+}
+
+#input-content::placeholder {
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+  color: #b9b9b9;
+}
+
+button {
+  cursor: pointer;
+}

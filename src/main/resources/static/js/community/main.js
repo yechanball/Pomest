@@ -230,7 +230,7 @@ function calcDate(postDate) {
   }
 }
 
-// 체크박스 및 라디오박스 클릭 이벤트 체크
+// 체크박스 클릭 이벤트 체크
 document.addEventListener("input", function () {
   for (var checkbox of checkboxList) {
     checkbox.addEventListener("change", function (event) {
@@ -493,11 +493,11 @@ var bottomMenus = document.querySelectorAll(".bottom-menu-item");
 bottomMenus.forEach((bottomMenu) => {
   bottomMenu.addEventListener("click", function () {
     // TODO 하단 메뉴 클릭시 해당 메뉴 페이지로 이동
-    alert(bottomMenu.getAttribute("value") + " 메뉴 선택");
-
     let menuName = bottomMenu.getAttribute("value");
     if (menuName == "post") {
       location.href = "../post/main.html";
+    } else if (menuName == "community") {
+      location.href = "../community/main.html";
     }
   });
 });

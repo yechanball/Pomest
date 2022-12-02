@@ -24,11 +24,13 @@ body {
 }
 
 .header {
+  position: fixed;
   width: 100%;
   max-width: 360px;
   height: 62px;
   background-color: #ffffff;
   overflow: hidden;
+  z-index: 9999;
 }
 
 .header > h1 {
@@ -213,6 +215,8 @@ body {
 
 #input-recomment-close {
   position: absolute;
-  bottom: 72px;
+  bottom: 52px;
   left: 13px;
+  background-color: #ffffff00;
+  border: none;
 }

@@ -1,0 +1,337 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* 포스트 메인 화면 */
+#post-main {
+  width: 100%;
+  height: 100%;
+}
+
+#post-main .header {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 66px;
+  background-color: #ffffff;
+  overflow: hidden;
+  z-index: 99;
+}
+
+#post-main .header-top {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin: 24px 24px 0px;
+}
+
+#post-main .header-top h1 {
+  position: absolute;
+  line-height: 30px;
+  margin: 0;
+}
+
+#post-main .header-top a {
+  position: absolute;
+  right: 48px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+/* most 포스트 화면 */
+#most-post-header {
+  width: 100%;
+  height: 40px;
+  padding: 12px 24px 0px;
+}
+#most-post-header p {
+  position: absolute;
+  margin: 0;
+}
+#most-post-header a {
+  position: absolute;
+  right: 24px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+#most-post-body {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+.most-post-item {
+  position: relative;
+  display: inline-block;
+  width: 129px;
+  height: 190px;
+  background-size: cover;
+  cursor: pointer;
+}
+.most-post-item:first-child {
+  margin-left: 24px;
+}
+.most-post-item > div {
+  width: 129px;
+  height: 190px;
+}
+
+/* 임시 배경 지정 */
+.most-post-item:nth-child(odd) {
+  background-image: url(../../img/post_background_1.png);
+}
+.most-post-item:nth-child(even) {
+  background-image: url(../../img/post_background_2.png);
+}
+/* --------------- */
+.symptom_tag_span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #ffffff;
+  background-color: #ff9691;
+}
+.post-save-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+}
+.most-post-text {
+  position: absolute;
+  top: 49px;
+  left: 15px;
+  width: 85px;
+  margin: 0;
+  white-space: normal;
+  text-align: left;
+}
+
+.blank-middle {
+  width: 90%;
+  height: 24px;
+  margin: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* 증상별 포스트 화면 */
+#symptom-post-header {
+  width: 100%;
+  height: 30px;
+  padding: 26px 24px 0px;
+  margin-bottom: 12px;
+}
+#symptom-post-header p {
+  position: absolute;
+  margin: 0;
+}
+
+#symptom-post-body {
+  height: calc(100vh - 200px);
+  overflow: scroll;
+}
+.symptom-post-item {
+  position: relative;
+  width: calc(100% - 48px);
+  height: 100px;
+  margin: auto;
+  margin-bottom: 12px;
+  background: #5fa0a6;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.symptom-post-item > p {
+  position: absolute;
+  left: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+.symptom-post-item > p:nth-child(1) {
+  top: 18px;
+}
+.symptom-post-item > p:nth-child(2) {
+  top: 39px;
+}
+.symptom-post-item > svg {
+  position: absolute;
+  top: 60px;
+  right: 23px;
+}
+
+/* 포스트 검색 화면 */
+#post-search {
+  width: 100%;
+}
+.search-header {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 74px;
+  background-color: #ffffff;
+  box-shadow: 0px 0.5px 10px 0px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  z-index: 99;
+}
+
+#search-header-sub > div {
+  position: absolute;
+  top: 27px;
+  left: 28px;
+}
+#search-title {
+  position: absolute;
+  top: 21px;
+  left: 64px;
+  margin: 0;
+}
+
+#btn-move-back,
+#btn-move-back-sub {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  cursor: pointer;
+}
+#input-search {
+  position: absolute;
+  top: 16px;
+  left: 64px;
+  width: 272px;
+  height: 38px;
+  cursor: auto;
+}
+#btn-search-remove {
+  position: absolute;
+  top: 28px;
+  left: 302px;
+  cursor: pointer;
+}
+.search-body {
+  position: absolute;
+  top: 74px;
+  left: 24px;
+}
+.search-body > p {
+  padding-top: 9px;
+  margin: 0;
+}
+
+/* 검색 추천 태그 목록 */
+#search-symptoms {
+  position: absolute;
+  width: 320px;
+  top: 24px;
+  padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#search-symptoms label {
+  margin: 4px;
+  cursor: pointer;
+}
+
+/* 검색된 태그 목록 */
+.search-header-menu {
+  position: fixed;
+  top: 74px;
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  overflow: auto;
+  white-space: nowrap;
+  text-align: left;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.search-header-menu label {
+  display: inline-block;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.search-header-menu label:first-child {
+  display: inline-block;
+  margin-left: 24px;
+}
+
+/* 포스트 목록 */
+#post-list {
+  width: 100%;
+}
+.post-item {
+  position: relative;
+  width: calc(100% - 48px);
+  height: 100px;
+  margin: auto;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.post-item > div > img {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+}
+.post-item > div > span {
+  position: absolute;
+  top: 13px;
+  left: 100px;
+}
+.post-item > div > p {
+  position: absolute;
+  top: 43px;
+  left: 100px;
+}
+.post-item > span {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+}
+
+/* 하단 메뉴 */
+.bottom-menu {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 75px;
+  bottom: -1px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.bottom-menu-item {
+  display: inline-block;
+  padding: 18px 0px 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.bottom-menu-item > p {
+  margin: 0;
+}
+
+.bottom-menu-item-select > p {
+  color: #4bb158;
+}

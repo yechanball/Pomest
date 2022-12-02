@@ -4,17 +4,278 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>포스트</title>
+    <title>포메스트 포스트</title>
+    <link
+      rel="stylesheet"
+      href="../../static/font/NotoSansKR.css"
+      type="text/css"
+    />
     <link
       rel="stylesheet"
       href="../../static/css/common/main.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="../../static/css/post/main.css"
+      type="text/css"
+    />
   </head>
   <body>
     <div class="wrap">
-      <h1 class="font-header-kr01">포스트 메인</h1>
-      <p class="font-body-kr01">아직 개발하지 않은 페이지</p>
+      <!-- post main start -->
+      <div id="post-main">
+        <div class="header">
+          <div class="header-top">
+            <h1 class="font-header-kr02">포스트</h1>
+            <a class="btn-search">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.146 12.371 1.888 11.113C0.629333 9.85433 0 8.31667 0 6.5C0 4.68333 0.629333 3.14567 1.888 1.887C3.146 0.629 4.68333 0 6.5 0C8.31667 0 9.85433 0.629 11.113 1.887C12.371 3.14567 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.81267 10.5627 9.688 9.688C10.5627 8.81267 11 7.75 11 6.5C11 5.25 10.5627 4.18733 9.688 3.312C8.81267 2.43733 7.75 2 6.5 2C5.25 2 4.18733 2.43733 3.312 3.312C2.43733 4.18733 2 5.25 2 6.5C2 7.75 2.43733 8.81267 3.312 9.688C4.18733 10.5627 5.25 11 6.5 11Z"
+                  fill="#121212"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div id="post-main-body">
+          <div style="height: 66px" id="top_blank"></div>
+          <!-- ------------------------------------- -->
+          <div id="most-post-header">
+            <p class="font-body-kr01">많은 분들이 읽었어요</p>
+            <a class="btn-most-more">
+              <svg
+                width="10"
+                height="17"
+                viewBox="0 0 10 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.50743 17L0 15.4913L6.98514 8.5L0 1.50875L1.50743 0L10 8.5L1.50743 17Z"
+                  fill="#121212"
+                />
+              </svg>
+            </a>
+          </div>
+          <div id="most-post-body">
+            <!-- most view post list start -->
+            <!-- template :: 0번 most view 포스트 -->
+            <!-- <div class="most-post-item">
+              <div onclick="viewPost(0)">
+                <span class="symptom_tag_span">태그명</span>
+                <p class="most-post-text font-body-kr02">포스트 제목</p>
+              </div>
+              <span class="post-save-btn" onclick="savePost(this, 0)">
+                <svg
+                  width="14"
+                  height="18"
+                  viewBox="0 0 14 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 18V2C0 1.45 0.196 0.979 0.588 0.587C0.979333 0.195667 1.45 0 2 0H12C12.55 0 13.021 0.195667 13.413 0.587C13.8043 0.979 14 1.45 14 2V18L7 15L0 18ZM2 14.95L7 12.8L12 14.95V2H2V14.95Z"
+                    fill="#121212"
+                  />
+                </svg>
+              </span>
+            </div> -->
+          </div>
+
+          <div class="blank-middle"></div>
+
+          <div id="symptom-post-header">
+            <p class="font-body-kr01">갱년기 증상별로 모았어요</p>
+          </div>
+          <div id="symptom-post-body">
+            <!-- symptom post list start -->
+            <!--  template :: 0번 증상별 포스트 -->
+            <!-- <div class="symptom-post-item" onclick="searchSymptomPost(0)">
+              <p class="font-body-kr03">증상 내용</p>
+              <p class="font-header-kr03">증상명</p>
+              <svg
+                width="10"
+                height="17"
+                viewBox="0 0 10 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.50743 17L0 15.4913L6.98514 8.5L0 1.50875L1.50743 0L10 8.5L1.50743 17Z"
+                  fill="white"
+                />
+              </svg>
+            </div> -->
+          </div>
+          <div style="height: 75px"></div>
+        </div>
+      </div>
+      <!-- post main end -->
+
+      <!-- post search start -->
+      <div id="post-search" style="display: none">
+        <div class="search-header" id="search-header">
+          <div id="btn-move-back">
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 16.4463L0 8.44629L8 0.446289L9.425 1.84629L3.825 7.44629H16V9.44629H3.825L9.425 15.0463L8 16.4463Z"
+                fill="#121212"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            class="textbox-default"
+            id="input-search"
+            name="search"
+            placeholder="엄마의 불면증, 어떻게 하면 좋을까?&emsp;&emsp;&emsp;"
+          />
+          <div id="btn-search-remove">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
+                fill="#121212"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="search-header" id="search-header-sub" style="display: none">
+          <div id="btn-move-back-sub">
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 16.4463L0 8.44629L8 0.446289L9.425 1.84629L3.825 7.44629H16V9.44629H3.825L9.425 15.0463L8 16.4463Z"
+                fill="#121212"
+              />
+            </svg>
+          </div>
+          <h1 class="font-title-kr02" id="search-title"></h1>
+        </div>
+        <div
+          class="search-header-menu"
+          id="select-symptoms"
+          style="display: none"
+        ></div>
+        <div class="search-body">
+          <p class="font-body-kr01">다른 분들은 이런 증상을 검색했어요</p>
+          <div id="search-symptoms"></div>
+        </div>
+        <div id="post-list" style="display: none">
+          <!-- post list -->
+          <!-- template :: 0번 포스트 -->
+          <!-- <div class="post-item">
+            <div onclick="viewPost(0)">
+              <img src="../../static/img/post_img_1.png" alt="post img" />
+              <span class="symptom_tag_span">태그명</span>
+              <p class="font-body-kr02">포스트 제목</p>
+            </div>
+            <span class="post-save-btn" onclick="savePost(this, 0)">
+              <svg
+                width="14"
+                height="18"
+                viewBox="0 0 14 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 18V2C0 1.45 0.196 0.979 0.588 0.587C0.979333 0.195667 1.45 0 2 0H12C12.55 0 13.021 0.195667 13.413 0.587C13.8043 0.979 14 1.45 14 2V18L7 15L0 18ZM2 14.95L7 12.8L12 14.95V2H2V14.95Z"
+                  fill="#121212"
+                />
+              </svg>
+            </span>
+          </div> -->
+        </div>
+        <div id="scrollerFooter" style="height: 10px"></div>
+      </div>
+      <!-- post search end -->
+
+      <div class="bottom-menu">
+        <span class="bottom-menu-item" value="home">
+          <svg
+            width="16"
+            height="18"
+            viewBox="0 0 16 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 18V6L8 0L16 6V18H10V11H6V18H0ZM2 16H4V9H12V16H14V7L8 2.5L2 7V16Z"
+              fill="#121212"
+            />
+          </svg>
+          <p class="font-detail-kr02">홈</p>
+        </span>
+        <span class="bottom-menu-item bottom-menu-item-select" value="post">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 20C1.45 20 0.979333 19.8043 0.588 19.413C0.196 19.021 0 18.55 0 18V4H2V18H16V20H2ZM6 16C5.45 16 4.97933 15.8043 4.588 15.413C4.196 15.021 4 14.55 4 14V2C4 1.45 4.196 0.979 4.588 0.587C4.97933 0.195667 5.45 0 6 0H18C18.55 0 19.021 0.195667 19.413 0.587C19.8043 0.979 20 1.45 20 2V14C20 14.55 19.8043 15.021 19.413 15.413C19.021 15.8043 18.55 16 18 16H6ZM11 9L13.5 7.5L16 9V2H11V9Z"
+              fill="#4BB158"
+            />
+          </svg>
+          <p class="font-detail-kr02">포스트</p>
+        </span>
+        <span class="bottom-menu-item" value="community">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 15V1C0 0.716667 0.0960001 0.479 0.288 0.287C0.479333 0.0956666 0.716667 0 1 0H14C14.2833 0 14.5207 0.0956666 14.712 0.287C14.904 0.479 15 0.716667 15 1V10C15 10.2833 14.904 10.5207 14.712 10.712C14.5207 10.904 14.2833 11 14 11H4L0 15ZM5 16C4.71667 16 4.479 15.904 4.287 15.712C4.09567 15.5207 4 15.2833 4 15V13H17V4H19C19.2833 4 19.5207 4.09567 19.712 4.287C19.904 4.479 20 4.71667 20 5V20L16 16H5ZM13 2H2V10.175L3.175 9H13V2Z"
+              fill="#121212"
+            />
+          </svg>
+          <p class="font-detail-kr02">커뮤니티</p>
+        </span>
+        <span class="bottom-menu-item" value="my">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 8C6.9 8 5.95833 7.60833 5.175 6.825C4.39167 6.04167 4 5.1 4 4C4 2.9 4.39167 1.95833 5.175 1.175C5.95833 0.391667 6.9 0 8 0C9.1 0 10.0417 0.391667 10.825 1.175C11.6083 1.95833 12 2.9 12 4C12 5.1 11.6083 6.04167 10.825 6.825C10.0417 7.60833 9.1 8 8 8ZM0 16V13.2C0 12.6333 0.146 12.1123 0.438 11.637C0.729334 11.1623 1.11667 10.8 1.6 10.55C2.63333 10.0333 3.68333 9.64567 4.75 9.387C5.81667 9.129 6.9 9 8 9C9.1 9 10.1833 9.129 11.25 9.387C12.3167 9.64567 13.3667 10.0333 14.4 10.55C14.8833 10.8 15.2707 11.1623 15.562 11.637C15.854 12.1123 16 12.6333 16 13.2V16H0ZM2 14H14V13.2C14 13.0167 13.9543 12.85 13.863 12.7C13.771 12.55 13.65 12.4333 13.5 12.35C12.6 11.9 11.6917 11.5623 10.775 11.337C9.85833 11.1123 8.93333 11 8 11C7.06667 11 6.14167 11.1123 5.225 11.337C4.30833 11.5623 3.4 11.9 2.5 12.35C2.35 12.4333 2.22933 12.55 2.138 12.7C2.046 12.85 2 13.0167 2 13.2V14ZM8 6C8.55 6 9.021 5.804 9.413 5.412C9.80433 5.02067 10 4.55 10 4C10 3.45 9.80433 2.97933 9.413 2.588C9.021 2.196 8.55 2 8 2C7.45 2 6.97933 2.196 6.588 2.588C6.196 2.97933 6 3.45 6 4C6 4.55 6.196 5.02067 6.588 5.412C6.97933 5.804 7.45 6 8 6Z"
+              fill="#121212"
+            />
+          </svg>
+          <p class="font-detail-kr02">마이</p>
+        </span>
+      </div>
     </div>
+    <script src="../../static/js/post/main.js"></script>
   </body>
 </html>
