@@ -498,6 +498,8 @@ bottomMenus.forEach((bottomMenu) => {
       location.href = "../post/main.html";
     } else if (menuName == "community") {
       location.href = "../community/main.html";
+    } else if (menuName == "my") {
+      location.href = "../mypage/main.html";
     }
   });
 });

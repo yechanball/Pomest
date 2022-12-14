@@ -1,0 +1,226 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap,
+.main-wrap,
+.setting-wrap,
+.symptom-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 62px;
+}
+
+/* 마이페이지 */
+.main-wrap .header h1 {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  margin: 0;
+}
+.main-wrap .header a {
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  cursor: pointer;
+}
+
+/* 닉네임 */
+.body-nickname {
+  position: relative;
+  width: calc(100% - 50px);
+  height: 164px;
+  margin: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+.body-nickname h3 {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  margin: 0;
+}
+.body-nickname a,
+.body-nickname button {
+  position: absolute;
+  top: 27px;
+  right: 0;
+  margin: 0;
+}
+
+#btn-submit {
+  height: 34px;
+  padding: 7px 15px 9px;
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#textbox {
+  position: absolute;
+  top: 78px;
+  left: 0;
+  width: calc(100% - 14px);
+  padding-left: 14px;
+  text-align: left;
+}
+
+#textbox-message {
+  position: absolute;
+  top: 123px;
+  width: 222px;
+  text-align: left;
+}
+
+/* 관심있는 증상*/
+.body-symptom {
+  position: relative;
+  width: calc(100% - 50px);
+  margin: auto;
+}
+.body-symptom h3 {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  margin: 0;
+}
+.body-symptom a {
+  position: absolute;
+  top: 27px;
+  right: 0;
+  margin: 0;
+}
+#selected-symptoms {
+  position: absolute;
+  top: 72px;
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#selected-symptoms label {
+  margin: 4px;
+}
+
+/* 하단 메뉴 */
+.bottom-menu {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 75px;
+  bottom: -1px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.bottom-menu-item {
+  display: inline-block;
+  padding: 18px 0px 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.bottom-menu-item > p {
+  margin: 0;
+}
+
+.bottom-menu-item-select > p {
+  color: #4bb158;
+}
+
+/* 관심 증상 편집*/
+.symptom-wrap .header a {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  cursor: pointer;
+}
+.symptom-wrap .header h2 {
+  position: absolute;
+  top: 21px;
+  left: 64px;
+  margin: 0;
+}
+.symptom-wrap .header button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 15px 9px;
+  font-family: "Noto Sans KR Regular";
+  font-size: 12px;
+  line-height: 18px;
+}
+#symptom-list {
+  position: relative;
+  width: calc(100% - 50px);
+  margin: auto;
+  padding-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#symptom-list label {
+  margin: 4px;
+}
+
+/* 설정 */
+.setting-wrap .header a {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  cursor: pointer;
+}
+.setting-wrap .header h2 {
+  position: absolute;
+  top: 21px;
+  left: 64px;
+  margin: 0;
+}
+
+.menu-box {
+  width: calc(100% - 48px);
+  padding-block: 17px;
+  margin: auto;
+  border-bottom: 1px solid #e5e5e5;
+}
+.menu-box:last-child {
+  border: none;
+}
+.menu-item {
+  position: relative;
+  width: 100%;
+  height: 25px;
+  padding-block: 7px;
+}
+.menu-item p {
+  position: absolute;
+  left: 0;
+  margin: 0;
+}
+.menu-item a {
+  position: absolute;
+  right: 6px;
+  margin: 0;
+  cursor: pointer;
+}
