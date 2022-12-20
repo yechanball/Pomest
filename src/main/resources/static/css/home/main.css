@@ -1,0 +1,157 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* 상단 */
+.header {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 66px;
+  background-color: #ffffff;
+  overflow: hidden;
+  z-index: 99;
+}
+.header h1 {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  line-height: 30px;
+  margin: 0;
+}
+
+/* 메인/공통 */
+#main-container {
+  width: calc(100% - 48px);
+  max-width: 450px;
+  padding-inline: 24px;
+  padding-top: 12px;
+}
+.content-header {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  padding-block: 12px;
+}
+.content-header p {
+  position: absolute;
+  margin: 0;
+}
+.content-header a {
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+
+/* 연락 기록 */
+#record-header {
+  padding-bottom: 0;
+}
+#record-body {
+  position: relative;
+  width: 100%;
+  height: 144px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 12px;
+}
+#record-body p {
+  position: absolute;
+  margin: 6px 0 0 0;
+}
+#record-calendar {
+  position: absolute;
+  top: 38px;
+  width: 100%;
+}
+.calendar-item {
+  display: inline-block;
+  width: 36px;
+  margin-inline: 2px;
+}
+.calendar-item-icon {
+  cursor: pointer;
+}
+
+/* 저장한 콘텐츠 */
+#post-list {
+  width: 100%;
+  height: calc(100vh - 202px);
+  padding-top: 12px;
+  overflow: scroll;
+}
+.post-item {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.post-item > div > img {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+}
+.post-item > div > span {
+  position: absolute;
+  top: 13px;
+  left: 100px;
+}
+.post-item > div > p {
+  position: absolute;
+  top: 43px;
+  left: 100px;
+  margin: 0;
+}
+.post-item > span {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+}
+
+/* 하단 메뉴 */
+.bottom-menu {
+  position: fixed;
+  width: 100%;
+  max-width: 450px;
+  height: 75px;
+  bottom: -1px;
+  background: #ffffff;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 15px 15px 0px 0px;
+}
+.bottom-menu-item {
+  display: inline-block;
+  padding: 18px 0px 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.bottom-menu-item > p {
+  margin: 0;
+}
+.bottom-menu-item-select > p {
+  color: #4bb158;
+}

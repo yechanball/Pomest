@@ -375,7 +375,9 @@ bottomMenus.forEach((bottomMenu) => {
   bottomMenu.addEventListener("click", function () {
     // TODO 하단 메뉴 클릭시 해당 메뉴 페이지로 이동
     let menuName = bottomMenu.getAttribute("value");
-    if (menuName == "post") {
+    if (menuName == "home") {
+      location.href = "../home/main.html";
+    } else if (menuName == "post") {
       location.href = "../post/main.html";
     } else if (menuName == "community") {
       location.href = "../community/main.html";
@@ -545,7 +547,7 @@ var intersectionObserver = new IntersectionObserver(function (entries) {
     */
 });
 // start observing
-intersectionObserver.observe(document.querySelector(".scrollerFooter"));
+intersectionObserver.observe(document.querySelector("#scrollerFooter"));
 
 // 포스트 검색 (키워드, 태그)
 function searchPost(searchValue, selectedSymptoms) {
