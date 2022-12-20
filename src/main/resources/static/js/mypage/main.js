@@ -253,7 +253,7 @@ document.querySelector("#btn-submit").addEventListener("click", function () {
     fetch("/mypage/modifynickname", config)
       .then((response) => response.json())
       .then((data) => {
-        if ((data.code = 200)) {
+        if ((data.code == 200)) {
           submitBtn.classList.remove("button-ghost-default");
           submitBtn.classList.add("button-ghost-disabled");
           textBoxMessage.style.display = "none";
@@ -334,7 +334,7 @@ document
 document
   .querySelector("#btn-withdraw-submit")
   .addEventListener("click", function () {
-    location.href = "../landing/login.html";
+    location.href = "../mypage/withdraw.html";
   });
 
 // 하단 메뉴 클릭시 이벤트 체크
@@ -343,7 +343,9 @@ bottomMenus.forEach((bottomMenu) => {
   bottomMenu.addEventListener("click", function () {
     // TODO 하단 메뉴 클릭시 해당 메뉴 페이지로 이동
     let menuName = bottomMenu.getAttribute("value");
-    if (menuName == "post") {
+    if (menuName == "home") {
+      location.href = "../home/main.html";
+    } else if (menuName == "post") {
       location.href = "../post/main.html";
     } else if (menuName == "community") {
       location.href = "../community/main.html";
