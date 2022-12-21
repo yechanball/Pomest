@@ -63,7 +63,7 @@ body {
 .search-option {
   position: absolute;
   top: 115px;
-  left: 216px;
+  right: 20px;
   width: 140px;
 }
 .search-option p {

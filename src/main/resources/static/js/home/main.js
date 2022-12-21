@@ -447,8 +447,7 @@ function viewPost(postId) {
 }
 
 document.querySelector("#record-header").addEventListener("click", function () {
-  console.log("요일 기록 더보기");
-  // location.href = "./record.html";
+  location.href = "./record.html";
 });
 
 document
