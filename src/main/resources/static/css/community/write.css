@@ -122,6 +122,10 @@ body {
   border: none;
 }
 
+.note-editor {
+  margin: auto;
+}
+
 #input-content::placeholder {
   font-family: "Noto Sans KR Regular";
   font-size: 12px;

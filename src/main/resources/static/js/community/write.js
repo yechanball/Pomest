@@ -3,6 +3,22 @@ var checkboxList = []; // 체크박스 리스트
 var checkResult = new Set(); // 최종 체크한 결과 목록 (중복 허용 X)
 var selectSymptoms = document.querySelector("#select-symptoms");
 
+// 텍스트 에디터 세팅
+$(document).ready(function () {
+  $("#input-content").summernote({
+    placeholder: "이야기를 나누면서 마음이 가뿐해지시면 좋겠어요",
+    tabsize: 2,
+    width: 312,
+    height: 400,
+    toolbar: [
+      ["style", ["style"]],
+      ["font", ["bold", "underline", "clear"]],
+      ["color", ["color"]],
+      ["para", ["paragraph"]],
+    ],
+  });
+});
+
 // 페이지 로딩시 증상 태그 생성
 window.onload = function () {
   // 증상 json 정보 받기
@@ -115,7 +131,7 @@ document.querySelector("#btn-delete").addEventListener("click", function () {
 
 // 글작성 완료 버튼 클릭 시
 document.querySelector("#btn-complete").addEventListener("click", function () {
-  let content = document.querySelector("#input-content").value;
+  let content = document.querySelector(".note-editable").innerHTML;
   if (content.length > 0) {
     let symptomArr = [];
     checkResult.forEach(function (symptomId) {
