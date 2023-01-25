@@ -126,6 +126,15 @@ body {
   margin: auto;
 }
 
+.note-statusbar {
+  display: none;
+}
+
+.popup .popup-box {
+  width: auto;
+  height: auto;
+}
+
 #input-content::placeholder {
   font-family: "Noto Sans KR Regular";
   font-size: 12px;

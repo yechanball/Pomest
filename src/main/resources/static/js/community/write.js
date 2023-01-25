@@ -11,10 +11,10 @@ $(document).ready(function () {
     width: 312,
     height: 400,
     toolbar: [
-      ["style", ["style"]],
-      ["font", ["bold", "underline", "clear"]],
-      ["color", ["color"]],
-      ["para", ["paragraph"]],
+      // ["style", ["style"]],
+      // ["font", ["bold", "underline", "clear"]],
+      // ["color", ["color"]],
+      // ["para", ["paragraph"]],
     ],
   });
 });
