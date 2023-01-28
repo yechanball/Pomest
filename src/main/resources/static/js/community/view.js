@@ -217,6 +217,13 @@ function modify() {
 // 삭제하기 버튼 클릭 -> 팝업
 function remove() {
   document.querySelector("#popup-delete-main").style.display = "";
+  document
+    .querySelector("#popup-box-delete-main")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
 }
 // 팝업 버튼
 document
@@ -405,6 +412,13 @@ let deleteCommentId;
 
 function removeComment(el) {
   document.querySelector("#popup-delete-comment").style.display = "";
+  document
+    .querySelector("#popup-box-delete-comment")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
   deleteCommentId = el.parentElement.id.split("-")[2];
 }
 
@@ -514,6 +528,13 @@ function modifyRecomment(el) {
 // 대댓글 삭제하기 버튼 클릭 -> 팝업
 function removeRecomment(el) {
   document.querySelector("#popup-delete-recomment").style.display = "";
+  document
+    .querySelector("#popup-box-delete-recomment")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
   deleteReommentId = el.parentElement.id.split("-")[2];
   console.log(deleteReommentId + "번 대댓글 삭제");
 }

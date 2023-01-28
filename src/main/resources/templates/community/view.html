@@ -21,6 +21,10 @@
       href="../../static/css/community/view.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <div class="wrap">
@@ -117,7 +121,7 @@
 
         <div class="popup" id="popup-delete-main" style="display: none">
           <div class="popup-background"></div>
-          <div class="popup-box">
+          <div class="popup-box" id="popup-box-delete-main">
             <p class="font-title-kr02">글을 삭제하시겠어요?</p>
             <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
             <button class="font-detail-kr01" id="btn-popup-close">
@@ -276,7 +280,7 @@
 
       <div class="popup" id="popup-delete-comment" style="display: none">
         <div class="popup-background"></div>
-        <div class="popup-box">
+        <div class="popup-box" id="popup-box-delete-comment">
           <p class="font-title-kr02">댓글을 삭제하시겠어요?</p>
           <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
           <button class="font-detail-kr01" id="btn-popup-comment-close">
@@ -290,7 +294,7 @@
 
       <div class="popup" id="popup-delete-recomment" style="display: none">
         <div class="popup-background"></div>
-        <div class="popup-box">
+        <div class="popup-box" id="popup-box-delete-recomment">
           <p class="font-title-kr02">댓글을 삭제하시겠어요?</p>
           <p class="font-body-kr03">삭제하면 지금까지 작성한 글이 사라져요</p>
           <button class="font-detail-kr01" id="btn-popup-recomment-close">

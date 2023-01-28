@@ -17,6 +17,13 @@ document
 // 뒤로가기 버튼 클릭 시
 document.querySelector("#btn-move-back").addEventListener("click", function () {
   document.querySelector(".popup").style.display = "";
+  document
+    .querySelector(".popup-box")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
 });
 
 // 팝업 버튼

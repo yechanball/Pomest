@@ -166,6 +166,11 @@ nextBtn.addEventListener("click", function () {
       question.innerHTML = "엄마의 갱년기를 알게 된 지<br>얼마나 되었나요?";
       step1Div.style.display = "none";
       step2Div.style.display = "block";
+      step2Div.classList.add(
+        "animate__animated",
+        "animate__fadeInRight",
+        "animate__faster"
+      );
       nextBtn.classList.remove("button-elevated-default");
       nextBtn.classList.add("button-elevated-disabled");
       isCheck = false;
@@ -175,6 +180,11 @@ nextBtn.addEventListener("click", function () {
       question.innerHTML = "엄마와 내가<br>태어난 연도는 언제인가요?";
       step2Div.style.display = "none";
       step3Div.style.display = "block";
+      step3Div.classList.add(
+        "animate__animated",
+        "animate__fadeInRight",
+        "animate__faster"
+      );
       nextBtn.innerText = "포메스트 시작하기";
       nextBtn.classList.remove("button-elevated-default");
       nextBtn.classList.add("button-elevated-disabled");

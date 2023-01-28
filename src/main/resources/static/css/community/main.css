@@ -98,14 +98,14 @@ body {
   position: absolute;
   top: -9px;
   left: 64px;
-  width: 272px;
+  width: calc(100% - 88px);
   height: 38px;
 }
 
 #btn-search-remove {
   position: absolute;
   top: 3px;
-  left: 302px;
+  right: 44px;
 }
 
 .search-body {

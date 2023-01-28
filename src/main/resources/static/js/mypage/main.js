@@ -307,10 +307,24 @@ document.querySelector(".btn-alarm").addEventListener("click", () => {
 document.querySelector(".btn-logout").addEventListener("click", () => {
   document.querySelector(".popup").style.display = "";
   document.querySelector("#popup-logout").style.display = "";
+  document
+    .querySelector("#popup-logout")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
 });
 document.querySelector(".btn-withdraw").addEventListener("click", () => {
   document.querySelector(".popup").style.display = "";
   document.querySelector("#popup-withdraw").style.display = "";
+  document
+    .querySelector("#popup-withdraw")
+    .classList.add(
+      "animate__animated",
+      "animate__slideInUp",
+      "animate__faster"
+    );
 });
 
 // 팝업 버튼
