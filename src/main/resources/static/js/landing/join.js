@@ -4,17 +4,18 @@ var submitBtn = document.querySelector("#btn-submit");
 
 // textbox 입력 처리
 textBox.addEventListener("keyup", function (e) {
-  if (e.keyCode == 13) {
-    // enter를 입력받은 경우 닉네임 중복 체크 메서드를 실행
-    checkNickname();
-  } else {
-    // 다른 키가 입력된 경우
-    submitBtn.classList.remove("button-elevated-default");
-    submitBtn.classList.add("button-elevated-disabled");
-    textBoxMessage.style.display = "none";
-    textBox.classList.remove("textbox-success", "textbox-fail");
-    textBox.classList.add("textbox-default");
-  }
+  checkNickname(); // 매번 닉네임 검증
+  // if (e.keyCode == 13) {
+  //   // enter를 입력받은 경우 닉네임 중복 체크 메서드를 실행
+  //   checkNickname();
+  // } else {
+  //   // 다른 키가 입력된 경우
+  //   submitBtn.classList.remove("button-elevated-default");
+  //   submitBtn.classList.add("button-elevated-disabled");
+  //   textBoxMessage.style.display = "none";
+  //   textBox.classList.remove("textbox-success", "textbox-fail");
+  //   textBox.classList.add("textbox-default");
+  // }
 });
 // $('input').keyup(function(e) {
 //     if(e.keyCode == 13)  // enter를 입력받은 경우 닉네임 중복 체크 메서드를 실행

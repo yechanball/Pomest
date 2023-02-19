@@ -68,6 +68,7 @@ document.addEventListener(
             // 선택한 항목이 있다면 버튼 활성화
             progress.style.border = "1.7px solid #4bb158";
             progress.style.width = (308 / 3) * step + "px";
+
             nextBtn.classList.remove("button-elevated-disabled");
             nextBtn.classList.add("button-elevated-default");
             isCheck = true;
@@ -140,7 +141,12 @@ function checkBirthMom() {
 function checkBirthMy() {
   var inputText = textBoxMy.value; // 입력 받은 태어난년도
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2014) {
+  if (
+    inputText.length == 4 &&
+    inputText >= 1900 &&
+    inputText <= 2014 &&
+    textBoxMom.value < inputText
+  ) {
     // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
     textBoxMy.classList.remove("textbox-fail");
     textBoxMy.classList.add("textbox-default");
