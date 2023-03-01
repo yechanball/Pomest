@@ -138,7 +138,7 @@ body {
   padding: 15px 25px 18px;
   gap: 2px;
   background: #4bb158;
-  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   font-family: "Noto Sans KR Bold";
   font-size: 14px;
@@ -154,7 +154,7 @@ body {
   padding: 15px 25px 18px;
   gap: 2px;
   background: #b9b9b9;
-  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
   font-family: "Noto Sans KR Bold";
   font-size: 14px;
@@ -277,7 +277,8 @@ input[type="radio"]:checked {
 /* Textbox */
 .textbox-default {
   background: #ffffff;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: 1px solid transparent;
   font-family: "Noto Sans KR Medium";
@@ -301,7 +302,8 @@ input[type="radio"]:checked {
 }
 .textbox-fail {
   background: #ffffff;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border: 1px solid #d32f2f;
   font-family: "Noto Sans KR Medium";
@@ -331,7 +333,8 @@ input[type="radio"]:checked {
 }
 .textbox-success {
   background: #ffffff;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border: 1px solid #4caf50;
   font-family: "Noto Sans KR Medium";

@@ -86,7 +86,7 @@ document.addEventListener("input", function () {
 document
   .querySelector("#input-content")
   .addEventListener("keyup", function (e) {
-    let content = document.querySelector("#input-content").value;
+    let content = document.querySelector(".note-editable").innerHTML;
     if (content.length > 0) {
       document
         .querySelector("#btn-complete")

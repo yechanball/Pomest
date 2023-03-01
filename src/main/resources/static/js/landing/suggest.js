@@ -13,8 +13,7 @@ window.onload = function () {
     location.href = "./join.html";
   } else {
     document.querySelector("#title-text").innerHTML =
-      nick +
-      "님께 필요한 정보를<br>꼼꼼히 모으기 위해<br>이런 것들을 알고 싶어요";
+      nick + "님에 대해<br>조금 더 알려주세요";
   }
 };
 

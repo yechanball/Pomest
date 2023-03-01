@@ -17,26 +17,21 @@ body {
   overflow: hidden;
 }
 
-h1 {
+.title {
   position: absolute;
   top: 74px;
-  left: 24px;
+  left: 44px;
   width: 255px;
   height: 90px;
   text-align: left;
   color: #121212;
 }
 
-table {
+#sub-text {
   position: absolute;
-  top: 225px;
-  left: 64px;
-  width: 232px;
-  height: 105px;
-}
-
-table td {
-  text-align: left;
+  top: 150px;
+  left: 44px;
+  color: #8a8a8a;
 }
 
 button {
@@ -45,12 +40,17 @@ button {
   height: 54px;
 }
 
-#btn-do-next {
-  left: 64px;
-  bottom: 144px;
-}
-
 #btn-do-now {
   left: 64px;
-  bottom: 74px;
+  bottom: 90px;
+}
+
+#btn-do-next {
+  position: absolute;
+  left: 24px;
+  bottom: 56px;
+  width: 312px;
+  text-decoration-line: underline;
+  color: #b9b9b9;
+  cursor: pointer;
 }
