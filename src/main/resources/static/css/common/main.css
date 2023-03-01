@@ -138,7 +138,7 @@ body {
   padding: 15px 25px 18px;
   gap: 2px;
   background: #4bb158;
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 14px #e2e2e2;
   border-radius: 15px;
   font-family: "Noto Sans KR Bold";
   font-size: 14px;
@@ -154,7 +154,7 @@ body {
   padding: 15px 25px 18px;
   gap: 2px;
   background: #b9b9b9;
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 14px #e2e2e2;
   border-radius: 15px;
   font-family: "Noto Sans KR Bold";
   font-size: 14px;
@@ -259,7 +259,7 @@ input[type="radio"] {
   background-color: #ffff;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1.7px solid #121212;
+  border: 1px solid #121212;
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -268,7 +268,7 @@ input[type="radio"]:checked {
   background-color: #4bb158;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1.7px solid #4bb158;
+  border: 1px solid #4bb158;
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -277,8 +277,8 @@ input[type="radio"]:checked {
 /* Textbox */
 .textbox-default {
   background: #ffffff;
-  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 8px #e2e2e2;
+  box-shadow: 0px 2px 8px #e2e2e2;
   border-radius: 10px;
   border: 1px solid transparent;
   font-family: "Noto Sans KR Medium";
@@ -302,8 +302,8 @@ input[type="radio"]:checked {
 }
 .textbox-fail {
   background: #ffffff;
-  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 8px #e2e2e2;
+  box-shadow: 0px 2px 8px #e2e2e2;
   border-radius: 10px;
   border: 1px solid #d32f2f;
   font-family: "Noto Sans KR Medium";
@@ -333,8 +333,8 @@ input[type="radio"]:checked {
 }
 .textbox-success {
   background: #ffffff;
-  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 8px #e2e2e2;
+  box-shadow: 0px 2px 8px #e2e2e2;
   border-radius: 10px;
   border: 1px solid #4caf50;
   font-family: "Noto Sans KR Medium";
@@ -387,7 +387,7 @@ input[type="radio"]:checked {
   width: calc(100% - 120px);
   height: 160px;
   background: #ffffff;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 24px #e2e2e2;
   border-radius: 20px;
   padding: 29px 38px 22px;
   z-index: 9999;
@@ -415,7 +415,7 @@ input[type="radio"]:checked {
   padding: 5px;
   gap: 2px;
   background: #ffffff;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 24px #e2e2e2;
   border-radius: 15px;
 }
 .menu-small-writer > p {
@@ -435,7 +435,7 @@ input[type="radio"]:checked {
   padding: 5px;
   gap: 2px;
   background: #ffffff;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 24px #e2e2e2;
   border-radius: 15px;
 }
 .menu-small-not-writer > p {

@@ -46,6 +46,13 @@ window.onload = function () {
   }
   checkboxList = document.querySelectorAll("input[type=checkbox]");
   radioboxList = document.querySelectorAll("input[type=radio]");
+
+  for (let year = 1950; year <= 1990; year++) {
+    textBoxMom.innerHTML += `<option class="font-detail-kr02" value="${year}">${year}</option>`;
+  }
+  for (let year = 2014; year >= 1960; year--) {
+    textBoxMy.innerHTML += `<option class="font-detail-kr02" value="${year}">${year}</option>`;
+  }
 };
 
 // 체크박스 및 라디오박스 클릭 이벤트 체크

@@ -89,53 +89,37 @@ body {
 #input-date {
   position: absolute;
   top: 225px;
-  right: 30px;
-  width: 300px;
+  left: 44px;
+  width: 272px;
   height: 130px;
   display: none;
-  text-align: right;
+  text-align: left;
 }
 
 #input-date div {
-  display: flex;
-  height: 38px;
-  margin-bottom: 48px;
-}
-
-#input-date div div {
   position: relative;
-  width: 50px;
-  height: 38px;
-  text-align: center;
+  height: 72px;
+  margin-bottom: 36px;
 }
 
-#input-date div div label {
+#input-date div label {
   position: absolute;
-  top: 10px;
-  width: 50px;
-  height: 38px;
+  top: 0px;
+  left: 0px;
 }
 
-#input-date div input {
-  width: 182px;
-  height: 38px;
-  margin-left: 40px;
-}
-
-#input-date div p {
+#input-date div select {
   position: absolute;
-  left: 90px;
-  margin: 0;
+  top: 33px;
+  width: 276px;
+  height: 38px;
+  font-family: "Noto Sans KR Regular";
+  font-size: 14px;
+  line-height: 18px;
 }
 
-#textbox-message-mom {
-  top: 50px;
-  display: none;
-}
-
-#textbox-message-my {
-  top: 140px;
-  display: none;
+#input-date div select option:first-child {
+  color: #b9b9b9;
 }
 
 #btn-next {
