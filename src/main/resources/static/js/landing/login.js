@@ -20,37 +20,27 @@ document
     location.href = "./join.html";
   });
 
-// 로그인이 필요한 이유 클릭 -> 바텀시트 열기 (아래 -> 위 500ms)
-var botSheet = document.querySelector(".bottom-sheet");
+// 로그인이 필요한 이유 클릭 -> 팝업 열기
+var popup = document.querySelector(".popup");
+var popupBox = document.querySelector(".popup-box");
 document
-  .querySelector("#btn-open-bottomsheet")
+  .querySelector("#btn-popup-open")
   .addEventListener("click", function () {
-    botSheet.classList.remove(
-      "animate__animated",
-      "animate__slideOutDown",
-      "animate__faster"
-    );
-    botSheet.classList.add(
+    popup.style.display = "";
+    popupBox.classList.add(
       "animate__animated",
       "animate__slideInUp",
       "animate__faster"
     );
-    botSheet.style.display = "block";
   });
 
-// X 클릭 -> 바텀시트 닫기 (위 -> 아래 500ms)
+// 팝업 닫기
 document
-  .querySelector("#btn-close-bottomsheet")
+  .querySelector("#btn-popup-close")
   .addEventListener("click", function () {
-    botSheet.classList.remove(
-      "animate__animated",
-      "animate__slideInUp",
-      "animate__faster"
-    );
-    botSheet.classList.add(
-      "animate__animated",
-      "animate__slideOutDown",
-      "animate__faster"
-    );
-    // botSheet.style.display = "none";
+    popupBox.classList.replace("animate__slideInUp", "animate__slideOutDown");
+    setTimeout(() => {
+      popup.style.display = "none";
+      popupBox.classList.replace("animate__slideOutDown", "animate__slideInUp");
+    }, 300);
   });

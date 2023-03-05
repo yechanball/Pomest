@@ -32,7 +32,7 @@ img {
   height: 50px;
 }
 
-button {
+.wrap > button {
   position: absolute;
   left: 24px;
   width: 312px;
@@ -61,35 +61,24 @@ a {
   cursor: pointer;
 }
 
-.bottom-sheet {
-  position: absolute;
-  width: 360px;
-  height: 252px;
-  left: 0;
-  bottom: 0;
-  background: #ffffff;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
-  border-radius: 25px 25px 0px 0px;
-  display: none;
+.popup .popup-box {
+  top: 159px;
+  height: 280px;
+  text-align: center;
 }
 
-.bottom-sheet > a {
-  position: absolute;
-  top: 29px;
-  left: 312px;
-  width: 24px;
-  height: 24px;
+.popup .popup-box p:first-child {
+  margin-bottom: 36px;
 }
 
-.bottom-sheet > table {
-  position: absolute;
-  top: 89px;
-  left: 40px;
-  width: 280px;
-  height: 96px;
-  text-align: left;
-}
-
-.bottom-sheet > table td {
-  padding-right: 10px;
+.popup .popup-box button {
+  width: 100px;
+  height: 34px;
+  padding: 7px 15px 9px;
+  margin-top: 28px;
+  font-family: "Noto Sans KR Medium";
+  font-size: 12px;
+  line-height: 18px;
+  color: #0091ea;
+  border: 1.5px solid #0091ea;
 }

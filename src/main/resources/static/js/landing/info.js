@@ -28,9 +28,15 @@ var checkResult = new Set(); // 최종 체크한 결과 목록 (중복 허용 X)
 var radioboxList = []; // 라디오박스 리스트
 var checkRadio; // 최종 체크한 라디오박스 값
 var textBoxMom = document.querySelector("#birth-year-mom"); // 엄마 생년월일
-var textBoxMomMessage = document.querySelector("#textbox-message-mom"); // 엄마 생년월일 오류 메시지
 var textBoxMy = document.querySelector("#birth-year-my"); // 나 생년월일
-var textBoxMyMessage = document.querySelector("#textbox-message-my"); // 나 생년월일 오류 메시지
+
+// progressbar
+var bar = new ProgressBar.Line("#progress-bar-container", {
+  easing: "easeInOut",
+  duration: 500,
+  color: "#4bb158",
+  svgStyle: { width: "100%", height: "100%" },
+});
 
 // 페이지 로딩시 닉네임 쿼리 확인 및 증상 태그 생성
 window.onload = function () {
@@ -41,13 +47,13 @@ window.onload = function () {
   for (let symptom of symptoms) {
     let symptomLabel = document.createElement("label");
     symptomLabel.classList.add("symptom_tag_medium");
-    symptomLabel.innerHTML = `<input type="checkbox" name="symptom" id="symptom-check" value="${symptom}"/><span>${symptom}</span>`;
+    symptomLabel.innerHTML = `<input type="checkbox" name="symptom" class="symptom-check" value="${symptom}"/><span>${symptom}</span>`;
     step1Div.appendChild(symptomLabel);
   }
   checkboxList = document.querySelectorAll("input[type=checkbox]");
   radioboxList = document.querySelectorAll("input[type=radio]");
 
-  for (let year = 1950; year <= 1990; year++) {
+  for (let year = 1990; year >= 1950; year--) {
     textBoxMom.innerHTML += `<option class="font-detail-kr02" value="${year}">${year}</option>`;
   }
   for (let year = 2014; year >= 1960; year--) {
@@ -65,23 +71,30 @@ document.addEventListener(
           if (event.target.checked) {
             // 체크된 경우 배열에 추가
             checkResult.add(event.target.value);
+            event.target.parentElement.classList.add(
+              "animate__animated",
+              "animate__bounceIn",
+              "animate_faster"
+            );
           } else {
             // 체크가 풀리는 경우 배열에서 삭제
             checkResult.delete(event.target.value);
+            event.target.parentElement.classList.remove(
+              "animate__animated",
+              "animate__bounceIn",
+              "animate_faster"
+            );
           }
 
           if (checkResult.size > 0) {
             // 선택한 항목이 있다면 버튼 활성화
-            progress.style.border = "1.7px solid #4bb158";
-            progress.style.width = (308 / 3) * step + "px";
-
+            bar.animate(0.33);
             nextBtn.classList.remove("button-elevated-disabled");
             nextBtn.classList.add("button-elevated-default");
             isCheck = true;
           } else {
             // 선택한 항목이 없다면 버튼 비활성화
-            progress.style.border = "none";
-            progress.style.width = (308 / 3) * (step - 1) + "px";
+            bar.animate(0.0);
             nextBtn.classList.remove("button-elevated-default");
             nextBtn.classList.add("button-elevated-disabled");
             isCheck = false;
@@ -90,30 +103,49 @@ document.addEventListener(
       }
     } else if (step == 2) {
       for (var radiobox of radioboxList) {
+        radiobox.classList.remove(
+          "animate__animated",
+          "animate__bounceIn",
+          "animate_faster"
+        );
         radiobox.addEventListener("change", function (event) {
           if (event.target.checked) {
             // 체크한 라디오박스 값 저장
             checkRadio = event.target.value;
+            event.target.classList.add(
+              "animate__animated",
+              "animate__bounceIn",
+              "animate_faster"
+            );
           }
           if (checkRadio) {
             // 선택한 항목이 있다면 버튼 활성화
-            progress.style.width = (308 / 3) * step + "px";
+            bar.animate(0.67);
             nextBtn.classList.remove("button-elevated-disabled");
             nextBtn.classList.add("button-elevated-default");
             isCheck = true;
           }
         });
       }
-    } else if (step == 3) {
+    }
+  },
+  false
+);
+
+// select 이벤트 체크
+document.addEventListener(
+  "change",
+  function () {
+    if (step == 3) {
       if (textBoxMom.value.length >= 4 && checkBirthMom()) {
         if (textBoxMy.value.length >= 4 && checkBirthMy()) {
-          progress.style.width = (308 / 3) * step + "px";
+          bar.animate(1.0);
           nextBtn.classList.remove("button-elevated-disabled");
           nextBtn.classList.add("button-elevated-default");
           isCheck = true;
         }
       } else {
-        progress.style.width = (308 / 3) * (step - 1) + "px";
+        bar.animate(0.67);
         nextBtn.classList.remove("button-elevated-default");
         nextBtn.classList.add("button-elevated-disabled");
       }
@@ -130,13 +162,11 @@ function checkBirthMom() {
     // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
     textBoxMom.classList.remove("textbox-fail");
     textBoxMom.classList.add("textbox-default");
-    textBoxMomMessage.style.display = "none";
     return true;
   } else {
-    progress.style.width = (308 / 3) * (step - 1) + "px";
+    bar.animate(0.67);
     textBoxMom.classList.remove("textbox-default");
     textBoxMom.classList.add("textbox-fail");
-    textBoxMomMessage.style.display = "block";
     nextBtn.classList.remove("button-elevated-default");
     nextBtn.classList.add("button-elevated-disabled");
     isCheck = false;
@@ -156,13 +186,11 @@ function checkBirthMy() {
     // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
     textBoxMy.classList.remove("textbox-fail");
     textBoxMy.classList.add("textbox-default");
-    textBoxMyMessage.style.display = "none";
     return true;
   } else {
-    progress.style.width = (308 / 3) * (step - 1) + "px";
+    bar.animate(0.67);
     textBoxMy.classList.remove("textbox-default");
     textBoxMy.classList.add("textbox-fail");
-    textBoxMyMessage.style.display = "block";
     nextBtn.classList.remove("button-elevated-default");
     nextBtn.classList.add("button-elevated-disabled");
     isCheck = false;

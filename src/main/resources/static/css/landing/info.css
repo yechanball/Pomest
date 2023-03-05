@@ -28,13 +28,10 @@ body {
   border-radius: 100px;
 }
 
-#progress-bar {
+#progress-bar-container > svg {
   position: absolute;
-  top: 49px;
-  left: 44px;
-  width: 0px;
-  height: 13px;
-  background: #4bb158;
+  top: 0px;
+  left: 0px;
   border-radius: 100px;
 }
 
@@ -57,7 +54,7 @@ body {
 }
 
 #select-symptoms label {
-  margin: 4px;
+  margin: 6px 4px;
   cursor: pointer;
 }
 
@@ -116,10 +113,6 @@ body {
   font-family: "Noto Sans KR Regular";
   font-size: 14px;
   line-height: 18px;
-}
-
-#input-date div select option:first-child {
-  color: #b9b9b9;
 }
 
 #btn-next {
