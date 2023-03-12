@@ -99,6 +99,7 @@ body {
   top: -9px;
   left: 64px;
   width: calc(100% - 88px);
+  width: -webkit-calc(100% - 88px);
   height: 38px;
 }
 

@@ -76,7 +76,7 @@ function showFeed(data) {
   }
   feedItem.innerHTML = `<div class="feed-item-top">
             ${postSymptomTag}
-            <span class="font-body-kr01" value="close" onclick="opneMenu(this)">
+            <span class="post-menu font-body-kr01" value="close" onclick="opneMenu(this)">
               &bull;&bull;&bull;
               </span>
           </div>
@@ -398,6 +398,11 @@ function openCommentMenu(el, id) {
   el.setAttribute("value", condition);
 }
 
+// 댓글 수정 버튼 클릭
+function modifyComment(el) {
+  console.log(el.parentElement.id.split("-")[2] + "번 댓글 수정하기");
+}
+
 // 댓글 신고 버튼 클릭
 function reportComment(el) {
   let id = el.parentElement.getAttribute("id").split("-")[2];
@@ -556,3 +561,31 @@ document
     recommentList.removeChild(recommentItem);
     document.querySelector("#popup-delete-recomment").style.display = "none";
   });
+
+// 클릭시 메뉴 닫기
+document.querySelector(".wrap").addEventListener("click", function (e) {
+  // if (
+  //   e.target.parentElement.classList.contains("menu-small-writer") ||
+  //   e.target.parentElement.classList.contains("menu-small-not-writer")
+  // ) {
+  //   e.target.parentElement.style.display = "none";
+  // }
+
+  if (
+    !e.target.classList.contains("post-menu") &&
+    !e.target.classList.contains("comment-menu")
+  ) {
+    document.querySelectorAll(".post-menu").forEach((el) => {
+      el.setAttribute("value", "close");
+    });
+    document.querySelectorAll(".comment-menu").forEach((el) => {
+      el.setAttribute("value", "close");
+    });
+    document.querySelectorAll(".menu-small-not-writer").forEach((el) => {
+      if (el.style.display != "none") el.style.display = "none";
+    });
+    document.querySelectorAll(".menu-small-writer").forEach((el) => {
+      if (el.style.display == "") el.style.display = "none";
+    });
+  }
+});

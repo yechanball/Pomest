@@ -1,4 +1,3 @@
-var progress = document.querySelector("#progress-bar");
 var question = document.querySelector("#question");
 var step1Div = document.querySelector("#select-symptoms");
 var step2Div = document.querySelector("#select-date");
@@ -56,7 +55,7 @@ window.onload = function () {
   for (let year = 1990; year >= 1950; year--) {
     textBoxMom.innerHTML += `<option class="font-detail-kr02" value="${year}">${year}</option>`;
   }
-  for (let year = 2014; year >= 1960; year--) {
+  for (let year = 2014; year >= 1950; year--) {
     textBoxMy.innerHTML += `<option class="font-detail-kr02" value="${year}">${year}</option>`;
   }
 };
@@ -71,19 +70,19 @@ document.addEventListener(
           if (event.target.checked) {
             // 체크된 경우 배열에 추가
             checkResult.add(event.target.value);
-            event.target.parentElement.classList.add(
+            /* event.target.parentElement.classList.add(
               "animate__animated",
               "animate__bounceIn",
               "animate_faster"
-            );
+            ); */
           } else {
             // 체크가 풀리는 경우 배열에서 삭제
             checkResult.delete(event.target.value);
-            event.target.parentElement.classList.remove(
+            /* event.target.parentElement.classList.remove(
               "animate__animated",
               "animate__bounceIn",
               "animate_faster"
-            );
+            ); */
           }
 
           if (checkResult.size > 0) {
@@ -103,20 +102,20 @@ document.addEventListener(
       }
     } else if (step == 2) {
       for (var radiobox of radioboxList) {
-        radiobox.classList.remove(
+        /* radiobox.classList.remove(
           "animate__animated",
           "animate__bounceIn",
           "animate_faster"
-        );
+        ); */
         radiobox.addEventListener("change", function (event) {
           if (event.target.checked) {
             // 체크한 라디오박스 값 저장
             checkRadio = event.target.value;
-            event.target.classList.add(
+            /* event.target.classList.add(
               "animate__animated",
               "animate__bounceIn",
               "animate_faster"
-            );
+            ); */
           }
           if (checkRadio) {
             // 선택한 항목이 있다면 버튼 활성화
@@ -158,8 +157,8 @@ document.addEventListener(
 function checkBirthMom() {
   var inputText = textBoxMom.value; // 입력 받은 태어난년도
 
-  if (inputText.length == 4 && inputText >= 1900 && inputText <= 2014) {
-    // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
+  if (inputText.length == 4 && inputText >= 1950 && inputText <= 1990) {
+    // 4글자 숫자열, 1950년 이상 1990년 이하인 경우
     textBoxMom.classList.remove("textbox-fail");
     textBoxMom.classList.add("textbox-default");
     return true;
@@ -179,11 +178,11 @@ function checkBirthMy() {
 
   if (
     inputText.length == 4 &&
-    inputText >= 1900 &&
+    inputText >= 1950 &&
     inputText <= 2014 &&
     textBoxMom.value < inputText
   ) {
-    // 4글자 숫자열, 1900년 이상 2014년 이하인 경우
+    // 4글자 숫자열, 1950년 이상 2014년 이하, 엄마보다 어린 경우
     textBoxMy.classList.remove("textbox-fail");
     textBoxMy.classList.add("textbox-default");
     return true;

@@ -35,12 +35,18 @@ document
   });
 
 // 팝업 닫기
-document
-  .querySelector("#btn-popup-close")
-  .addEventListener("click", function () {
-    popupBox.classList.replace("animate__slideInUp", "animate__slideOutDown");
-    setTimeout(() => {
-      popup.style.display = "none";
-      popupBox.classList.replace("animate__slideOutDown", "animate__slideInUp");
-    }, 300);
-  });
+document.querySelector("#btn-popup-close").addEventListener("click", () => {
+  popupBox.classList.replace("animate__slideInUp", "animate__slideOutDown");
+  setTimeout(() => {
+    popup.style.display = "none";
+    popupBox.classList.replace("animate__slideOutDown", "animate__slideInUp");
+  }, 380);
+});
+
+document.querySelector(".popup-background").addEventListener("click", () => {
+  popupBox.classList.replace("animate__slideInUp", "animate__slideOutDown");
+  setTimeout(() => {
+    popup.style.display = "none";
+    popupBox.classList.replace("animate__slideOutDown", "animate__slideInUp");
+  }, 380);
+});

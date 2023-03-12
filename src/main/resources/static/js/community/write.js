@@ -83,20 +83,18 @@ document.addEventListener("input", function () {
 });
 
 // 본문 작성 입력 받기
-document
-  .querySelector("#input-content")
-  .addEventListener("keyup", function (e) {
-    let content = document.querySelector(".note-editable").innerHTML;
-    if (content.length > 0) {
-      document
-        .querySelector("#btn-complete")
-        .classList.replace("button-ghost-disabled", "button-ghost-default");
-    } else {
-      document
-        .querySelector("#btn-complete")
-        .classList.replace("button-ghost-default", "button-ghost-disabled");
-    }
-  });
+document.addEventListener("keyup", function (e) {
+  let content = document.querySelector(".note-editable").innerHTML;
+  if (content.length > 0) {
+    document
+      .querySelector("#btn-complete")
+      .classList.replace("button-ghost-disabled", "button-ghost-default");
+  } else {
+    document
+      .querySelector("#btn-complete")
+      .classList.replace("button-ghost-default", "button-ghost-disabled");
+  }
+});
 
 document.querySelector(".popup").style.display = "none";
 // 다음 버튼 클릭 시
