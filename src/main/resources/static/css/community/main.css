@@ -98,7 +98,8 @@ body {
   position: absolute;
   top: 16px;
   left: 64px;
-  width: 100%-88px;
+  width: calc(100% - 88px);
+  width: -webkit-calc(100% - 88px);
   height: 38px;
 }
 

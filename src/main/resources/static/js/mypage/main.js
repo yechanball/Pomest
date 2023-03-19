@@ -3,6 +3,15 @@ window.onload = function () {
   document.querySelector("#textbox").value = "옴따가랭이";
   document.querySelector("#textbox").readOnly = true;
 
+  // 내 정보 호출
+  // fetch("정보 호출 API")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  document.querySelector("#info-gender").innerText = "여성";
+  document.querySelector("#info-email").innerText = "pomest@pomest.co.kr";
+  document.querySelector("#info-phoneNumber").innerText = "010-1234-5678";
+  //   });
+
   // 관심 있는 증상 목록 호출
   fetch(
     "https://yechanball.github.io/Pomest/src/main/resources/static/data/symptoms.json"
@@ -289,6 +298,10 @@ document.querySelector(".btn-move-back").addEventListener("click", () => {
   document.querySelector(".setting-wrap").style.display = "none";
   document.querySelector(".main-wrap").style.display = "";
 });
+document.querySelector(".btn-move-back-info").addEventListener("click", () => {
+  document.querySelector(".setting-wrap").style.display = "";
+  document.querySelector(".info-wrap").style.display = "none";
+});
 
 // 설정 메뉴 클릭
 document.querySelector(".btn-suggest").addEventListener("click", () => {
@@ -303,6 +316,10 @@ document.querySelector(".btn-policy").addEventListener("click", () => {
 });
 document.querySelector(".btn-alarm").addEventListener("click", () => {
   console.log("알림 설정 클릭");
+});
+document.querySelector(".btn-info").addEventListener("click", () => {
+  document.querySelector(".setting-wrap").style.display = "none";
+  document.querySelector(".info-wrap").style.display = "";
 });
 document.querySelector(".btn-logout").addEventListener("click", () => {
   document.querySelector(".popup").style.display = "";

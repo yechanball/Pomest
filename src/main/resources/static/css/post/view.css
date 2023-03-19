@@ -86,3 +86,8 @@ body {
 .post-body > p {
   text-align: left;
 }
+
+.post-body > iframe {
+  width: 100%;
+  height: auto;
+}

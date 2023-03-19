@@ -190,9 +190,9 @@
           <h2 class="font-title-kr02">설정</h2>
         </div>
         <div class="menu-box">
-          <div class="menu-item">
+          <div class="menu-item btn-suggest">
             <p class="font-body-kr02">포메스트에 제안하기</p>
-            <a class="btn-suggest">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -208,10 +208,10 @@
             </a>
           </div>
         </div>
-        <div class="menu-box">
+        <div class="menu-box btn-tos">
           <div class="menu-item">
             <p class="font-body-kr02">서비스 이용약관</p>
-            <a class="btn-tos">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -226,9 +226,9 @@
               </svg>
             </a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item btn-policy">
             <p class="font-body-kr02">개인정보 처리방침</p>
-            <a class="btn-policy">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -245,9 +245,9 @@
           </div>
         </div>
         <div class="menu-box">
-          <div class="menu-item" style="display: none">
+          <div class="menu-item btn-alarm" style="display: none">
             <p class="font-body-kr02">알림 설정</p>
-            <a class="btn-alarm">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -262,9 +262,26 @@
               </svg>
             </a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item btn-info">
+            <p class="font-body-kr02">내 정보 자세히 보기</p>
+            <a>
+              <svg
+                width="10"
+                height="17"
+                viewBox="0 0 10 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.50743 17L0 15.4913L6.98514 8.5L0 1.50875L1.50743 0L10 8.5L1.50743 17Z"
+                  fill="#121212"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="menu-item btn-logout">
             <p class="font-body-kr02">로그아웃</p>
-            <a class="btn-logout">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -279,9 +296,9 @@
               </svg>
             </a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item btn-withdraw">
             <p class="font-body-kr02" style="color: #d32f2f">서비스 탈퇴</p>
-            <a class="btn-withdraw">
+            <a>
               <svg
                 width="10"
                 height="17"
@@ -322,6 +339,42 @@
           </button>
         </div>
         <div id="symptom-list"></div>
+      </div>
+
+      <!-- 내 정보 상세 -->
+      <div class="info-wrap" style="display: none">
+        <div class="header">
+          <a class="btn-move-back-info">
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 16.4463L0 8.44629L8 0.446289L9.425 1.84629L3.825 7.44629H16V9.44629H3.825L9.425 15.0463L8 16.4463Z"
+                fill="#121212"
+              />
+            </svg>
+          </a>
+          <h2 class="font-title-kr02">내 정보 자세히 보기</h2>
+        </div>
+        <p class="font-body-kr02">소셜 로그인을 통해 연동된 정보입니다.</p>
+        <table class="font-body-kr02">
+          <tr>
+            <td>성별</td>
+            <td id="info-gender"></td>
+          </tr>
+          <tr>
+            <td>이메일</td>
+            <td id="info-email"></td>
+          </tr>
+          <tr>
+            <td>전화번호</td>
+            <td id="info-phoneNumber"></td>
+          </tr>
+        </table>
       </div>
 
       <!-- 팝업 -->
