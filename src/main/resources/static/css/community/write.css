@@ -124,6 +124,7 @@ body {
 
 .note-editor {
   margin: auto;
+  text-align: left;
 }
 
 .note-statusbar {
@@ -140,4 +141,8 @@ body {
   font-size: 12px;
   line-height: 18px;
   color: #b9b9b9;
+}
+
+.note-modal {
+  display: none;
 }

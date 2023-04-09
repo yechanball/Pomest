@@ -1,5 +1,15 @@
 var postId;
 
+// 텍스트 에디터 세팅
+$(document).ready(function () {
+  $("#input-content").summernote({
+    tabsize: 2,
+    width: 312,
+    height: 400,
+    toolbar: [],
+  });
+});
+
 // 페이지 로딩 시 게시글 요청
 window.onload = function () {
   const queryString = window.location.search;
@@ -28,24 +38,22 @@ function showFeed(data) {
     symptomLabel.innerHTML = `<span>${symptom}</span>`;
     document.querySelector("#selected-symptoms").appendChild(symptomLabel);
   }
-  document.querySelector("#input-content").value = data.content;
+  document.querySelector(".note-editable").innerHTML = data.content;
 }
 
 // 본문 작성 입력 받기
-document
-  .querySelector("#input-content")
-  .addEventListener("keyup", function (e) {
-    let content = document.querySelector("#input-content").value;
-    if (content.length > 0) {
-      document
-        .querySelector("#btn-complete")
-        .classList.replace("button-ghost-disabled", "button-ghost-default");
-    } else {
-      document
-        .querySelector("#btn-complete")
-        .classList.replace("button-ghost-default", "button-ghost-disabled");
-    }
-  });
+document.addEventListener("keyup", function (e) {
+  let content = document.querySelector(".note-editable").innerHTML;
+  if (content.length > 0) {
+    document
+      .querySelector("#btn-complete")
+      .classList.replace("button-ghost-disabled", "button-ghost-default");
+  } else {
+    document
+      .querySelector("#btn-complete")
+      .classList.replace("button-ghost-default", "button-ghost-disabled");
+  }
+});
 
 document.querySelector(".popup").style.display = "none";
 
@@ -66,7 +74,7 @@ document.querySelector("#btn-delete").addEventListener("click", function () {
 
 // 글수정 완료 버튼 클릭 시
 document.querySelector("#btn-complete").addEventListener("click", function () {
-  let content = document.querySelector("#input-content").value;
+  let content = document.querySelector(".note-editable").innerHTML;
   if (content.length > 0) {
     /////////////////////////////////////////
     // 서버 요청 부분
