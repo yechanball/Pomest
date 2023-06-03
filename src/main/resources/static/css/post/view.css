@@ -40,6 +40,22 @@ body {
   cursor: pointer;
 }
 
+.post-save-btn {
+  position: absolute;
+  top: 29px;
+  right: 66px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.post-share-btn {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  margin: 0;
+  cursor: pointer;
+}
+
 /* 피드 내용 */
 .post-item {
   width: 100%-48px;
@@ -49,29 +65,12 @@ body {
 .post-header {
   position: relative;
   width: 100%;
-  height: 53px;
+  height: fit-content;
 }
 
 .post-header > h2 {
-  position: absolute;
-  top: 12px;
-  margin: 0;
-}
-
-.post-save-btn {
-  position: absolute;
-  top: 15px;
-  right: 38px;
-  margin: 0;
-  cursor: pointer;
-}
-
-.post-share-btn {
-  position: absolute;
-  top: 12px;
-  right: 0px;
-  margin: 0;
-  cursor: pointer;
+  margin: 12px 0 0;
+  text-align: left;
 }
 
 .post-body {
