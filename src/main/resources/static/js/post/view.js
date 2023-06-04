@@ -10,10 +10,10 @@ window.onload = function () {
   //   .then((response) => response.json())
   //   .then((data) => showFeed(data));
 
-  if (typeof navigator.share === "undefined") {
-    // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
-    document.querySelector(".post-share-btn").style.display = "none";
-  }
+  // if (typeof navigator.share === "undefined") {
+  //   // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
+  //   document.querySelector(".post-share-btn").style.display = "none";
+  // }
 };
 
 // 포스트 화면 구성
